@@ -5,9 +5,11 @@
 
 local opt = vim.opt
 
+opt.clipboard = "unnamedplus" -- sync with system clipboard
 opt.swapfile = false
 opt.backup = false
 opt.writebackup = false
+opt.pumblend = 5
 
 opt.shiftwidth = 4 -- Size of an indent
 opt.tabstop = 4 -- Size of an indent

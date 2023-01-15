@@ -16,6 +16,7 @@ Map("<A-l>", ":bnext<CR>", { mode = { "n", "v" } })
 Map("<A-h>", ":bprevious<CR>", { mode = { "n", "v" } })
 
 Map("<leader>ma", ":Mason<CR>")
+Map("<leader>dif", ":Gitsigns diffthis<CR>")
 
 Map("Q", ":bdelete<CR>")
 

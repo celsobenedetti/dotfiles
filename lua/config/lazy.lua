@@ -14,7 +14,7 @@ require("lazy").setup({
       import = "lazyvim.plugins",
     },
 
-    -- import/override with your plugins
+    -- local plugins configuration
     { import = "plugins" },
 
     { "wakatime/vim-wakatime", event = "VeryLazy" },

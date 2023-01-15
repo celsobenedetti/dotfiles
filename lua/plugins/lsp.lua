@@ -37,6 +37,12 @@ return {
       servers = {
         -- servers will be automatically installed with mason and loaded with lspconfig
         pyright = {},
+        cssls = {},
+        gopls = {},
+        angularls = {},
+        jdtls = {},
+        tailwindcss = { filetypes = { "vue", "javascriptreact", "typescriptreact", "html" } },
+        emmet_ls = { filetypes = { "html", "javascriptreact", "typescriptreact", "vue" } },
       },
       -- you can do any additional lsp server setup here
       -- return true if you don't want this server to be setup with lspconfig
@@ -84,8 +90,10 @@ return {
           nls.builtins.formatting.prettierd,
           nls.builtins.formatting.black,
           nls.builtins.formatting.shfmt,
+          nls.builtins.formatting.rustywind,
 
           nls.builtins.diagnostics.flake8,
+          nls.builtins.diagnostics.golangci_lint,
           nls.builtins.diagnostics.shellcheck,
         },
       }

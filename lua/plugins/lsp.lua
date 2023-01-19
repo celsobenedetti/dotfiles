@@ -33,6 +33,7 @@ return {
     },
     ---@class PluginLspOpts
     opts = {
+      autoformat = false,
       ---@type lspconfig.options
       servers = {
         -- servers will be automatically installed with mason and loaded with lspconfig
@@ -40,10 +41,10 @@ return {
         cssls = {},
         gopls = {},
         angularls = {},
-        jdtls = {},
         tailwindcss = { filetypes = { "vue", "javascriptreact", "typescriptreact", "html" } },
         emmet_ls = { filetypes = { "html", "javascriptreact", "typescriptreact", "vue" } },
       },
+
       -- you can do any additional lsp server setup here
       -- return true if you don't want this server to be setup with lspconfig
       ---@type table<string, fun(server:string, opts:_.lspconfig.options):boolean?>

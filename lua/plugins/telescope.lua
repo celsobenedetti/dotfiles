@@ -67,6 +67,7 @@ return {
     },
     keys = {
       { "<leader>dot", search_dotfiles, desc = "Search Dotfiles" },
+      { "<leader><leader>", require("telescope.builtin").buffers, desc = "Search Buffers" },
     },
   },
 }

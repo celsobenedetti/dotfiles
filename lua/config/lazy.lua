@@ -37,6 +37,7 @@ require("lazy").setup({
           "go",
           "help",
           "html",
+          "java",
           "javascript",
           "json",
           "lua",

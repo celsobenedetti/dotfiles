@@ -7,16 +7,13 @@ Map("<A-F>", require("lazyvim.plugins.lsp.format").format, { desc = "Format Docu
 Map("<A-F>", require("lazyvim.plugins.lsp.format").format, { desc = "Format Range", mode = "v" })
 Map("R", require("lazyvim.plugins.lsp.keymaps").rename, { desc = "Rename" })
 
---ThePrimeagen
-Map("<leader>x", '"_d', { mode = { "v", "n" } })
-Map("<leader>p", '"_dP', { mode = "x" })
-
 -- Navigate buffers
 Map("<A-l>", ":bnext<CR>", { mode = { "n", "v" } })
 Map("<A-h>", ":bprevious<CR>", { mode = { "n", "v" } })
+
+Map("p", '"_dP', { mode = "v", desc = "Paste without losing register" }) --hold on to register when pasting and replace text
 
 Map("<leader>ma", ":Mason<CR>")
 Map("<leader>dif", ":Gitsigns diffthis<CR>")
 
 Map("Q", ":bdelete<CR>")
-

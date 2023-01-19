@@ -20,13 +20,15 @@ return {
       local cmp = require("cmp")
       -- extend opts
       opts.sources = cmp.config.sources(vim.list_extend(opts.sources, {
-        { name = "copilot", group_index = 2 },
+        { name = "copilot", group_index = 3 },
       }))
 
       --override opts
       opts.formatting = {
         format = cmp_format_source,
       }
+
+      opts.experimental.ghost_text = false
 
       opts.window = {
         completion = cmp.config.window.bordered({ col_offset = -1 }),

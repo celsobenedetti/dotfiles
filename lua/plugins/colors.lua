@@ -1,55 +1,39 @@
-local function catppuccin()
-  require("catppuccin").setup({
-    flavour = "frappe", -- latte, frappe, macchiato, mocha
-    term_colors = false,
-    custom_colors = {},
-    custom_highlights = {},
-    integrations = {
-      cmp = true,
-      gitsigns = true,
-      nvimtree = true,
-      telescope = true,
-      mini = true,
-      harpoon = true,
-      treesitter = true,
-      lsp_trouble = true,
-      mason = true,
-      which_key = true,
-      neotree = true,
-    },
-  })
-  vim.cmd("silent! colorscheme catppuccin")
-  -- require("catppuccin").load("frappe")
-end
+local catppuccin_opts = {
+  flavour = "frappe", -- latte, frappe, macchiato, mocha
+  term_colors = false,
+  custom_colors = {},
+  custom_highlights = {},
+  integrations = {
+    cmp = true,
+    gitsigns = true,
+    nvimtree = true,
+    telescope = true,
+    mini = true,
+    harpoon = true,
+    treesitter = true,
+    lsp_trouble = true,
+    mason = true,
+    which_key = true,
+    neotree = true,
+  },
+}
 
-local function material()
-  vim.g.material_style = "palenight"
-  require("material").setup({
-    plugins = {
-      "gitsigns",
-      "mini",
-      "nvim-cmp",
-      "nvim-web-devicons",
-      "telescope",
-      "trouble",
-      "which-key",
-    },
-    custom_highlights = {
-      LineNr = { fg = "#717CB4" },
-      CursorLineNr = { fg = "#5eacd3" },
-    },
-    lualine_style = "stealth", -- "stealth" or "default"
-  })
-  vim.cmd("silent! colorscheme material")
-end
-
-local function rose_pine()
-  require("rose-pine").setup({
-    --- @usage 'main' | 'moon'
-    dark_variant = "moon",
-  })
-  vim.cmd("colorscheme rose-pine")
-end
+local material_opts = {
+  plugins = {
+    "gitsigns",
+    "mini",
+    "nvim-cmp",
+    "nvim-web-devicons",
+    "telescope",
+    "trouble",
+    "which-key",
+  },
+  custom_highlights = {
+    LineNr = { fg = "#717CB4" },
+    CursorLineNr = { fg = "#5eacd3" },
+  },
+  lualine_style = "stealth", -- "stealth" or "default"
+}
 
 return {
   -- general plugins
@@ -65,24 +49,50 @@ return {
   },
 
   -- colorschemes
-  { "catppuccin/nvim", as = "catppuccin" },
   { "ellisonleao/gruvbox.nvim" },
-  { "marko-cerovac/material.nvim" },
   { "rebelot/kanagawa.nvim" },
   { "sainnhe/edge" },
   -- { "shaunsingh/nord.nvim" },
-  { "rose-pine/neovim" },
   { "nyoom-engineering/oxocarbon.nvim" },
+  { "EdenEast/nightfox.nvim" },
+
+  { "lewpoly/sherbet.nvim" },
+  { "Mofiqul/vscode.nvim" },
+  { "sainnhe/everforest" },
 
   {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = function()
-        catppuccin()
-        -- material()
-        -- rose_pine()
-      end,
-      -- colorscheme = "kanagawa"
-    },
+    "catppuccin/nvim",
+    as = "catppuccin",
+    config = function()
+      require("catppuccin").setup(catppuccin_opts)
+    end,
   },
+  {
+    "marko-cerovac/material.nvim",
+    config = function()
+      vim.g.material_style = "palenight"
+      require("material").setup(material_opts)
+    end,
+  },
+  {
+    "olivercederborg/poimandres.nvim",
+    config = function()
+      require("poimandres").setup()
+    end,
+  },
+  {
+    "rose-pine/neovim",
+    config = function()
+      require("rose-pine").setup({ dark_variant = "moon" })
+    end,
+  },
+
+  -- {
+  --   "LazyVim/LazyVim",
+  --   opts = {
+  --     colorscheme = "material",
+  --   },
+  -- },
+
+  ---
 }

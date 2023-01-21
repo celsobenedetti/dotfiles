@@ -92,7 +92,9 @@ return {
           nls.builtins.formatting.prettierd,
           nls.builtins.formatting.black,
           nls.builtins.formatting.shfmt,
-          nls.builtins.formatting.rustywind,
+          nls.builtins.formatting.rustywind.with({
+            filetypes = { "html", "javascriptreact", "typescriptreact", "vue" },
+          }),
 
           nls.builtins.diagnostics.flake8,
           nls.builtins.diagnostics.golangci_lint,

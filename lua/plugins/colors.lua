@@ -59,6 +59,7 @@ return {
   { "lewpoly/sherbet.nvim" },
   { "Mofiqul/vscode.nvim" },
   { "sainnhe/everforest" },
+  { "Mofiqul/dracula.nvim" },
 
   {
     "catppuccin/nvim",
@@ -87,12 +88,20 @@ return {
     end,
   },
 
-  -- {
-  --   "LazyVim/LazyVim",
-  --   opts = {
-  --     colorscheme = "material",
-  --   },
-  -- },
+  {
+    "projekt0n/github-nvim-theme",
+    version = "0.0.7",
+    config = function()
+      require("github-theme").setup({})
+    end,
+  },
+
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "catppuccin",
+    },
+  },
 
   ---
 }

@@ -26,8 +26,8 @@ return {
         -- client.server_capabilities.document_formatting = false
         -- client.server_capabilities.document_range_formatting = false
           -- stylua: ignore
-          Map("<leader>cR", "TypescriptRenameFile", { desc = "Rename File", buffer = buffer })
-          Map("<A-O>", "TypescriptOrganizeImports", { buffer = buffer, desc = "Organize Imports" })
+          Map("<leader>cR", ":TypescriptRenameFile<CR>", { desc = "Rename File", buffer = buffer })
+          Map("<A-O>", ":TypescriptOrganizeImports<CR>", { buffer = buffer, desc = "Organize Imports" })
         end)
       end,
     },
@@ -40,6 +40,7 @@ return {
         pyright = {},
         cssls = {},
         gopls = {},
+        zk = {},
         angularls = {},
         tailwindcss = { filetypes = { "vue", "javascriptreact", "typescriptreact", "html" } },
         emmet_ls = { filetypes = { "html", "javascriptreact", "typescriptreact", "vue" } },
@@ -98,6 +99,15 @@ return {
           nls.builtins.diagnostics.shellcheck,
         },
       }
+    end,
+  },
+
+  --zk
+  {
+    "mickael-menu/zk-nvim",
+    event = "VeryLazy",
+    config = function()
+      require("zk").setup()
     end,
   },
 }

@@ -67,6 +67,7 @@ return {
     config = function()
       require("catppuccin").setup(catppuccin_opts)
     end,
+    event = "VimEnter",
   },
   {
     "marko-cerovac/material.nvim",

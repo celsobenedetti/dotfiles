@@ -64,6 +64,9 @@ end
 return {
   {
     "nvim-lualine/lualine.nvim",
+    -- dependencies = {
+    --   "github-nvim-theme",
+    -- },
     opts = function(_, opts)
       table.insert(opts.sections.lualine_x, get_lsp_client_list)
     end,

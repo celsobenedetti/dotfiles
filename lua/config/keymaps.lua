@@ -3,6 +3,9 @@
 -- Add any additional keymaps here
 --
 
+-- -- Unset LazyVim's default bindings
+-- vim.keymap.del("i", "<c-k>")
+
 Map("<A-F>", require("lazyvim.plugins.lsp.format").format, { desc = "Format Document" })
 Map("<A-F>", require("lazyvim.plugins.lsp.format").format, { desc = "Format Range", mode = "v" })
 Map("R", require("lazyvim.plugins.lsp.keymaps").rename, { desc = "Rename" })

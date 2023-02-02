@@ -1,5 +1,6 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
 
+
 -- Global Keymap function
 function Map(lhs, rhs, opts)
   local mode = "n"

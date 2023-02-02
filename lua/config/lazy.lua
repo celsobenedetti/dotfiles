@@ -55,10 +55,24 @@ require("lazy").setup({
       },
     },
 
+    {
+      "nvim-neo-tree/neo-tree.nvim",
+      opts = function(_, opts)
+        opts.event_handlers = {
+          {
+            event = "file_opened",
+            handler = function(_)
+              require("neo-tree").close_all() --auto close
+            end,
+          },
+        }
+      end,
+    },
+
     -- import any extras modules here
     -- { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "lazyvim.plugins.extras.lang.json" },
-    { import = "lazyvim.plugins.extras.ui.mini-animate" },
+    -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
 
     -- override plugin opts
     { "echasnovski/mini.ai", event = "VeryLazy" },

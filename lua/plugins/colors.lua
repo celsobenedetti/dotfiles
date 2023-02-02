@@ -1,22 +1,27 @@
-local catppuccin_opts = {
-  flavour = "frappe", -- latte, frappe, macchiato, mocha
-  term_colors = false,
-  custom_colors = {},
-  custom_highlights = {},
-  integrations = {
-    cmp = true,
-    gitsigns = true,
-    nvimtree = true,
-    telescope = true,
-    mini = true,
-    harpoon = true,
-    treesitter = true,
-    lsp_trouble = true,
-    mason = true,
-    which_key = true,
-    neotree = true,
-  },
-}
+local function catppuccin_setup()
+  local catppuccin_opts = {
+    flavour = "frappe", -- latte, frappe, macchiato, mocha
+    term_colors = false,
+    custom_colors = {},
+    custom_highlights = {},
+    integrations = {
+      cmp = true,
+      gitsigns = true,
+      nvimtree = true,
+      telescope = true,
+      mini = true,
+      harpoon = true,
+      treesitter = true,
+      lsp_trouble = true,
+      mason = true,
+      which_key = true,
+      neotree = true,
+    },
+  }
+
+  require("catppuccin").setup(catppuccin_opts)
+  require("catppuccin").load(catppuccin_opts.flavour)
+end
 
 local material_opts = {
   plugins = {
@@ -34,6 +39,17 @@ local material_opts = {
   },
   lualine_style = "stealth", -- "stealth" or "default"
 }
+
+local function change_cursor_color()
+  vim.cmd([[
+        highlight Cursor guifg=white guibg=#6c7086
+        highlight iCursor guifg=white guibg=steelblue
+        set guicursor=n-v-c:block-Cursor
+        set guicursor-=i:ver100-iCursor
+        set guicursor-=n-v-c:blinkon0
+        set guicursor-=i:blinkwait10
+    ]])
+end
 
 return {
   -- general plugins
@@ -64,10 +80,8 @@ return {
   {
     "catppuccin/nvim",
     as = "catppuccin",
-    config = function()
-      require("catppuccin").setup(catppuccin_opts)
-    end,
-    event = "VimEnter",
+    config = catppuccin_setup,
+    -- event = "VimEnter",
   },
   {
     "marko-cerovac/material.nvim",
@@ -94,13 +108,15 @@ return {
     version = "0.0.7",
     config = function()
       require("github-theme").setup({})
+      change_cursor_color()
     end,
   },
 
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      -- colorscheme = "",
+      colorscheme = catppuccin_setup,
     },
   },
 

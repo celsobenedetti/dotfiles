@@ -18,6 +18,7 @@ require("lazy").setup({
     { import = "plugins" },
 
     { "wakatime/vim-wakatime", event = "VeryLazy" },
+    { "christoomey/vim-tmux-navigator", event = "VeryLazy" },
 
     {
       "kylechui/nvim-surround",

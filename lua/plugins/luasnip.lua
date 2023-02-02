@@ -6,6 +6,9 @@ return {
       local ls = require("luasnip")
 
       -- require("luasnip.loaders.from_vscode").lazy_load()
+      require("luasnip.loaders.from_vscode").lazy_load({
+        paths = { "~/.dotfiles/snippets", include = "go" },
+      })
 
       ls.config.set_config({
         history = true,

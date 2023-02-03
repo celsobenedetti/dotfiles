@@ -44,6 +44,7 @@ return {
             ["<esc>"] = require("telescope.actions").close,
             ["<C-/>"] = "which_key",
             ["<C-C>"] = false,
+            ["<C-[>"] = false,
             ["<c-t>"] = trouble.open_with_trouble,
           },
           n = { ["<c-t>"] = trouble.open_with_trouble },

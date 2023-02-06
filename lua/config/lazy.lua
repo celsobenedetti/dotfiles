@@ -70,6 +70,7 @@ require("lazy").setup({
       end,
     },
 
+    { "mbbill/undotree", cmd = "UndotreeToggle" },
     -- import any extras modules here
     -- { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "lazyvim.plugins.extras.lang.json" },

@@ -97,7 +97,7 @@ return {
           }),
 
           nls.builtins.diagnostics.flake8,
-          nls.builtins.diagnostics.golangci_lint,
+          -- nls.builtins.diagnostics.golangci_lint,
           nls.builtins.diagnostics.shellcheck,
         },
       }
@@ -107,7 +107,7 @@ return {
   --zk
   {
     "mickael-menu/zk-nvim",
-    event = "VeryLazy",
+    ft = "markdown",
     config = function()
       require("zk").setup()
     end,

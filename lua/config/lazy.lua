@@ -73,7 +73,7 @@ require("lazy").setup({
     { "mbbill/undotree", cmd = "UndotreeToggle" },
     -- import any extras modules here
     -- { import = "lazyvim.plugins.extras.lang.typescript" },
-    { import = "lazyvim.plugins.extras.lang.json" },
+    { import = "lazyvim.plugins.extras.lang.json", ft = "typescript" },
     -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
 
     -- override plugin opts
@@ -81,6 +81,7 @@ require("lazy").setup({
 
     -- disable plugins
     { "ggandor/leap.nvim", enabled = false },
+    { "ggandor/flit.nvim", enabled = false },
     { "echasnovski/mini.surround", enabled = false },
     { "rcarriga/nvim-notify", enabled = false },
   },

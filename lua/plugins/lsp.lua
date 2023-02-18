@@ -26,7 +26,7 @@ return {
         -- client.server_capabilities.document_formatting = false
         -- client.server_capabilities.document_range_formatting = false
           -- stylua: ignore
-          Map("<leader>cR", ":TypescriptRenameFile<CR>", { desc = "Rename File", buffer = buffer })
+          Map("<leader>RF", ":TypescriptRenameFile<CR>", { desc = "Rename File", buffer = buffer })
           Map("<A-O>", ":TypescriptOrganizeImports<CR>", { buffer = buffer, desc = "Organize Imports" })
         end)
       end,
@@ -37,13 +37,14 @@ return {
       ---@type lspconfig.options
       servers = {
         -- servers will be automatically installed with mason and loaded with lspconfig
+        sumneko_lua = {},
         pyright = {},
         cssls = {},
         gopls = {},
         zk = {},
         angularls = {},
         tailwindcss = { filetypes = { "vue", "javascriptreact", "typescriptreact", "html" } },
-        emmet_ls = { filetypes = { "html", "javascriptreact", "typescriptreact", "vue" } },
+        emmet_ls = { filetypes = { "html", "javascriptreact", "typescriptreact", "vue", "gohtml" } },
       },
 
       -- you can do any additional lsp server setup here

@@ -1,4 +1,4 @@
-local function cmp_format_source(_, item)
+local function cmp_format_source(entry, item)
   local icons = require("lazyvim.config").icons.kinds
 
   icons.Snippet = " "
@@ -8,6 +8,9 @@ local function cmp_format_source(_, item)
   if icons[item.kind] then
     item.kind = icons[item.kind] .. item.kind
   end
+
+  require("tailwindcss-colorizer-cmp").formatter(entry, item)
+
   return item
 end
 
@@ -15,6 +18,10 @@ return {
   -- override nvim-cmp
   {
     "hrsh7th/nvim-cmp",
+
+    dependencies = {
+      { "roobert/tailwindcss-colorizer-cmp.nvim", config = true },
+    },
 
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)

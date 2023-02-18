@@ -1,3 +1,5 @@
+local lazy_colorschemes = true
+
 local function catppuccin_setup()
   local catppuccin_opts = {
     flavour = "frappe", -- latte, frappe, macchiato, mocha
@@ -39,7 +41,6 @@ local material_opts = {
   },
   lualine_style = "stealth", -- "stealth" or "default"
 }
-
 local function change_cursor_color()
   vim.cmd([[
         highlight Cursor guifg=white guibg=#6c7086
@@ -53,35 +54,53 @@ end
 
 return {
   -- general plugins
+  -- {
+  --   "brenoprata10/nvim-highlight-colors",
+  --   event = "VeryLazy",
+  --   config = function()
+  --     require("nvim-highlight-colors").setup({
+  --       render = "foreground", -- or 'foreground' or 'first_column'
+  --       enable_tailwind = true,
+  --     })
+  --   end,
+  -- },
   {
-    "brenoprata10/nvim-highlight-colors",
-    event = "VeryLazy",
+    "NvChad/nvim-colorizer.lua",
     config = function()
-      require("nvim-highlight-colors").setup({
-        render = "foreground", -- or 'foreground' or 'first_column'
-        enable_tailwind = true,
+      require("colorizer").setup({
+        user_default_options = {
+          tailwind = true,
+        },
       })
+      require("colorizer").attach_to_buffer(0)
     end,
+    event = "VimEnter",
   },
 
   -- colorschemes
-  { "ellisonleao/gruvbox.nvim" },
-  { "rebelot/kanagawa.nvim" },
-  { "sainnhe/edge" },
-  -- { "shaunsingh/nord.nvim" },
-  { "nyoom-engineering/oxocarbon.nvim" },
-  { "EdenEast/nightfox.nvim" },
+  { "ellisonleao/gruvbox.nvim", lazy = lazy_colorschemes },
+  { "rebelot/kanagawa.nvim", lazy = lazy_colorschemes },
+  { "sainnhe/edge", lazy = lazy_colorschemes },
+  -- { "shaunsingh/nord.nvim", lazy = lazy_colorschemes },
+  { "gbprod/nord.nvim", lazy = lazy_colorschemes },
 
-  { "lewpoly/sherbet.nvim" },
-  { "Mofiqul/vscode.nvim" },
-  { "sainnhe/everforest" },
-  { "Mofiqul/dracula.nvim" },
+  { "nyoom-engineering/oxocarbon.nvim", lazy = lazy_colorschemes },
+  { "EdenEast/nightfox.nvim", lazy = lazy_colorschemes },
+  { "tiagovla/tokyodark.nvim", lazy = lazy_colorschemes },
+
+  { "lewpoly/sherbet.nvim", lazy = lazy_colorschemes },
+  { "Mofiqul/vscode.nvim", lazy = lazy_colorschemes },
+  { "sainnhe/everforest", lazy = lazy_colorschemes },
+  { "Mofiqul/dracula.nvim", lazy = lazy_colorschemes },
+  { "olivercederborg/poimandres.nvim", config = true, lazy = lazy_colorschemes },
+
+  { "rmehri01/onenord.nvim", config = true, lazy = lazy_colorschemes },
 
   {
     "catppuccin/nvim",
     as = "catppuccin",
-    config = catppuccin_setup,
-    -- event = "VimEnter",
+    -- config = catppuccin_setup,
+    lazy = lazy_colorschemes,
   },
   {
     "marko-cerovac/material.nvim",
@@ -89,33 +108,29 @@ return {
       vim.g.material_style = "palenight"
       require("material").setup(material_opts)
     end,
-  },
-  {
-    "olivercederborg/poimandres.nvim",
-    config = function()
-      require("poimandres").setup()
-    end,
+    lazy = lazy_colorschemes,
   },
   {
     "rose-pine/neovim",
     config = function()
       require("rose-pine").setup({ dark_variant = "moon" })
     end,
+    lazy = lazy_colorschemes,
   },
 
   {
     "projekt0n/github-nvim-theme",
     version = "0.0.7",
     config = function()
-      require("github-theme").setup({})
       change_cursor_color()
     end,
+    lazy = lazy_colorschemes,
   },
 
   {
     "LazyVim/LazyVim",
     opts = {
-      -- colorscheme = "",
+      -- colorscheme = "nord",
       colorscheme = catppuccin_setup,
     },
   },

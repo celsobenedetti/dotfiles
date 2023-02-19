@@ -13,7 +13,7 @@ end
 return {
   {
     "zbirenbaum/copilot.lua",
-    event = "VeryLazy",
+    -- event = "VeryLazy",
     cmd = "Copilot",
     keys = {
       { "<leader>cp", open_vertical_panel, desc = "Open Copilot Panel" },
@@ -65,7 +65,7 @@ return {
 
   {
     "zbirenbaum/copilot-cmp",
-    event = "VeryLazy",
+    -- event = "VeryLazy",
     dependencies = { "zbirenbaum/copilot.lua", "hrsh7th/nvim-cmp" },
     config = function()
       require("copilot_cmp").setup()
@@ -82,7 +82,8 @@ return {
       { "<leader>gpa", ":ChatGPTActAs<CR>", desc = "Open Chat GPT (Act as)" },
       { "<leader>gpe", ":ChatGPTEditWithInstructions<CR>", desc = "Open Chat GPT (Edit With Instructions)" },
     },
-    event = "VeryLazy",
     dependencies = { "nvim-lua/plenary.nvim" },
+    cmd = { "ChatGPT", "ChatGPTEditWithInstructions", "ChatGPTActAs" },
+    -- event = "VeryLazy",
   },
 }

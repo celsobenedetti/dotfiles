@@ -6,6 +6,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
+
 require("lazy").setup({
   spec = {
     -- LazyVim core
@@ -27,33 +28,6 @@ require("lazy").setup({
       config = function()
         require("nvim-surround").setup({})
       end,
-    },
-
-    -- add more treesitter parsers
-    {
-      "nvim-treesitter/nvim-treesitter",
-      opts = {
-        ensure_installed = {
-          "bash",
-          "go",
-          "help",
-          "html",
-          "java",
-          "javascript",
-          "json",
-          "lua",
-          "markdown",
-          "markdown_inline",
-          "python",
-          "query",
-          "regex",
-          "rust",
-          "tsx",
-          "typescript",
-          "vim",
-          "yaml",
-        },
-      },
     },
 
     {
@@ -83,7 +57,7 @@ require("lazy").setup({
     { "ggandor/leap.nvim", enabled = false },
     { "ggandor/flit.nvim", enabled = false },
     { "echasnovski/mini.surround", enabled = false },
-    { "rcarriga/nvim-notify", enabled = false },
+    -- { "rcarriga/nvim-notify", enabled = false },
   },
   defaults = {
     lazy = true, -- every plugin is lazy-loaded by default

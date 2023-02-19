@@ -27,57 +27,70 @@ return {
         -- client.server_capabilities.document_range_formatting = false
           -- stylua: ignore
           Map("<leader>RF", ":TypescriptRenameFile<CR>", { desc = "Rename File", buffer = buffer })
-          Map("<A-O>", ":TypescriptOrganizeImports<CR>", { buffer = buffer, desc = "Organize Imports" })
+          Map("<A-O>", function()
+            local ts = require("typescript")
+            ts.actions.removeUnused()
+            ts.actions.addMissingImports()
+            -- ts.actions.organizeImports()
+          end, { buffer = buffer, desc = "Organize Imports" })
         end)
       end,
     },
     ---@class PluginLspOpts
-    opts = {
-      autoformat = false,
-      ---@type lspconfig.options
-      servers = {
+    opts = function(_, opts)
+      opts.autoformat = false
+      opts.servers = vim.tbl_deep_extend("force", opts.servers, {
         -- servers will be automatically installed with mason and loaded with lspconfig
-        sumneko_lua = {},
+        sumneko_lua = {
+          settings = {
+            Lua = {
+              workspace = {
+                checkThirdParty = false,
+              },
+              completion = {
+                callSnippet = "Replace",
+              },
+              diagnostics = {
+                globals = { "vim" },
+              },
+            },
+          },
+        },
         pyright = {},
         cssls = {},
         gopls = {},
-        zk = {},
+        dockerls = {},
+        yamlls = {},
         angularls = {},
         tailwindcss = { filetypes = { "vue", "javascriptreact", "typescriptreact", "html" } },
         emmet_ls = { filetypes = { "html", "javascriptreact", "typescriptreact", "vue", "gohtml" } },
-      },
+        zk = {},
+      })
 
-      -- you can do any additional lsp server setup here
-      -- return true if you don't want this server to be setup with lspconfig
-      ---@type table<string, fun(server:string, opts:_.lspconfig.options):boolean?>
-      setup = {
-        tsserver = function(_, opts)
-          require("typescript").setup({ server = opts })
+      -- HACK: Have not figured this out
+      opts.servers.lua_ls = nil
+
+      opts.setup = {
+        tsserver = function(_, ts_opts)
+          require("typescript").setup({ server = ts_opts })
           return true
         end,
-
-        -- Specify * to use this function as a fallback for any server
-        -- ["*"] = function(server, opts) end,
-      },
-    },
+      }
+    end,
   },
 
   -- add any tools you want to have installed below
   {
     "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
+    opts = function(_, opts)
+      opts.ensure_installed = vim.list_extend(opts.ensure_installed, {
         "pyright",
         "typescript-language-server",
 
         "prettierd",
-        "stylua",
-        "shellcheck",
-        "shfmt",
-        "flake8",
         "black",
-      },
-    },
+      })
+    end,
   },
 
   -- null-ls
@@ -93,9 +106,9 @@ return {
           nls.builtins.formatting.prettierd,
           nls.builtins.formatting.black,
           nls.builtins.formatting.shfmt,
-          nls.builtins.formatting.rustywind.with({
-            filetypes = { "html", "javascriptreact", "typescriptreact", "vue" },
-          }),
+          -- nls.builtins.formatting.rustywind.with({
+          --   filetypes = { "html", "javascriptreact", "typescriptreact", "vue" },
+          -- }),
 
           nls.builtins.diagnostics.flake8,
           -- nls.builtins.diagnostics.golangci_lint,

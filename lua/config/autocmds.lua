@@ -17,3 +17,11 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
   desc = "Run on every file",
 })
+
+vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = "*.gohtml",
+  callback = function()
+    vim.cmd("set filetype=html")
+  end,
+  desc = "Set html ft to gohtml files",
+})

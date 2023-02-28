@@ -6,13 +6,15 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
-
 require("lazy").setup({
   spec = {
     -- LazyVim core
     {
       "LazyVim/LazyVim",
       import = "lazyvim.plugins",
+      keys = {
+        { "<leader><leader>", false }, -- disable default keymap to be set by local telescope config
+      },
     },
 
     -- local plugins configuration
@@ -64,7 +66,7 @@ require("lazy").setup({
     version = "*", -- try installing the latest stable version for plugins that support semver
   },
   install = { colorscheme = { "tokyonight", "habamax" } },
-  checker = { enabled = true }, -- automatically check for plugin updates
+  checker = { enabled = false }, -- automatically check for plugin updates
   performance = {
     rtp = {
       -- disable some rtp plugins

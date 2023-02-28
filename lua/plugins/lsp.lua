@@ -67,12 +67,13 @@ return {
         zk = {},
       })
 
-      -- HACK: Have not figured this out
-      opts.servers.lua_ls = false
-
       opts.setup = {
         tsserver = function(_, ts_opts)
           require("typescript").setup({ server = ts_opts })
+          return true
+        end,
+        -- HACK: Have not figured this out
+        lua_ls = function(_, _)
           return true
         end,
       }
@@ -106,11 +107,20 @@ return {
           nls.builtins.formatting.prettierd,
           nls.builtins.formatting.black,
           nls.builtins.formatting.shfmt,
+          nls.builtins.formatting.gofumpt,
           -- nls.builtins.formatting.rustywind.with({
+          nls.builtins.formatting.sqlfluff.with({
+            extra_args = { "--dialect", "tsql" }, -- change to your dialect
+          }),
+          nls.builtins.diagnostics.sqlfluff.with({
+            extra_args = { "--dialect", "tsql" }, -- change to your dialect
+          }),
           --   filetypes = { "html", "javascriptreact", "typescriptreact", "vue" },
           -- }),
 
-          nls.builtins.diagnostics.flake8,
+          nls.builtins.diagnostics.flake8.with({
+            extra_args = { "--max-line-length", "160" },
+          }),
           -- nls.builtins.diagnostics.golangci_lint,
           nls.builtins.diagnostics.shellcheck,
         },

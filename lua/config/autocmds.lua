@@ -18,10 +18,26 @@ vim.api.nvim_create_autocmd("FileType", {
   desc = "Run on every file",
 })
 
-vim.api.nvim_create_autocmd("BufEnter", {
+vim.api.nvim_create_autocmd("BufRead", {
   pattern = "*.gohtml",
   callback = function()
     vim.cmd("set filetype=html")
   end,
   desc = "Set html ft to gohtml files",
+})
+
+vim.api.nvim_create_autocmd("BufRead", {
+  pattern = "*.hurl",
+  callback = function()
+    vim.cmd("set filetype=hurl")
+  end,
+  desc = "Set hurl ft to .hurl files",
+})
+
+vim.api.nvim_create_autocmd("BufRead", {
+  pattern = "*.norg",
+  callback = function()
+    vim.cmd("set filetype=norg")
+  end,
+  desc = "Set norg ft to .norg files",
 })

@@ -68,7 +68,7 @@ return {
       })
 
       -- HACK: Have not figured this out
-      opts.servers.lua_ls = nil
+      opts.servers.lua_ls = false
 
       opts.setup = {
         tsserver = function(_, ts_opts)

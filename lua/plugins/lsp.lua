@@ -112,16 +112,13 @@ return {
           nls.builtins.formatting.sqlfluff.with({
             extra_args = { "--dialect", "tsql" }, -- change to your dialect
           }),
-          nls.builtins.diagnostics.sqlfluff.with({
-            extra_args = { "--dialect", "tsql" }, -- change to your dialect
-          }),
           --   filetypes = { "html", "javascriptreact", "typescriptreact", "vue" },
           -- }),
 
           nls.builtins.diagnostics.flake8.with({
             extra_args = { "--max-line-length", "160" },
           }),
-          -- nls.builtins.diagnostics.golangci_lint,
+          nls.builtins.diagnostics.golangci_lint,
           nls.builtins.diagnostics.shellcheck,
         },
       }

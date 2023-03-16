@@ -25,6 +25,12 @@ local function catppuccin_setup()
   require("catppuccin").load(catppuccin_opts.flavour)
 end
 
+local function nord_setup()
+    require("nord").set()
+  vim.api.nvim_set_hl(0, "Normal", { bg = "#3B4252" })
+  vim.api.nvim_set_hl(0, "CursorLine", { bg = "#434C5E" })
+end
+
 local material_opts = {
   plugins = {
     "gitsigns",
@@ -81,8 +87,8 @@ return {
   { "ellisonleao/gruvbox.nvim", lazy = lazy_colorschemes },
   { "rebelot/kanagawa.nvim", lazy = lazy_colorschemes },
   { "sainnhe/edge", lazy = lazy_colorschemes },
-  -- { "shaunsingh/nord.nvim", lazy = lazy_colorschemes },
-  { "gbprod/nord.nvim", lazy = lazy_colorschemes },
+  { "shaunsingh/nord.nvim", lazy = lazy_colorschemes },
+  { "andersevenrud/nordic.nvim", lazy = lazy_colorschemes },
 
   { "nyoom-engineering/oxocarbon.nvim", lazy = lazy_colorschemes },
   { "EdenEast/nightfox.nvim", lazy = lazy_colorschemes },
@@ -135,5 +141,4 @@ return {
     },
   },
 
-  ---
 }

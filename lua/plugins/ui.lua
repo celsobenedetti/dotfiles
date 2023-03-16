@@ -50,10 +50,10 @@ return {
       local animate = require("mini.animate")
       return {
         resize = {
-          timing = animate.gen_timing.linear({ duration = 80, unit = "total" }),
+          timing = animate.gen_timing.linear({ duration = 15, unit = "total" }),
         },
         scroll = {
-          timing = animate.gen_timing.linear({ duration = 80, unit = "total" }),
+          timing = animate.gen_timing.linear({ duration = 15, unit = "total" }),
           subscroll = animate.gen_subscroll.equal({
             predicate = function(total_scroll)
               if mouse_scrolled then
@@ -70,4 +70,17 @@ return {
       require("mini.animate").setup(opts)
     end,
   },
+
+  {
+    "nvim-tree/nvim-web-devicons",
+    opts = {
+      [".Dockerfile"] = {
+        icon = "",
+        color = "#007acc",
+        name = "dockerfile_test",
+      },
+    },
+  },
+
+  { "imsnif/kdl.vim", ft = "kdl" },
 }

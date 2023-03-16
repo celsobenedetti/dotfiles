@@ -44,6 +44,9 @@ require("lazy").setup({
           },
         }
       end,
+      keys = {
+        { "<C-E>", "<leader>e", desc = "Explorer NeoTree (root dir)", remap = true },
+      },
     },
 
     { "mbbill/undotree", cmd = "UndotreeToggle" },
@@ -59,7 +62,7 @@ require("lazy").setup({
     { "ggandor/leap.nvim", enabled = false },
     { "ggandor/flit.nvim", enabled = false },
     { "echasnovski/mini.surround", enabled = false },
-    -- { "rcarriga/nvim-notify", enabled = false },
+    { "rcarriga/nvim-notify", enabled = false },
   },
   defaults = {
     lazy = true, -- every plugin is lazy-loaded by default
@@ -83,3 +86,6 @@ require("lazy").setup({
     },
   },
 })
+
+-- vim.api.nvim_set_hl(0, "Normal", { bg = "#3B4252" })
+-- vim.api.nvim_set_hl(0, "CursorLine", { bg = "#434C5E" })

@@ -22,5 +22,7 @@ Map("p", '"_dP', { mode = "v", desc = "Paste without losing register" })
 
 Map("<leader>ma", ":Mason<CR>")
 Map("<leader>dif", ":Gitsigns diffthis<CR>")
+Map("<leader>S", ":w<CR>")
+Map("<leader>W", ":w<CR>")
 
 Map("Q", ":bdelete<CR>")

@@ -61,8 +61,9 @@ require("lazy").setup({
     -- disable plugins
     { "ggandor/leap.nvim", enabled = false },
     { "ggandor/flit.nvim", enabled = false },
-    { "echasnovski/mini.surround", enabled = false },
+    { "echasnovski/mini.surroakinsho/bufferline.nvimund", enabled = false },
     { "rcarriga/nvim-notify", enabled = false },
+    { "akinsho/bufferline.nvim", enabled = false },
   },
   defaults = {
     lazy = true, -- every plugin is lazy-loaded by default

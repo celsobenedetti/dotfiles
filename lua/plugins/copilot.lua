@@ -46,8 +46,8 @@ return {
             },
           },
           filetypes = {
-            yaml = false,
-            markdown = false,
+            yaml = true,
+            markdown = true,
             help = false,
             gitcommit = false,
             gitrebase = false,
@@ -70,20 +70,20 @@ return {
   --   config = true,
   -- },
 
-  {
-    "jackMort/ChatGPT.nvim",
-    config = function()
-      require("chatgpt").setup()
-    end,
-    keys = {
-      { "<leader>gpt", ":ChatGPT<CR>", desc = "Open Chat GPT" },
-      { "<leader>gpa", ":ChatGPTActAs<CR>", desc = "Open Chat GPT (Act as)" },
-      { "<leader>gpe", ":ChatGPTEditWithInstructions<CR>", desc = "Open Chat GPT (Edit With Instructions)" },
-    },
-    dependencies = { "nvim-lua/plenary.nvim" },
-    cmd = { "ChatGPT", "ChatGPTEditWithInstructions", "ChatGPTActAs" },
-    -- event = "VeryLazy",
-  },
+  -- {
+  --   "jackMort/ChatGPT.nvim",
+  --   config = function()
+  --     require("chatgpt").setup()
+  --   end,
+  --   keys = {
+  --     { "<leader>gpt", ":ChatGPT<CR>", desc = "Open Chat GPT" },
+  --     { "<leader>gpa", ":ChatGPTActAs<CR>", desc = "Open Chat GPT (Act as)" },
+  --     { "<leader>gpe", ":ChatGPTEditWithInstructions<CR>", desc = "Open Chat GPT (Edit With Instructions)" },
+  --   },
+  --   dependencies = { "nvim-lua/plenary.nvim" },
+  --   cmd = { "ChatGPT", "ChatGPTEditWithInstructions", "ChatGPTActAs" },
+  --   -- event = "VeryLazy",
+  -- },
   {
     "dpayne/CodeGPT.nvim",
     cmd = "Chat",

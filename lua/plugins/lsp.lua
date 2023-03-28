@@ -60,7 +60,15 @@ return {
         cssls = {},
         gopls = {},
         dockerls = {},
-        yamlls = {},
+        yamlls = {
+          settings = {
+            yaml = {
+              schemas = {
+                ["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "docker-compose.yml",
+              },
+            },
+          },
+        },
         angularls = {},
         tailwindcss = { filetypes = { "vue", "javascriptreact", "typescriptreact", "html" } },
         emmet_ls = { filetypes = { "html", "javascriptreact", "typescriptreact", "vue", "gohtml" } },
@@ -108,6 +116,9 @@ return {
           nls.builtins.formatting.black,
           nls.builtins.formatting.shfmt,
           nls.builtins.formatting.gofumpt,
+          nls.builtins.formatting.google_java_format.with({
+            extra_args = { "--aosp" },
+          }),
           -- nls.builtins.formatting.rustywind.with({
           nls.builtins.formatting.sqlfluff.with({
             extra_args = { "--dialect", "tsql" }, -- change to your dialect

@@ -26,7 +26,7 @@ local function catppuccin_setup()
 end
 
 local function nord_setup()
-    require("nord").set()
+  require("nord").set()
   vim.api.nvim_set_hl(0, "Normal", { bg = "#3B4252" })
   vim.api.nvim_set_hl(0, "CursorLine", { bg = "#434C5E" })
 end
@@ -101,6 +101,7 @@ return {
   { "olivercederborg/poimandres.nvim", config = true, lazy = lazy_colorschemes },
 
   { "rmehri01/onenord.nvim", config = true, lazy = lazy_colorschemes },
+  { "olimorris/onedarkpro.nvim", lazy = lazy_colorschemes, },
 
   {
     "catppuccin/nvim",
@@ -136,9 +137,8 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      -- colorscheme = "nord",
+      -- colorscheme = "onedark",
       colorscheme = catppuccin_setup,
     },
   },
-
 }

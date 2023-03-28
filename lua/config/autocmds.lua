@@ -41,3 +41,12 @@ vim.api.nvim_create_autocmd("BufRead", {
   end,
   desc = "Set norg ft to .norg files",
 })
+
+
+vim.api.nvim_create_autocmd("BufRead", {
+  pattern = "Caddyfile*",
+  callback = function()
+    vim.cmd("set filetype=caddyfile")
+  end,
+  desc = "Set Caddyfile ft to Caddyfile files",
+})

@@ -82,8 +82,6 @@ return {
     },
   },
 
-  { "imsnif/kdl.vim", ft = "kdl" },
-
   {
     "jbyuki/venn.nvim",
     ft = "markdown",
@@ -108,6 +106,18 @@ return {
       end
       -- toggle keymappings for venn using <leader>v
       Map("<leader>v", ":lua Toggle_venn()<CR>", { desc = "Toggle venn" })
+    end,
+  },
+
+  {
+    "vimwiki/vimwiki",
+    ft = "markdown",
+    config = function()
+      vim.cmd([[
+        let g:vimwiki_list = [{'path': '~/vimwiki/',
+        \ 'syntax': 'markdown', 'ext': '.md'}] 
+        let g:vimwiki_global_ext = 0
+        ]])
     end,
   },
 }

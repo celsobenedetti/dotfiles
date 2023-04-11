@@ -72,7 +72,7 @@ return {
         angularls = {},
         tailwindcss = { filetypes = { "vue", "javascriptreact", "typescriptreact", "html" } },
         emmet_ls = { filetypes = { "html", "javascriptreact", "typescriptreact", "vue", "gohtml" } },
-        zk = {},
+        -- zk = {},
       })
 
       opts.setup = {
@@ -82,6 +82,10 @@ return {
         end,
         -- HACK: Have not figured this out
         lua_ls = function(_, _)
+          return true
+        end,
+        zk = function()
+          require("zk").setup()
           return true
         end,
       }
@@ -105,8 +109,8 @@ return {
   -- null-ls
   {
     "jose-elias-alvarez/null-ls.nvim",
-    event = "BufReadPre",
     dependencies = { "mason.nvim" },
+    event = "BufReadPre",
     opts = function()
       local nls = require("null-ls")
       return {
@@ -126,11 +130,15 @@ return {
           --   filetypes = { "html", "javascriptreact", "typescriptreact", "vue" },
           -- }),
 
-          nls.builtins.diagnostics.flake8.with({
-            extra_args = { "--max-line-length", "160" },
-          }),
+          -- nls.builtins.diagnostics.flake8.with({
+          --   extra_args = { "--max-line-length", "160" },
+          -- }),
+          nls.builtins.diagnostics.ruff,
           nls.builtins.diagnostics.golangci_lint,
           nls.builtins.diagnostics.shellcheck,
+
+
+          nls.builtins.completion.spell.with({ filetypes = { "markdown" } }),
         },
       }
     end,
@@ -140,8 +148,8 @@ return {
   {
     "mickael-menu/zk-nvim",
     ft = "markdown",
-    config = function()
-      require("zk").setup()
-    end,
+    -- config = function()
+    --   require("zk").setup()
+    -- end,
   },
 }

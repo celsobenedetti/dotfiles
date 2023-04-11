@@ -44,3 +44,8 @@ end)
 Map("k", function()
   track_position_before_relative_jump("k")
 end)
+
+-- zk
+Map("<leader>zn", ":ZkNotes<CR>", { mode = { "n", "v" } })
+Map("<leader>zb", ":ZkBacklinks<CR>", { mode = { "n", "v" } })
+Map("<leader>zl", ":ZkLinks<CR>", { mode = { "n", "v" } })

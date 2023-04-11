@@ -99,9 +99,12 @@ return {
   { "sainnhe/everforest", lazy = lazy_colorschemes },
   { "Mofiqul/dracula.nvim", lazy = lazy_colorschemes },
   { "olivercederborg/poimandres.nvim", config = true, lazy = lazy_colorschemes },
+  { "doums/darcula", lazy = lazy_colorschemes },
+  { "JoosepAlviste/palenightfall.nvim", lazy = lazy_colorschemes },
 
   { "rmehri01/onenord.nvim", config = true, lazy = lazy_colorschemes },
-  { "olimorris/onedarkpro.nvim", lazy = lazy_colorschemes, },
+
+  { "olimorris/onedarkpro.nvim", lazy = lazy_colorschemes },
 
   {
     "catppuccin/nvim",
@@ -137,7 +140,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      -- colorscheme = "onedark",
+      -- colorscheme = "nord",
       colorscheme = catppuccin_setup,
     },
   },

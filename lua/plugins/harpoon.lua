@@ -5,6 +5,7 @@ return {
   config = function()
     Map("<leader>'", require("harpoon.mark").add_file)
     Map("''", require("harpoon.ui").toggle_quick_menu)
+    Map('"', "<C-^>")
 
     local power_fingers = { "a", "s", "d", "f" }
     local power_fingers2 = { "h", "j", "k", "l" }

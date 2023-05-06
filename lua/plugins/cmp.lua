@@ -29,11 +29,16 @@ return {
       -- extend opts
       opts.sources = cmp.config.sources(vim.list_extend(opts.sources, {
         -- { name = "copilot", group_index = 3 },
+        { name = "dictionary", keyword_length = 2 },
       }))
 
       --override opts
       opts.formatting = {
         format = cmp_format_source,
+      }
+
+      opts.matching = {
+        disallow_fuzzy_match = false,
       }
 
       opts.experimental.ghost_text = false
@@ -44,5 +49,32 @@ return {
         documentation = cmp.config.window.bordered(),
       }
     end,
+  },
+
+  {
+    "uga-rosa/cmp-dictionary",
+    dependencies = { { "hrsh7th/nvim-cmp" } },
+    config = function()
+      local dict = require("cmp_dictionary")
+      dict.setup({
+        -- The following are default values.
+        exact = 2,
+        first_case_insensitive = false,
+        document = false,
+        document_command = "wn %s -over",
+        async = false,
+        sqlite = false,
+        max_items = -1,
+        capacity = 5,
+        debug = false,
+      })
+      -- dict.update()
+      dict.switcher({
+        spelllang = {
+          en = "~/.dotfiles/english.dict",
+        },
+      })
+    end,
+    ft = { "markdown", "tex", "latex", "vimwiki" },
   },
 }

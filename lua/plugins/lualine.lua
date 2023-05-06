@@ -69,6 +69,7 @@ return {
     -- },
     opts = function(_, opts)
       table.insert(opts.sections.lualine_x, get_lsp_client_list)
+      table.insert(opts.sections.lualine_c, require("NeoComposer.ui").status_recording)
     end,
   },
 }

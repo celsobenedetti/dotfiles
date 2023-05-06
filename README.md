@@ -2,44 +2,27 @@
 
 A starter template for [LazyVim](https://github.com/LazyVim/LazyVim)
 
-## 🚀 Getting Started
+## Usages
 
-This repo contains an example setup for
-[LazyVim](https://github.com/LazyVim/LazyVim)
+### NeoComposer
 
-### 1. Make a backup of your current Neovim files:
+| Function            | Keymap  | Action                                                                                                              |
+| ------------------- | ------- | ------------------------------------------------------------------------------------------------------------------- |
+| `play_macro`        | `Q`     | Plays queued macro                                                                                                  |
+| `stop_macro`        | `cq`    | Halts macro playback                                                                                                |
+| `toggle_macro_menu` | `<m-q>` | Toggles popup macro menu                                                                                            |
+| `cycle_next`        | `<c-n>` | Cycles available macros forward                                                                                     |
+| `cycle_prev`        | `<c-p>` | Cycles available macros backward                                                                                    |
+| `toggle_record`     | `q`     | Starts recording, press again to end recording                                                                      |
+| `yank_macro`        | `yq`    | Yank the currently selected macro, in human readable format into the default register                               |
+|                     |         |                                                                                                                     |
+| `:ToggleDelay `     |         | For complex macros over large counts, you can toggle a delay between macro playback using the `ToggleDelay` command |
 
-```sh
-mv ~/.config/nvim ~/.config/nvim.bak
-mv ~/.local/share/nvim ~/.local/share/nvim.bak
-```
-
-### 2. Clone the starter
-
-```sh
-git clone https://github.com/LazyVim/starter ~/.config/nvim
-```
-
-### 3. Start Neovim!
-
-```sh
-nvim
-```
-
-Refer to the comments in the files on how to customize **LazyVim**.
-
-## 📂 File Structure
-
-<pre>
-~/.config/nvim
-├── lua
-│   ├── config
-│   │   ├── autocmds.lua
-│   │   ├── keymaps.lua
-│   │   ├── lazy.lua
-│   │   └── options.lua
-│   └── plugins
-│       └── example.lua
-├── init.lua
-└── stylua.toml
-</pre>
+- _Telescope_
+  | Keymap | Action |
+  | ------------------- | -------------------------------------------------------------------- |
+  | `:Telescope macros` | Launch the Telescope extension using the `Telescope macros` command |
+  | `yq` | Yank the currently selected macro, in human readable format (normal) |
+  | `<cr>` | Queue the currently selected macro (insert, normal) |
+  | `<c-d>` | Delete the currently selected macro (insert) |
+  | `d` | Delete the currently selected macro |

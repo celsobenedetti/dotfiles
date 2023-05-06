@@ -28,7 +28,7 @@ end
 local function nord_setup()
   require("nord").set()
   vim.api.nvim_set_hl(0, "Normal", { bg = "#3B4252" })
-  vim.api.nvim_set_hl(0, "CursorLine", { bg = "#434C5E" })
+  -- vim.api.nvim_set_hl(0, "CursorLine", { bg = "#434C5E" })
 end
 
 local material_opts = {
@@ -87,8 +87,6 @@ return {
   { "ellisonleao/gruvbox.nvim", lazy = lazy_colorschemes },
   { "rebelot/kanagawa.nvim", lazy = lazy_colorschemes },
   { "sainnhe/edge", lazy = lazy_colorschemes },
-  { "shaunsingh/nord.nvim", lazy = lazy_colorschemes },
-  { "andersevenrud/nordic.nvim", lazy = lazy_colorschemes },
 
   { "nyoom-engineering/oxocarbon.nvim", lazy = lazy_colorschemes },
   { "EdenEast/nightfox.nvim", lazy = lazy_colorschemes },
@@ -100,9 +98,19 @@ return {
   { "Mofiqul/dracula.nvim", lazy = lazy_colorschemes },
   { "olivercederborg/poimandres.nvim", config = true, lazy = lazy_colorschemes },
   { "doums/darcula", lazy = lazy_colorschemes },
+  { "wadackel/vim-dogrun", lazy = lazy_colorschemes },
+
+  { "shaunsingh/nord.nvim", lazy = lazy_colorschemes },
+  { "andersevenrud/nordic.nvim", lazy = lazy_colorschemes },
+  { "rmehri01/onenord.nvim", config = true, lazy = lazy_colorschemes },
   { "JoosepAlviste/palenightfall.nvim", lazy = lazy_colorschemes },
 
-  { "rmehri01/onenord.nvim", config = true, lazy = lazy_colorschemes },
+  { "mhartington/oceanic-next", lazy = lazy_colorschemes },
+  { "sam4llis/nvim-tundra", lazy = lazy_colorschemes },
+  { "sainnhe/sonokai", lazy = lazy_colorschemes },
+  { "cocopon/iceberg.vim", lazy = lazy_colorschemes },
+  { "dempfi/ayu", lazy = lazy_colorschemes },
+  { "AhmedAbdulrahman/aylin.vim", lazy = lazy_colorschemes },
 
   { "olimorris/onedarkpro.nvim", lazy = lazy_colorschemes },
 
@@ -120,6 +128,7 @@ return {
     end,
     lazy = lazy_colorschemes,
   },
+
   {
     "rose-pine/neovim",
     config = function()
@@ -138,10 +147,20 @@ return {
   },
 
   {
+    "lalitmee/cobalt2.nvim",
+    dependencies = { "tjdevries/colorbuddy.nvim" },
+    lazy = lazy_colorschemes,
+  },
+
+  {
     "LazyVim/LazyVim",
     opts = {
-      -- colorscheme = "nord",
-      colorscheme = catppuccin_setup,
+      colorscheme = "nord",
+      -- colorscheme = nord_setup,
+      -- colorscheme = catppuccin_setup,
+      -- colorscheme = function()
+      --   require("colorbuddy").colorscheme("cobalt2")
+      -- end,
     },
   },
 }

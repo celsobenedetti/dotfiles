@@ -23,10 +23,10 @@ return {
         require("lazyvim.util").on_attach(function(client, buffer)
           attach_lsp_signature(buffer)
 
-        -- client.server_capabilities.document_formatting = false
-        -- client.server_capabilities.document_range_formatting = false
-          -- stylua: ignore
-          Map("<leader>RF", ":TypescriptRenameFile<CR>", { desc = "Rename File", buffer = buffer })
+                    -- client.server_capabilities.document_formatting = false
+                    -- client.server_capabilities.document_range_formatting = false
+                    -- stylua: ignore
+                    Map("<leader>RF", ":TypescriptRenameFile<CR>", { desc = "Rename File", buffer = buffer })
           Map("<A-O>", function()
             local ts = require("typescript")
             ts.actions.removeUnused()
@@ -117,6 +117,7 @@ return {
         sources = {
           nls.builtins.formatting.stylua,
           nls.builtins.formatting.prettierd,
+          -- nls.builtins.formatting.prettier,
           nls.builtins.formatting.black,
           nls.builtins.formatting.shfmt,
           nls.builtins.formatting.gofumpt,
@@ -137,8 +138,20 @@ return {
           nls.builtins.diagnostics.golangci_lint,
           nls.builtins.diagnostics.shellcheck,
 
+          -- nls.builtins.diagnostics.alex.with({ filetypes = { "markdown" } }),
+          nls.builtins.diagnostics.proselint.with({ filetypes = { "markdown" } }),
+          nls.builtins.diagnostics.write_good.with({
+            filetypes = { "markdown" },
+            extra_args = {
+              "--no-passive",
+              "--no-tooWordy",
+            },
+          }),
 
-          nls.builtins.completion.spell.with({ filetypes = { "markdown" } }),
+          -- nls.builtins.completion.spell.with({ filetypes = { "markdown" } }),
+
+          nls.builtins.code_actions.shellcheck,
+          nls.builtins.code_actions.proselint.with({ filetypes = { "markdown" } }),
         },
       }
     end,
@@ -148,8 +161,14 @@ return {
   {
     "mickael-menu/zk-nvim",
     ft = "markdown",
-    -- config = function()
-    --   require("zk").setup()
-    -- end,
+    config = function()
+      Map("<leader>zn", ":ZkNewFromTitleSelection<CR>", { mode = { "v" } })
+      Map("<leader>zn", ":ZkNewFromTitleSelection<CR>", { mode = { "v" } })
+      Map("<leader>zz", ":ZkNotes<CR>", { mode = { "v", "n" } })
+      Map("<leader>zb", ":ZkBacklinks<CR>", { mode = { "n", "v" } })
+      Map("<leader>zl", ":ZkLinks<CR>", { mode = { "n", "v" } })
+    end,
   },
+
+
 }

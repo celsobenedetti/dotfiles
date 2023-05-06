@@ -45,7 +45,10 @@ Map("k", function()
   track_position_before_relative_jump("k")
 end)
 
--- zk
-Map("<leader>zn", ":ZkNotes<CR>", { mode = { "n", "v" } })
-Map("<leader>zb", ":ZkBacklinks<CR>", { mode = { "n", "v" } })
-Map("<leader>zl", ":ZkLinks<CR>", { mode = { "n", "v" } })
+Map("<Tab>", function()
+  if require("copilot.suggestion").is_visible() then
+    require("copilot.suggestion").accept()
+  else
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Tab>", true, false, true), "n", false)
+  end
+end, { mode = "i", desc = "Copilot Tab accept Suggestion" })

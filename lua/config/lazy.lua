@@ -50,9 +50,20 @@ require("lazy").setup({
     },
 
     { "mbbill/undotree", cmd = "UndotreeToggle" },
+
+    {
+      "Wansmer/treesj",
+      keys = { "<space>m", "<space>j", "<space>s" },
+      dependencies = { "nvim-treesitter/nvim-treesitter" },
+      config = function()
+        require("treesj").setup({--[[ your config ]]
+        })
+      end,
+    },
     -- import any extras modules here
     -- { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "lazyvim.plugins.extras.lang.json", ft = "typescript" },
+    { import = "lazyvim.plugins.extras.linting.eslint" },
     -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
 
     -- override plugin opts

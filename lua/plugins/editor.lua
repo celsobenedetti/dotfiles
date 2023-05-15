@@ -1,4 +1,8 @@
 return {
+
+  { "wakatime/vim-wakatime", event = "VeryLazy" },
+  { "christoomey/vim-tmux-navigator", event = "VeryLazy" },
+
   {
     --
     -- | Function            | Keymap  | Action                                                                                                              |
@@ -27,10 +31,70 @@ return {
       "nvim-lualine/lualine.nvim",
       "nvim-telescope/telescope.nvim",
     },
-    opts = {},
+    -- opts = {},
     config = function()
       require("NeoComposer").setup()
       require("telescope").load_extension("macros")
+    end,
+  },
+
+  {
+    "Wansmer/treesj",
+    keys = { "<space>m" },
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    config = function()
+      require("treesj").setup({--[[ your config ]]
+      })
+    end,
+  },
+
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit for the latest features
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup({})
+    end,
+  },
+
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    opts = function(_, opts)
+      opts.event_handlers = {
+        {
+          event = "file_opened",
+          handler = function(_)
+            require("neo-tree").close_all() --auto close
+          end,
+        },
+      }
+    end,
+    keys = {
+      { "<C-E>", "<leader>e", desc = "Explorer NeoTree (root dir)", remap = true },
+    },
+  },
+
+  { "mbbill/undotree", cmd = "UndotreeToggle" },
+
+  {
+    "ray-x/web-tools.nvim",
+    ft = { "hurl" },
+    config = function()
+      Map("<leader>rq", ":HurlRun<CR>", { desc = "run Hurl", mode = { "n", "v" } })
+      require("web-tools").setup({
+        keymaps = {
+          rename = nil, -- by default use same setup of lspconfig
+          repeat_rename = ".", -- . to repeat
+        },
+        hurl = { -- hurl default
+          show_headers = false, -- do not show http headers
+          floating = false, -- use floating windows (need guihua.lua)
+          formatters = { -- format the result by filetype
+            json = { "jq" },
+            html = { "prettier", "--parser", "html" },
+          },
+        },
+      })
     end,
   },
 }

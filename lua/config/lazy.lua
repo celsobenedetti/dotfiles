@@ -20,46 +20,6 @@ require("lazy").setup({
     -- local plugins configuration
     { import = "plugins" },
 
-    { "wakatime/vim-wakatime", event = "VeryLazy" },
-    { "christoomey/vim-tmux-navigator", event = "VeryLazy" },
-
-    {
-      "kylechui/nvim-surround",
-      version = "*", -- Use for stability; omit for the latest features
-      event = "VeryLazy",
-      config = function()
-        require("nvim-surround").setup({})
-      end,
-    },
-
-    {
-      "nvim-neo-tree/neo-tree.nvim",
-      opts = function(_, opts)
-        opts.event_handlers = {
-          {
-            event = "file_opened",
-            handler = function(_)
-              require("neo-tree").close_all() --auto close
-            end,
-          },
-        }
-      end,
-      keys = {
-        { "<C-E>", "<leader>e", desc = "Explorer NeoTree (root dir)", remap = true },
-      },
-    },
-
-    { "mbbill/undotree", cmd = "UndotreeToggle" },
-
-    {
-      "Wansmer/treesj",
-      keys = { "<space>m", "<space>j", "<space>s" },
-      dependencies = { "nvim-treesitter/nvim-treesitter" },
-      config = function()
-        require("treesj").setup({--[[ your config ]]
-        })
-      end,
-    },
     -- import any extras modules here
     -- { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "lazyvim.plugins.extras.lang.json", ft = "typescript" },
@@ -73,7 +33,7 @@ require("lazy").setup({
     { "ggandor/leap.nvim", enabled = false },
     { "ggandor/flit.nvim", enabled = false },
     { "echasnovski/mini.surroakinsho/bufferline.nvimund", enabled = false },
-    { "rcarriga/nvim-notify", enabled = false },
+    -- { "rcarriga/nvim-notify", enabled = false },
     -- { "akinsho/bufferline.nvim", enabled = false },
   },
   defaults = {

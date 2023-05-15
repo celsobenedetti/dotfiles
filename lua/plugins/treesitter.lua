@@ -30,4 +30,9 @@ return {
     config = true,
     event = "VeryLazy",
   },
+  -- {
+  --   "m-demare/hlargs.nvim",
+  --   config = true,
+  --   event = "VeryLazy",
+  -- },
 }

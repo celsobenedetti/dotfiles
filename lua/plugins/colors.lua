@@ -1,4 +1,4 @@
-local lazy_colorschemes = true
+local lazy_colorschemes = false
 
 local function catppuccin_setup()
   local catppuccin_opts = {
@@ -85,8 +85,8 @@ return {
 
   -- colorschemes
   { "ellisonleao/gruvbox.nvim", lazy = lazy_colorschemes },
+  { "Mofiqul/adwaita.nvim", lazy = lazy_colorschemes },
   { "rebelot/kanagawa.nvim", lazy = lazy_colorschemes },
-  { "sainnhe/edge", lazy = lazy_colorschemes },
 
   { "nyoom-engineering/oxocarbon.nvim", lazy = lazy_colorschemes },
   { "EdenEast/nightfox.nvim", lazy = lazy_colorschemes },
@@ -102,7 +102,7 @@ return {
 
   { "shaunsingh/nord.nvim", lazy = lazy_colorschemes },
   { "andersevenrud/nordic.nvim", lazy = lazy_colorschemes },
-  { "rmehri01/onenord.nvim", config = true, lazy = lazy_colorschemes },
+  { "rmehri01/onenord.nvim", lazy = lazy_colorschemes },
   { "JoosepAlviste/palenightfall.nvim", lazy = lazy_colorschemes },
 
   { "mhartington/oceanic-next", lazy = lazy_colorschemes },
@@ -155,9 +155,11 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "nord",
+      colorscheme = "github_light",
+      -- colorscheme = "nordic",
       -- colorscheme = nord_setup,
       -- colorscheme = catppuccin_setup,
+
       -- colorscheme = function()
       --   require("colorbuddy").colorscheme("cobalt2")
       -- end,

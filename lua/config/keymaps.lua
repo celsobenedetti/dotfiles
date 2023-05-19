@@ -120,3 +120,4 @@ local function trouble_mispelled_wods()
 end
 
 Map("<leader>xS", trouble_mispelled_wods, { desc = "Mispelled Words (Trouble)" })
+Map("<leader>O", ":Oil<CR>", { desc = "Open parent directory" })

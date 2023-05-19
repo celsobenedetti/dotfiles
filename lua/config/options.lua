@@ -15,3 +15,7 @@ opt.shiftwidth = 4 -- Size of an indent
 opt.tabstop = 4 -- Size of an indent
 
 vim.api.nvim_create_user_command("DiffThis", ":Gitsigns diffthis<CR>", { desc = "Git Diff current buffer" })
+
+vim.api.nvim_create_user_command("Oil", function()
+  require("oil").open()
+end, { desc = "Open oil.nvim" })

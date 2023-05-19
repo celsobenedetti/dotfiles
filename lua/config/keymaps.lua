@@ -3,6 +3,8 @@
 -- Add any additional keymaps here
 --
 
+Map("<leader>tod", ":e $TODO<CR>", { mode = { "n", "v" } })
+
 -- -- Unset bindings
 -- vim.keymap.del("i", "<c-c>")
 Map("<C-c>", "<Nop>", { desc = "Disable default <C-c>", mode = { "i", "v", "c" } })

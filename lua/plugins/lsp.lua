@@ -157,19 +157,6 @@ return {
     end,
   },
 
-  --zk
-  {
-    "mickael-menu/zk-nvim",
-    ft = "markdown",
-    config = function()
-      Map("<leader>zn", ":ZkNewFromTitleSelection<CR>", { mode = { "v" } })
-      Map("<leader>zn", ":ZkNewFromTitleSelection<CR>", { mode = { "v" } })
-      Map("<leader>zz", ":ZkNotes<CR>", { mode = { "v", "n" } })
-      Map("<leader>zb", ":ZkBacklinks<CR>", { mode = { "n", "v" } })
-      Map("<leader>zl", ":ZkLinks<CR>", { mode = { "n", "v" } })
-    end,
-  },
-
   {
     "ray-x/go.nvim",
     dependencies = { -- optional packages
@@ -177,10 +164,11 @@ return {
       "neovim/nvim-lspconfig",
       "nvim-treesitter/nvim-treesitter",
     },
-    config = function()
-      require("go").setup()
-    end,
-    event = { "CmdlineEnter" },
+        opts = {},
+    -- config = function()
+    --   require("go").setup()
+    -- end,
+    -- event = { "CmdlineEnter" },
     ft = { "go", "gomod" },
     build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
   },

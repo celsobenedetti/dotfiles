@@ -16,6 +16,10 @@ require("lazy").setup({
         { "<leader><leader>", false }, -- disable default keymap to be set by local telescope config
       },
     },
+    {
+      "kkharji/sqlite.lua",
+      event = "VeryLazy",
+    },
 
     -- local plugins configuration
     { import = "plugins" },
@@ -33,7 +37,7 @@ require("lazy").setup({
     { "ggandor/leap.nvim", enabled = false },
     { "ggandor/flit.nvim", enabled = false },
     { "echasnovski/mini.surroakinsho/bufferline.nvimund", enabled = false },
-    -- { "rcarriga/nvim-notify", enabled = false },
+    { "rcarriga/nvim-notify", enabled = false },
     -- { "akinsho/bufferline.nvim", enabled = false },
   },
   defaults = {

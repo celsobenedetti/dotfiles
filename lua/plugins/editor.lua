@@ -28,10 +28,9 @@ return {
     "ecthelionvi/NeoComposer.nvim",
     dependencies = {
       "kkharji/sqlite.lua",
-      "nvim-lualine/lualine.nvim",
-      "nvim-telescope/telescope.nvim",
     },
     -- opts = {},
+    event = "VeryLazy",
     config = function()
       require("NeoComposer").setup()
       require("telescope").load_extension("macros")

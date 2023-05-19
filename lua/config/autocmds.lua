@@ -6,6 +6,7 @@
 
 vim.cmd("autocmd FileType help wincmd L")
 vim.cmd("autocmd FileType qf wincmd L") -- hurl
+vim.cmd("autocmd FileType man wincmd L") -- man
 
 -- run on every file
 vim.api.nvim_create_autocmd("FileType", {

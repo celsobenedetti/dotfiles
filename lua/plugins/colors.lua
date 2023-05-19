@@ -155,8 +155,8 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "github_light",
-      -- colorscheme = "nordic",
+      -- colorscheme = "github_light",
+      colorscheme = "nordic",
       -- colorscheme = nord_setup,
       -- colorscheme = catppuccin_setup,
 

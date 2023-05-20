@@ -72,6 +72,7 @@ return {
         angularls = {},
         tailwindcss = { filetypes = { "vue", "javascriptreact", "typescriptreact", "html" } },
         emmet_ls = { filetypes = { "html", "javascriptreact", "typescriptreact", "vue", "gohtml" } },
+        terraformls = {},
         -- zk = {},
       })
 
@@ -137,6 +138,7 @@ return {
           nls.builtins.diagnostics.ruff,
           nls.builtins.diagnostics.golangci_lint,
           nls.builtins.diagnostics.shellcheck,
+          nls.builtins.diagnostics.tfsec,
 
           -- nls.builtins.diagnostics.alex.with({ filetypes = { "markdown" } }),
           nls.builtins.diagnostics.proselint.with({ filetypes = { "markdown" } }),
@@ -152,6 +154,10 @@ return {
 
           nls.builtins.code_actions.shellcheck,
           nls.builtins.code_actions.proselint.with({ filetypes = { "markdown" } }),
+
+          -- terraform
+          nls.builtins.formatting.terraform_fmt,
+          nls.builtins.diagnostics.terraform_validate,
         },
       }
     end,
@@ -164,7 +170,7 @@ return {
       "neovim/nvim-lspconfig",
       "nvim-treesitter/nvim-treesitter",
     },
-        opts = {},
+    opts = {},
     -- config = function()
     --   require("go").setup()
     -- end,

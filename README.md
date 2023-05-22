@@ -1,8 +1,8 @@
 # LazyVim
 
-A starter template for [LazyVim](https://github.com/LazyVim/LazyVim)
+A starter template for [ ](https://github.com/LazyVim/LazyVim)
 
-## Usages
+- ## Usages
 
 ### NeoComposer
 

@@ -10,6 +10,12 @@ return {
       Map("<leader>zb", ":ZkBacklinks<CR>", { mode = { "n", "v" } })
       Map("<leader>zl", ":ZkLinks<CR>", { mode = { "n", "v" } })
       Map("<leader>zt", ":ZkTags<CR>", { mode = { "n", "v" } })
+
+      Map(
+        "<C-t>",
+        require("config.functions").toggle_checkbox,
+        { desc = "Toggle to-do item checkbox", mode = { "i", "n" } }
+      )
     end,
   },
 

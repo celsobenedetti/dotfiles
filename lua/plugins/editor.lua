@@ -83,7 +83,8 @@ return {
         ["<C-h>"] = "actions.select_split",
         ["<C-t>"] = "actions.select_tab",
         ["<C-p>"] = "actions.preview",
-        ["<C-c>"] = "actions.close",
+        ["<C-c>"] = "",
+        ["<Esc>"] = "actions.close",
         ["<C-l>"] = "actions.refresh",
         ["-"] = "actions.parent",
         ["BS"] = "actions.parent",
@@ -94,6 +95,7 @@ return {
       },
     },
     command = "Oil",
+    keys = { "-" },
     dependencies = { "nvim-tree/nvim-web-devicons" },
   },
 

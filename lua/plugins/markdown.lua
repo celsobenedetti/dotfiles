@@ -19,9 +19,6 @@ return {
     end,
   },
 
-  { "toppair/peek.nvim", build = "deno task --quiet build:fast" },
-  { "iamcco/markdown-preview.nvim", build = "cd app && yarn install", ft = "markdown" },
-
   {
     "jbyuki/venn.nvim",
     ft = "markdown",

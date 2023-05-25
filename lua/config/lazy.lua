@@ -6,6 +6,11 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
+if vim.g.vscode then
+  require("lazy").setup({ spec = require("config.vscode") })
+  return
+end
+
 require("lazy").setup({
   spec = {
     -- LazyVim core
@@ -28,6 +33,7 @@ require("lazy").setup({
     -- { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "lazyvim.plugins.extras.lang.json", ft = "typescript" },
     { import = "lazyvim.plugins.extras.linting.eslint" },
+    { import = "lazyvim.plugins.extras.dap.core" },
     -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
 
     -- override plugin opts

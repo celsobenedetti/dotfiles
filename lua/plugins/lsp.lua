@@ -1,7 +1,7 @@
 local function attach_lsp_signature(bufnr)
   require("lsp_signature").on_attach({
     bind = true, -- This is mandatory, otherwise border config won't get registered.
-    hint_enable = false, -- virtual hint enable
+    hint_enable = true, -- virtual hint enable
     hint_prefix = "📚 ",
     floating_window = true,
     floating_window_above_cur_line = true,
@@ -23,10 +23,9 @@ return {
         require("lazyvim.util").on_attach(function(client, buffer)
           attach_lsp_signature(buffer)
 
-                    -- client.server_capabilities.document_formatting = false
-                    -- client.server_capabilities.document_range_formatting = false
-                    -- stylua: ignore
-                    Map("<leader>RF", ":TypescriptRenameFile<CR>", { desc = "Rename File", buffer = buffer })
+          -- client.server_capabilities.document_formatting = false
+          -- client.server_capabilities.document_range_formatting = false
+          Map("<leader>RF", ":TypescriptRenameFile<CR>", { desc = "Rename File", buffer = buffer })
           Map("<A-O>", function()
             local ts = require("typescript")
             ts.actions.removeUnused()
@@ -38,7 +37,7 @@ return {
     },
     ---@class PluginLspOpts
     opts = function(_, opts)
-      opts.autoformat = false
+      opts.autoformat = true
       opts.servers = vim.tbl_deep_extend("force", opts.servers, {
         -- servers will be automatically installed with mason and loaded with lspconfig
         sumneko_lua = {

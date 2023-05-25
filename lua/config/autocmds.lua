@@ -21,6 +21,14 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.api.nvim_create_autocmd("BufRead", {
+  pattern = "*.md",
+  callback = function()
+    vim.cmd("setlocal conceallevel=0")
+  end,
+  desc = "Run on every markdown file",
+})
+
+vim.api.nvim_create_autocmd("BufRead", {
   pattern = "*.gohtml",
   callback = function()
     vim.cmd("set filetype=html")

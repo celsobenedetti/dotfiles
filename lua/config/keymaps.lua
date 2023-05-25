@@ -50,3 +50,5 @@ end, { mode = "i", desc = "Copilot Tab accept Suggestion" })
 
 Map("<leader>xS", f.trouble_mispelled_wods, { desc = "Mispelled Words (Trouble)" })
 Map("<leader>O", ":Oil<CR>", { desc = "Open parent directory" })
+Map("-", ":Oil<CR>", { desc = "Open parent directory" })
+Map("<C-E>", ":Neotree toggle<CR>", { desc = "Open parent directory" })

@@ -42,8 +42,9 @@ require("lazy").setup({
     -- disable plugins
     { "ggandor/leap.nvim", enabled = false },
     { "ggandor/flit.nvim", enabled = false },
-    { "echasnovski/mini.surroakinsho/bufferline.nvimund", enabled = false },
+    -- { "echasnovski/mini.surroakinsho/bufferline.nvimund", enabled = false },
     { "rcarriga/nvim-notify", enabled = false },
+    { "echasnovski/mini.comment", enabled = false },
     -- { "akinsho/bufferline.nvim", enabled = false },
   },
   defaults = {

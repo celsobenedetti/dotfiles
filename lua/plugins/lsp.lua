@@ -69,7 +69,7 @@ return {
           },
         },
         angularls = {},
-        tailwindcss = { filetypes = { "vue", "javascriptreact", "typescriptreact", "html" } },
+        tailwindcss = { filetypes = { "vue", "javascriptreact", "typescriptreact", "html", "css" } },
         emmet_ls = { filetypes = { "html", "javascriptreact", "typescriptreact", "vue", "gohtml" } },
         terraformls = {},
         -- zk = {},

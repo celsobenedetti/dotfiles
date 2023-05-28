@@ -48,7 +48,16 @@ Map("<Tab>", function()
   end
 end, { mode = "i", desc = "Copilot Tab accept Suggestion" })
 
+Map("<leader>O", require("oil").open, { desc = "Oil: Open parent directory" })
+Map("-", require("oil").open, { desc = "Oil: Open parent directory" })
+
 Map("<leader>xS", f.trouble_mispelled_wods, { desc = "Mispelled Words (Trouble)" })
-Map("<leader>O", ":Oil<CR>", { desc = "Open parent directory" })
-Map("-", ":Oil<CR>", { desc = "Open parent directory" })
 Map("<C-E>", ":Neotree toggle<CR>", { desc = "Open parent directory" })
+Map("<leader>zF", ":FoldIndent<CR>", { desc = "Open parent directory" })
+
+-- Telescope
+Map("<leader><leader>", require("telescope.builtin").buffers, { desc = "Search Buffers" })
+Map("<leader>ft", require("telescope.builtin").treesitter, { desc = "Search Buffers" })
+Map("<leader>ff", function()
+  require("telescope.builtin").find_files({ no_ignore = true, hidden = true })
+end, { desc = "Find Files" })

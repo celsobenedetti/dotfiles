@@ -26,9 +26,10 @@ local function catppuccin_setup()
 end
 
 local function nord_setup()
-  require("nord").set()
+  -- require("nordic").set()
   vim.api.nvim_set_hl(0, "Normal", { bg = "#3B4252" })
   -- vim.api.nvim_set_hl(0, "CursorLine", { bg = "#434C5E" })
+  return "nordic"
 end
 
 local material_opts = {
@@ -157,7 +158,7 @@ return {
     opts = {
       -- colorscheme = "github_light",
       -- colorscheme = nord_setup,
-            -- colorscheme = "nordic",
+      -- colorscheme = "nordic",
       colorscheme = catppuccin_setup,
 
       -- colorscheme = function()

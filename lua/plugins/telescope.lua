@@ -38,7 +38,18 @@ return {
             case_mode = "smart_case", --  "ignore_case" | "respect_case" |"smart_case"
           },
         },
-        file_ignore_patterns = { "node_modules", ".git/", "tmp", ".png", ".ico", ".jpg" },
+        file_ignore_patterns = {
+          "node_modules",
+          ".git/",
+          "tmp",
+          ".png",
+          ".ico",
+          ".pdf",
+          ".jpg",
+          ".next/",
+          "build/",
+          "dist/",
+        },
         prompt_prefix = "  > ",
         mappings = {
           i = {
@@ -69,8 +80,6 @@ return {
     },
     keys = {
       { "<leader>dot", search_dotfiles, desc = "Search Dotfiles" },
-      { "<leader><leader>", require("telescope.builtin").buffers, desc = "Search Buffers" },
-      { "<leader>fg", require("telescope.builtin").git_files, desc = "Search Git Files" },
     },
   },
 }

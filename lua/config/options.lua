@@ -16,6 +16,14 @@ opt.tabstop = 4 -- Size of an indent
 
 vim.api.nvim_create_user_command("DiffThis", ":Gitsigns diffthis<CR>", { desc = "Git Diff current buffer" })
 
+vim.api.nvim_create_user_command("FoldIndent", function()
+  vim.opt.foldmethod = "indent"
+end, { desc = "Set fold method indent" })
+
+vim.api.nvim_create_user_command("FoldManual", function()
+  vim.opt.foldmethod = "manual"
+end, { desc = "Set fold method manual" })
+
 vim.api.nvim_create_user_command("Oil", function()
   require("oil").open()
 end, { desc = "Open oil.nvim" })

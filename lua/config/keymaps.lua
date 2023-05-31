@@ -4,7 +4,7 @@
 --
 local f = require("config.functions")
 
-Map("<leader>tod", ":e $TODO<CR>", { mode = { "n", "v" } })
+Map("<leader>todo", ":e $TODO<CR>", { mode = { "n", "v" } })
 
 -- -- Unset bindings
 -- vim.keymap.del("i", "<c-c>")
@@ -55,9 +55,11 @@ Map("<leader>xS", f.trouble_mispelled_wods, { desc = "Mispelled Words (Trouble)"
 Map("<C-E>", ":Neotree toggle<CR>", { desc = "Open parent directory" })
 Map("<leader>zF", ":FoldIndent<CR>", { desc = "Open parent directory" })
 
+Map("<leader>n", "<cmd>enew<cr>", { desc = "New File" })
+
 -- Telescope
 Map("<leader><leader>", require("telescope.builtin").buffers, { desc = "Search Buffers" })
-Map("<leader>ft", require("telescope.builtin").treesitter, { desc = "Search Buffers" })
+Map("<leader>fn", require("telescope.builtin").treesitter, { desc = "Search Buffers" })
 Map("<leader>ff", function()
   require("telescope.builtin").find_files({ no_ignore = true, hidden = true })
 end, { desc = "Find Files" })

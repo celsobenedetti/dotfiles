@@ -158,6 +158,7 @@ return {
 
           nls.builtins.code_actions.shellcheck,
           nls.builtins.code_actions.proselint.with({ filetypes = { "markdown" } }),
+          nls.builtins.code_actions.refactoring,
 
           -- terraform
           nls.builtins.formatting.terraform_fmt,
@@ -181,5 +182,14 @@ return {
     -- event = { "CmdlineEnter" },
     ft = { "go", "gomod" },
     build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
+  },
+  {
+    "ThePrimeagen/refactoring.nvim",
+    dependencies = {
+      { "nvim-lua/plenary.nvim" },
+      { "nvim-treesitter/nvim-treesitter" },
+    },
+    opts = {},
+    ft = { "go", "lua", "python", "javascript", "javascriptreact", "typescript", "typescriptreact" },
   },
 }

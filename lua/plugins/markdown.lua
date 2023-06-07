@@ -45,4 +45,6 @@ return {
       Map("<leader>v", ":lua Toggle_venn()<CR>", { desc = "Toggle venn" })
     end,
   },
+
+  { "dkarter/bullets.vim", ft = "markdown" },
 }

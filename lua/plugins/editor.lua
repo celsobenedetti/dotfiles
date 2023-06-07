@@ -117,24 +117,9 @@ return {
   { "mbbill/undotree", cmd = "UndotreeToggle" },
 
   {
-    "ray-x/web-tools.nvim",
-    ft = { "hurl" },
-    config = function()
-      Map("<leader>rq", ":HurlRun<CR>", { desc = "run Hurl", mode = { "n", "v" } })
-      require("web-tools").setup({
-        keymaps = {
-          rename = nil, -- by default use same setup of lspconfig
-          repeat_rename = ".", -- . to repeat
-        },
-        hurl = { -- hurl default
-          show_headers = false, -- do not show http headers
-          floating = false, -- use floating windows (need guihua.lua)
-          formatters = { -- format the result by filetype
-            json = { "jq" },
-            html = { "prettier", "--parser", "html" },
-          },
-        },
-      })
-    end,
+    "barrett-ruth/import-cost.nvim",
+    build = "sh install.sh npm",
+    ft = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+    config = true,
   },
 }

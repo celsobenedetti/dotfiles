@@ -6,7 +6,6 @@ return {
       ensure_installed = {
         "bash",
         "go",
-        "help",
         "html",
         "java",
         "javascript",

@@ -119,7 +119,12 @@ return {
   {
     "barrett-ruth/import-cost.nvim",
     build = "sh install.sh npm",
-    ft = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
-    config = true,
+    -- ft = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+    cmd = "ImportCost",
+    config = function()
+      vim.api.nvim_create_user_command("ImportCost", function()
+        require("import-cost").setup()
+      end, { desc = "Enable ImportCost" })
+    end,
   },
 }

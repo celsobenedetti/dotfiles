@@ -10,6 +10,7 @@ opt.swapfile = false
 opt.backup = false
 opt.writebackup = false
 opt.pumblend = 5
+opt.relativenumber = false
 
 opt.shiftwidth = 4 -- Size of an indent
 opt.tabstop = 4 -- Size of an indent

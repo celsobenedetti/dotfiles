@@ -5,6 +5,7 @@
 local f = require("config.functions")
 
 Map("<leader>todo", ":e $TODO<CR>", { mode = { "n", "v" } })
+Map("<leader>wodo", ":e $WODO<CR>", { mode = { "n", "v" } })
 
 -- -- Unset bindings
 -- vim.keymap.del("i", "<c-c>")

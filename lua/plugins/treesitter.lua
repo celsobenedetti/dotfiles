@@ -7,6 +7,7 @@ return {
         "bash",
         "go",
         "html",
+        "http",
         "java",
         "javascript",
         "json",

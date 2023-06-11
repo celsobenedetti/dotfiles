@@ -9,16 +9,16 @@ vim.cmd("autocmd FileType qf wincmd L") -- hurl
 vim.cmd("autocmd FileType man wincmd L") -- man
 
 -- run on every file
--- vim.api.nvim_create_autocmd("FileType", {
---   pattern = "*",
---   callback = function()
---     --[[ Stop comment continuation on line below and global statusline ]]
---     vim.cmd("setlocal formatoptions-=cro")
---     --[[ vim.cmd("set laststatus=3") ]]
---     --[[ vim.o.ch = 0 ]]
---   end,
---   desc = "Run on every file",
--- })
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "*",
+  callback = function()
+    --[[ Stop comment continuation on line below and global statusline ]]
+    vim.cmd("setlocal formatoptions-=cro")
+    --[[ vim.cmd("set laststatus=3") ]]
+    --[[ vim.o.ch = 0 ]]
+  end,
+  desc = "Run on every file",
+})
 
 vim.api.nvim_create_autocmd("BufRead", {
   pattern = "*.md",
@@ -42,6 +42,14 @@ vim.api.nvim_create_autocmd("BufRead", {
     vim.cmd("set filetype=hurl")
   end,
   desc = "Set hurl ft to .hurl files",
+})
+
+vim.api.nvim_create_autocmd("BufRead", {
+  pattern = "*.http",
+  callback = function()
+    vim.cmd("set filetype=http")
+  end,
+  desc = "Set http ft to .http files",
 })
 
 vim.api.nvim_create_autocmd("BufRead", {

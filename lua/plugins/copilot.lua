@@ -71,18 +71,16 @@ return {
   --   config = true,
   -- },
 
-  -- {
-  --   "jackMort/ChatGPT.nvim",
-  --   config = function()
-  --     require("chatgpt").setup()
-  --   end,
-  --   -- keys = {
-  --   --   { "<leader>gpt", ":ChatGPT<CR>", desc = "Open Chat GPT" },
-  --   --   { "<leader>gpa", ":ChatGPTActAs<CR>", desc = "Open Chat GPT (Act as)" },
-  --   --   { "<leader>gpe", ":ChatGPTEditWithInstructions<CR>", desc = "Open Chat GPT (Edit With Instructions)" },
-  --   -- },0j0j
-  --   dependencies = { "nvim-lua/plenary.nvim" },
-  --   cmd = { "ChatGPT", "ChatGPTEditWithInstructions", "ChatGPTActAs", "ChatGPTRun" },
-  --   -- event = "VeryLazy",
-  -- },
+  {
+    "jackMort/ChatGPT.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
+    config = function()
+      require("chatgpt").setup()
+    end,
+  },
 }

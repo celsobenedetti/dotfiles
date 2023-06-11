@@ -57,6 +57,8 @@ Map("<C-E>", ":Neotree toggle<CR>", { desc = "Open parent directory" })
 Map("<leader>zF", ":FoldIndent<CR>", { desc = "Open parent directory" })
 
 Map("<leader>n", "<cmd>enew<cr>", { desc = "New File" })
+Map("<leader>snt", ":NoiceTelescope<CR>", { desc = "Noice messages on Telescope" })
+Map("<leader>sC", require("telescope.builtin").commands, { mode = { "v" }, desc = "Noice messages on Telescope" })
 
 -- Telescope
 Map("<leader><leader>", require("telescope.builtin").buffers, { desc = "Search Buffers" })

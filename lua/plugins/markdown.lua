@@ -46,5 +46,5 @@ return {
     end,
   },
 
-  { "dkarter/bullets.vim", ft = "markdown" },
+  -- { "dkarter/bullets.vim", ft = "markdown" },
 }

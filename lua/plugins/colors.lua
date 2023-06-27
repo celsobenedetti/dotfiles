@@ -1,4 +1,4 @@
-local lazy_colorschemes = false
+local lazy_colorschemes = true
 
 local function catppuccin_setup()
   local catppuccin_opts = {
@@ -156,9 +156,13 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      -- colorscheme = "github_light",
       -- colorscheme = nord_setup,
       -- colorscheme = "nordic",
+      -- colorscheme = "github_dimmed",
+      -- colorscheme = "nordfox",
+      -- colorscheme = "kanagawa-wave",
+      -- colorscheme = "palenightfall",
+      -- colorscheme = "sherbet",
       colorscheme = catppuccin_setup,
 
       -- colorscheme = function()

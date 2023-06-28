@@ -71,6 +71,7 @@ return {
   --     })
   --   end,
   -- },
+  { "NoahTheDuke/vim-just", ft = "just" },
   {
     "NvChad/nvim-colorizer.lua",
     config = function()

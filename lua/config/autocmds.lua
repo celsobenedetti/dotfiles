@@ -53,11 +53,11 @@ vim.api.nvim_create_autocmd("BufRead", {
 })
 
 vim.api.nvim_create_autocmd("BufRead", {
-  pattern = "*.norg",
+  pattern = "justfile",
   callback = function()
-    vim.cmd("set filetype=norg")
+    vim.cmd("set filetype=just")
   end,
-  desc = "Set norg ft to .norg files",
+  desc = "Set just ft to justfiles",
 })
 
 vim.api.nvim_create_autocmd("BufRead", {

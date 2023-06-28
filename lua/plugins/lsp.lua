@@ -102,10 +102,11 @@ return {
     "williamboman/mason.nvim",
     opts = function(_, opts)
       opts.ensure_installed = vim.list_extend(opts.ensure_installed, {
-        "pyright",
         "typescript-language-server",
-
+        "js-debug-adapter",
         "prettierd",
+
+        "pyright",
         "black",
       })
     end,

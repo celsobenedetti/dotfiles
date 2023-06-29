@@ -13,7 +13,7 @@ Map("<C-c>", "<Nop>", { desc = "Disable default <C-c>", mode = { "i", "v", "c" }
 
 Map("<A-F>", require("lazyvim.plugins.lsp.format").format, { desc = "Format Document" })
 Map("<A-F>", require("lazyvim.plugins.lsp.format").format, { desc = "Format Range", mode = "v" })
-Map("<leader>r", vim.lsp.buf.rename, { desc = "Rename" })
+Map("<leader>R", vim.lsp.buf.rename, { desc = "Rename" })
 
 Map("gm", ":call cursor(0, len(getline('.'))/2)<CR>", { desc = "Go the middle of line" })
 

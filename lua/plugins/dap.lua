@@ -1,8 +1,18 @@
 return {
-  "mfussenegger/nvim-dap",
-  opts = function()
-    local dap = require("dap")
-    if not dap.adapters["pwa-node"] then
+  {
+    "mfussenegger/nvim-dap",
+    event = "VeryLazy",
+    dependencies = {
+      {
+        "williamboman/mason.nvim",
+        opts = function(_, opts)
+          opts.ensure_installed = opts.ensure_installed or {}
+          table.insert(opts.ensure_installed, "js-debug-adapter")
+        end,
+      },
+    },
+    opts = function()
+      local dap = require("dap")
       require("dap").adapters["pwa-node"] = {
         type = "server",
         host = "localhost",
@@ -17,9 +27,8 @@ return {
           },
         },
       }
-    end
-    for _, language in ipairs({ "typescript", "javascript" }) do
-      if not dap.configurations[language] then
+
+      for _, language in ipairs({ "typescript", "javascript" }) do
         dap.configurations[language] = {
           {
             type = "pwa-node",
@@ -37,8 +46,8 @@ return {
           },
         }
       end
-    end
-  end,
+    end,
+  },
   {
     "mfussenegger/nvim-dap-python",
     dependencies = { "mfussenegger/nvim-dap" },

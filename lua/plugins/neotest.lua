@@ -14,8 +14,9 @@ return {
       "nvim-neotest/neotest-go",
       "nvim-neotest/neotest-python",
       "haydenmeade/neotest-jest",
+      "marilari88/neotest-vitest",
     },
-    ft = { "go", "python" },
+    ft = { "go", "python", "typescript" },
 
     opts = function(_, opts)
       if opts.adapters == nil then
@@ -23,6 +24,8 @@ return {
       end
       opts.adapters = vim.list_extend(opts.adapters, {
         require("neotest-go"),
+        require("neotest-vitest"),
+
         require("neotest-python")({
           args = { "--log-level", "DEBUG" },
         }),

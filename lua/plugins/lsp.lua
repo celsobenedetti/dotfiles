@@ -162,8 +162,8 @@ return {
           nls.builtins.code_actions.refactoring,
 
           -- terraform
-          nls.builtins.formatting.terraform_fmt,
-          nls.builtins.diagnostics.terraform_validate,
+          -- nls.builtins.formatting.terraform_fmt,
+          -- nls.builtins.diagnostics.terraform_validate,
         },
       }
     end,

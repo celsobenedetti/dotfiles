@@ -3,7 +3,6 @@
   "Comment.nvim": { "branch": "master", "commit": "e51f2b142d88bb666dcaa77d93a07f4b419aca70" },
   "LazyVim": { "branch": "main", "commit": "abea2807ce13c994d5697f0ff19d80f85f678b1b" },
   "LuaSnip": { "branch": "master", "commit": "500981ff6cefc7343e3959ef0f939bd0bfd49ba9" },
-  "NeoComposer.nvim": { "branch": "main", "commit": "384826255d5a25be2ab2683d1cbe6d92b44b80b6" },
   "SchemaStore.nvim": { "branch": "main", "commit": "78c53f2ce05b7209bf5e2e2b2e25c72a3c1444b2" },
   "adwaita.nvim": { "branch": "main", "commit": "bb421a3439a515862ecb57970f10722cdcc4d089" },
   "alpha-nvim": { "branch": "main", "commit": "9e33db324b8bb7a147bce9ea5496686ee859461d" },

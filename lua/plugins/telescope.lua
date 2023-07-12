@@ -49,6 +49,7 @@ return {
           ".next/",
           "build/",
           "dist/",
+          "target/",
         },
         prompt_prefix = "  > ",
         mappings = {

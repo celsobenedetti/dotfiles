@@ -41,7 +41,7 @@ return {
     },
     ---@class PluginLspOpts
     opts = function(_, opts)
-      opts.autoformat = true
+      opts.autoformat = false
       opts.servers = vim.tbl_deep_extend("force", opts.servers, {
         -- servers will be automatically installed with mason and loaded with lspconfig
         sumneko_lua = {
@@ -93,6 +93,8 @@ return {
           require("zk").setup()
           return true
         end,
+
+        jdtls = require("config.jdtls").setup,
       }
     end,
   },
@@ -147,13 +149,13 @@ return {
 
           -- nls.builtins.diagnostics.alex.with({ filetypes = { "markdown" } }),
           nls.builtins.diagnostics.proselint.with({ filetypes = { "markdown" } }),
-          nls.builtins.diagnostics.write_good.with({
-            filetypes = { "markdown" },
-            extra_args = {
-              "--no-passive",
-              "--no-tooWordy",
-            },
-          }),
+          -- nls.builtins.diagnostics.write_good.with({
+          --   filetypes = { "markdown" },
+          --   extra_args = {
+          --     "--no-passive",
+          --     "--no-tooWordy",
+          --   },
+          -- }),
 
           -- nls.builtins.completion.spell.with({ filetypes = { "markdown" } }),
 

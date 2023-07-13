@@ -29,7 +29,8 @@ Map("<leader>dif", ":Gitsigns diffthis<CR>")
 Map("<leader>S", ":w<CR>")
 Map("<leader>W", ":w<CR>")
 
-Map("<leader>Q", ":bdelete<CR>")
+Map("Q", ":bdelete<CR>")
+Map("<leader>Q", ":wqa<CR>")
 
 Map("zf", ":set foldmethod=indent<CR>", { desc = "Enable indent folding" })
 

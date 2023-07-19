@@ -41,7 +41,7 @@ return {
     },
     ---@class PluginLspOpts
     opts = function(_, opts)
-      opts.autoformat = false
+      opts.autoformat = true
       opts.servers = vim.tbl_deep_extend("force", opts.servers, {
         -- servers will be automatically installed with mason and loaded with lspconfig
         sumneko_lua = {

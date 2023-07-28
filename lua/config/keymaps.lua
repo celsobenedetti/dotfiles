@@ -4,18 +4,11 @@
 
 local track_position_before_relative_jump = require("functions.relative_jump")
 
-function Map(lhs, rhs, opts)
-  local mode = "n"
-  local options = { noremap = true, silent = true }
-  if opts then
-    if opts.mode then
-      mode = opts.mode
-      opts.mode = nil
-    end
-    options = vim.tbl_extend("force", options, opts)
-  end
-  vim.keymap.set(mode, lhs, rhs, options)
-end
+Map("<leader>todo", ":e $TODO<CR>", { mode = { "n", "v" } })
+Map("<leader>wodo", ":e $WODO<CR>", { mode = { "n", "v" } })
 
 Map("k", track_position_before_relative_jump.up)
 Map("j", track_position_before_relative_jump.down)
+
+-- Markdown
+Map("<leader>xS", require("functions.misspelled_words"), { desc = "Mispelled Words (Trouble)" })

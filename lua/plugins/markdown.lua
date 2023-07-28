@@ -21,4 +21,30 @@ return {
       },
     },
   },
+
+  {
+    "uga-rosa/cmp-dictionary",
+    config = function()
+      local dict = require("cmp_dictionary")
+      dict.setup({
+        -- The following are default values.
+        exact = 2,
+        first_case_insensitive = false,
+        document = false,
+        document_command = "wn %s -over",
+        async = false,
+        sqlite = false,
+        max_items = -1,
+        capacity = 5,
+        debug = false,
+      })
+      -- dict.update()
+      dict.switcher({
+        spelllang = {
+          en = "~/.dotfiles/english.dict",
+        },
+      })
+    end,
+    ft = { "markdown", "tex", "latex", "vimwiki" },
+  },
 }

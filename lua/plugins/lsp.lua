@@ -14,7 +14,7 @@ return {
       opts.setup = {
         zk = function()
           require("zk").setup()
-          return true
+          return true --let zk.nvim handle zk lsp
         end,
       }
     end,

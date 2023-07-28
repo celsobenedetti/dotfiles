@@ -1,5 +1,3 @@
-local copilot = require("functions.copilot")
-
 return {
   {
     "nvim-telescope/telescope.nvim",
@@ -14,14 +12,6 @@ return {
       { "<leader>fn", require("telescope.builtin").treesitter, desc = "Find Treesitter nodes" },
       { "<leader>dot", require("functions.dotfiles"), desc = "Search Dotfiles" },
     },
-  },
-
-  {
-    "zbirenbaum/copilot.lua",
-    keys = {
-      { "<leader>cp", copilot.open_vertical_panel, desc = "Open Copilot Panel" },
-    },
-    config = copilot.setup,
   },
 
   {

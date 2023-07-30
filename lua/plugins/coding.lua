@@ -8,6 +8,11 @@ return {
       { "<c-h>", snippets.go_back, mode = "i" },
       { "<c-j>", snippets.toggle_option, mode = "i" },
     },
+    config = function()
+      require("luasnip.loaders.from_vscode").lazy_load({
+        paths = { "~/.dotfiles/snippets" },
+      })
+    end,
   },
 
   {

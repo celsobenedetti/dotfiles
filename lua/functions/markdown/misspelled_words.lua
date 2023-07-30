@@ -58,4 +58,4 @@ local trouble_mispelled_wods = function()
   vim.cmd("Trouble quickfix")
 end
 
-return trouble_mispelled_wods
+return { trouble = trouble_mispelled_wods }

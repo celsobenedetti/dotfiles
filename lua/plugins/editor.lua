@@ -10,7 +10,7 @@ return {
     },
     keys = {
       { "<leader>fn", require("telescope.builtin").treesitter, desc = "Find Treesitter nodes" },
-      { "<leader>dot", require("functions.dotfiles"), desc = "Search Dotfiles" },
+      { "<leader>dot", require("functions.telescope").search_dotfiles, desc = "Search Dotfiles" },
     },
   },
 
@@ -21,6 +21,13 @@ return {
         preview = false,
       },
     },
+  },
+
+  {
+    "nvim-lualine/lualine.nvim",
+    opts = function(_, opts)
+      table.insert(opts.sections.lualine_x, require("functions.lualine").get_lsp_client_list)
+    end,
   },
 
   {

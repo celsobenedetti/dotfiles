@@ -14,4 +14,4 @@ Map("j", track_position_before_relative_jump.down)
 
 -- Markdown
 Map("<leader>xS", require("functions.markdown.misspelled_words").trouble, { desc = "Mispelled Words (Trouble)" })
-Map("<leader>tl", require("functions.markdown.toggle_checkbox").toggle, { desc = "Toggle to-do checkbox (Markdown)" })
+Map("<A-x>", require("functions.markdown.toggle_checkbox").toggle, { desc = "Toggle to-do checkbox (Markdown)" })

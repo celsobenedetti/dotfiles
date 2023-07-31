@@ -1,5 +1,13 @@
 return {
   {
+    "williamboman/mason.nvim",
+    keys = {
+      { "<leader>cm", false },
+      { "<leader>ma", "<cmd>Mason<cr>", desc = "Mason" },
+    },
+  },
+
+  {
     "nvim-telescope/telescope.nvim",
     dependencies = {
       "nvim-telescope/telescope-fzf-native.nvim",

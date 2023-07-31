@@ -3,9 +3,7 @@ return {
     "zbirenbaum/copilot.lua",
     event = "VeryLazy",
     cmd = "Copilot",
-    config = function()
-      require("copilot").setup()
-    end,
+    config = true,
   },
   -- copilot
   {

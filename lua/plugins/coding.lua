@@ -45,5 +45,8 @@ return {
         documentation = cmp.config.window.bordered(),
       }
     end,
+    keys = {
+      { "<leader>uC", require("functions.cmp").toggle, { desc = "Toggle autocompletion (cmp)" } },
+    },
   },
 }

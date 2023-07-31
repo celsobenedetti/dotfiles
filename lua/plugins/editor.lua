@@ -11,6 +11,12 @@ return {
     keys = {
       { "<leader>fn", require("telescope.builtin").treesitter, desc = "Find Treesitter nodes" },
       { "<leader>dot", require("functions.telescope").search_dotfiles, desc = "Search Dotfiles" },
+      { "<leader>uC", false },
+      {
+        "<leader>fC",
+        require("lazyvim.util").telescope("colorscheme", { enable_preview = true }),
+        desc = "Colorscheme with preview",
+      },
     },
   },
 

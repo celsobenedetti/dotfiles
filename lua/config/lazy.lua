@@ -45,6 +45,9 @@ require("lazy").setup({
     --disable plugins
     { "folke/flash.nvim", enabled = false },
     { "echasnovski/mini.surround", enabled = false },
+
+    --disable keybinds
+    { "williamboman/mason.nvim", keys = { { "<leader>cm", false } } },
   },
   defaults = {
     lazy = false,

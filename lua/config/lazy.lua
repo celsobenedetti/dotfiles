@@ -42,6 +42,12 @@ require("lazy").setup({
     -- import/override with your plugins
     { import = "plugins" },
 
+    --colors
+    { "luisiacc/gruvbox-baby", enabled = false },
+    { "projekt0n/github-nvim-theme", enabled = false },
+    { "rose-pine/neovim", enabled = false },
+    { "savq/melange-nvim", enabled = false },
+
     --disable plugins
     { "folke/flash.nvim", enabled = false },
     { "echasnovski/mini.surround", enabled = false },

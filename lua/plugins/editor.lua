@@ -62,15 +62,15 @@ return {
           harpoon.nav_file(i)
         end)
 
-        Map("'" .. tostring(i), function()
+        Map("m" .. tostring(i), function()
           harpoon.nav_file(i)
         end)
 
-        Map("'" .. power_fingers[i], function()
+        Map("m" .. power_fingers[i], function()
           harpoon.nav_file(i)
         end)
 
-        Map("'" .. power_fingers2[i], function()
+        Map("m" .. power_fingers2[i], function()
           harpoon.nav_file(i)
         end)
       end

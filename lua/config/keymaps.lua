@@ -2,6 +2,11 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
+vim.api.nvim_del_keymap("n", "<leader>ft")
+vim.api.nvim_del_keymap("n", "<leader>fT")
+vim.api.nvim_del_keymap("n", "<c-_>")
+vim.api.nvim_del_keymap("n", "<c-/>")
+
 local track_position_before_relative_jump = require("functions.relative_jump")
 
 Map("<leader>wq", "<cmd>wqa<cr>", { desc = "Save all buffers" })

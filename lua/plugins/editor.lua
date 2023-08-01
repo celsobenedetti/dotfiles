@@ -1,4 +1,7 @@
 return {
+  { "wakatime/vim-wakatime", event = "VeryLazy" },
+  { "christoomey/vim-tmux-navigator", event = "VeryLazy" },
+
   {
     "williamboman/mason.nvim",
     keys = {

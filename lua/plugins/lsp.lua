@@ -16,6 +16,8 @@ return {
           require("zk").setup()
           return true --let zk.nvim handle zk lsp
         end,
+
+        jdtls = require("config.jdtls").setup,
       }
     end,
   },

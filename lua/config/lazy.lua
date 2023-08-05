@@ -13,7 +13,7 @@ require("lazy").setup({
 
       import = "lazyvim.plugins",
       opts = {
-        colorscheme = "catppuccin-frappe",
+        colorscheme = "gruvbox-baby",
       },
     },
     -- import any extras modules here
@@ -27,7 +27,7 @@ require("lazy").setup({
 
     { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "lazyvim.plugins.extras.lang.go" },
-    { import = "lazyvim.plugins.extras.lang.java" },
+    -- { import = "lazyvim.plugins.extras.lang.java" },
     { import = "lazyvim.plugins.extras.lang.python" },
     { import = "lazyvim.plugins.extras.lang.json" },
     { import = "lazyvim.plugins.extras.lang.yaml" },
@@ -43,7 +43,7 @@ require("lazy").setup({
     { import = "plugins" },
 
     --colors
-    { "luisiacc/gruvbox-baby", enabled = false },
+    { "luisiacc/gruvbox-baby", enabled = true },
     { "projekt0n/github-nvim-theme", enabled = false },
     { "rose-pine/neovim", enabled = false },
     { "savq/melange-nvim", enabled = false },

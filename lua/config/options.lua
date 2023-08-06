@@ -3,6 +3,7 @@
 -- Add any additional options here
 
 vim.opt.swapfile = false
+vim.opt.pumblend = 0 -- disable transparent completion menu
 
 vim.opt.shiftwidth = 4 -- Size of an indent
 vim.opt.tabstop = 4 -- Size of an indent

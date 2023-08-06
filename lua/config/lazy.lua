@@ -12,9 +12,6 @@ require("lazy").setup({
       "LazyVim/LazyVim",
 
       import = "lazyvim.plugins",
-      opts = {
-        colorscheme = "gruvbox-baby",
-      },
     },
     -- import any extras modules here
     { import = "lazyvim.plugins.extras.linting.eslint" },
@@ -41,12 +38,6 @@ require("lazy").setup({
 
     -- import/override with your plugins
     { import = "plugins" },
-
-    --colors
-    { "luisiacc/gruvbox-baby", enabled = true },
-    { "projekt0n/github-nvim-theme", enabled = false },
-    { "rose-pine/neovim", enabled = false },
-    { "savq/melange-nvim", enabled = false },
 
     --disable plugins
     { "folke/flash.nvim", enabled = false },

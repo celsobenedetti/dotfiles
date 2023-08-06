@@ -61,3 +61,4 @@ webui
 eas
 js
 Redis
+RabbitMQ

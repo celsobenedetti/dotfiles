@@ -1,4 +1,4 @@
-local colorscheme = "github_dark"
+local colorscheme = "github_dark_high_contrast"
 
 local function is_enabled(color)
   return tostring(string.match(colorscheme, color)) ~= "nil"

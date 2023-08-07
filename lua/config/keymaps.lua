@@ -14,13 +14,15 @@ Map("<leader>la", "<cmd>Lazy<cr>", { desc = "Open lazy.nvim" })
 
 -- my keys
 
-local track_position_before_relative_jump = require("functions.relative_jump")
-
 Map("<leader>wq", "<cmd>wqa<cr>", { desc = "Save all buffers" })
 
 Map("<leader>todo", ":e $TODO<CR>", { mode = { "n", "v" } })
 Map("<leader>wodo", ":e $WODO<CR>", { mode = { "n", "v" } })
 
+--hold on to register when pasting and replace text
+Map("p", '"_dP', { mode = "v", desc = "Paste without losing register" })
+
+local track_position_before_relative_jump = require("functions.relative_jump")
 Map("k", track_position_before_relative_jump.up)
 Map("j", track_position_before_relative_jump.down)
 

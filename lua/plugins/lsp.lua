@@ -21,4 +21,24 @@ return {
       }
     end,
   },
+
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    opts = function(_, opts)
+      local nls = require("null-ls")
+      table.insert(opts.sources, nls.builtins.formatting.sqlfluff.with({ extra_args = { "--dialect", "tsql" } }))
+      table.insert(opts.sources, nls.builtins.diagnostics.shellcheck)
+      table.insert(opts.sources, nls.builtins.code_actions.shellcheck)
+    end,
+  },
+
+  {
+    "williamboman/mason.nvim",
+    opts = function(_, opts)
+      if type(opts.ensure_installed) == "table" then
+        vim.list_extend(opts.ensure_installed, { "shellcheck" })
+        vim.list_extend(opts.ensure_installed, { "sqlfluff" })
+      end
+    end,
+  },
 }

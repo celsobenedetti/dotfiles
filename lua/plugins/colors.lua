@@ -1,4 +1,4 @@
-local colorscheme = "github_dark_high_contrast"
+local colorscheme = "tundra"
 
 local function is_enabled(color)
   return tostring(string.match(colorscheme, color)) ~= "nil"
@@ -14,4 +14,5 @@ return {
 
   { "projekt0n/github-nvim-theme", enabled = is_enabled("github") },
   { "rose-pine/neovim", enabled = is_enabled("rose") },
+  { "sam4llis/nvim-tundra", enabled = is_enabled("tundra") },
 }

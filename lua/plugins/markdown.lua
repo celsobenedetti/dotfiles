@@ -1,4 +1,17 @@
 return {
+
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = function(_, opts)
+      if type(opts.ensure_installed) == "table" then
+        vim.list_extend(opts.ensure_installed, {
+          "markdown",
+          "markdown_inline",
+        })
+      end
+    end,
+  },
+
   -- zk
   {
     "mickael-menu/zk-nvim",
@@ -15,8 +28,9 @@ return {
       {
         "williamboman/mason.nvim",
         opts = function(_, opts)
-          opts.ensure_installed = opts.ensure_installed or {}
-          table.insert(opts.ensure_installed, "zk")
+          if type(opts.ensure_installed) == "table" then
+            vim.list_extend(opts.ensure_installed, { "zk" })
+          end
         end,
       },
     },

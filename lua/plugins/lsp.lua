@@ -3,7 +3,7 @@ return {
     "neovim/nvim-lspconfig",
     ---@class PluginLspOpts
     opts = function(_, opts)
-      opts.autoformat = true
+      opts.autoformat = false
       opts.servers = vim.tbl_deep_extend("force", opts.servers, {
         cssls = {},
         prismals = {},
@@ -36,8 +36,10 @@ return {
     "williamboman/mason.nvim",
     opts = function(_, opts)
       if type(opts.ensure_installed) == "table" then
-        vim.list_extend(opts.ensure_installed, { "shellcheck" })
-        vim.list_extend(opts.ensure_installed, { "sqlfluff" })
+        vim.list_extend(opts.ensure_installed, {
+          "shellcheck",
+          "sqlfluff",
+        })
       end
     end,
   },

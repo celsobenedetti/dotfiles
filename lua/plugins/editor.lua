@@ -22,8 +22,8 @@ return {
     opts = {
       defaults = {
         mappings = {
-          n = { ["<leader>bd"] = require("telescope.actions").delete_buffer },
-          i = { ["<leader>bd"] = require("telescope.actions").delete_buffer },
+          n = { ["<leader>dd"] = require("telescope.actions").delete_buffer },
+          i = { ["<leader>dd"] = require("telescope.actions").delete_buffer },
         },
       },
     },
@@ -95,13 +95,13 @@ return {
     end,
   },
 
-
   {
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)
       if type(opts.ensure_installed) == "table" then
         vim.list_extend(opts.ensure_installed, {
           "make",
+          "css",
         })
       end
     end,

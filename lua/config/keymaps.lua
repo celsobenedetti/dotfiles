@@ -15,9 +15,12 @@ Map("<leader>la", "<cmd>Lazy<cr>", { desc = "Open lazy.nvim" })
 -- my keys
 
 Map("<leader>wq", "<cmd>wqa<cr>", { desc = "Save all buffers" })
+Map("<leader>ww", ":e $CURR_WORK_WEEK<cr>", { desc = "Save all buffers" })
 
 Map("<leader>todo", ":e $TODO<CR>", { mode = { "n", "v" } })
-Map("<leader>wodo", ":e $WODO<CR>", { mode = { "n", "v" } })
+Map("<leader>wodo", ":e $WORK_TODO<CR>", { mode = { "n", "v" } })
+
+Map("<leader>dd", ":bdelete<cr>", { desc = "Delete buffer" })
 
 --hold on to register when pasting and replace text
 Map("p", '"_dP', { mode = "v", desc = "Paste without losing register" })

@@ -19,6 +19,14 @@ return {
         require("telescope").load_extension("fzf")
       end,
     },
+    opts = {
+      defaults = {
+        mappings = {
+          n = { ["<leader>bd"] = require("telescope.actions").delete_buffer },
+          i = { ["<leader>bd"] = require("telescope.actions").delete_buffer },
+        },
+      },
+    },
     keys = {
       { "<leader>fn", require("telescope.builtin").treesitter, desc = "Find Treesitter nodes" },
       { "<leader>dot", require("functions.telescope").search_dotfiles, desc = "Search Dotfiles" },

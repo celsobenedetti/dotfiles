@@ -1,7 +1,15 @@
-local colorscheme = "tundra"
+local colors = {
+  github = "github_dark_high_contrast",
+  tokyo = "tokyonight",
+  catppuccin = "catppuccin",
+  tundra = "tundra",
+  rose = "rose-pine",
+}
+
+local colorscheme = colors.github
 
 local function is_enabled(color)
-  return tostring(string.match(colorscheme, color)) ~= "nil"
+  return colorscheme == colors[color]
 end
 
 return {

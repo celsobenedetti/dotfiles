@@ -13,3 +13,11 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
   desc = "Stop comment continuation on line below",
 })
+
+vim.api.nvim_create_autocmd("BufRead", {
+  pattern = "*.hurl",
+  callback = function()
+    vim.cmd("set filetype=hurl")
+  end,
+  desc = "Set hurl ft to .hurl files",
+})

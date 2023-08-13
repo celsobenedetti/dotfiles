@@ -11,3 +11,4 @@ vim.opt.tabstop = 4 -- Size of an indent
 -- open buffers verticaly
 vim.cmd("autocmd FileType help wincmd L") --help
 vim.cmd("autocmd FileType man wincmd L") -- man
+vim.cmd("autocmd FileType qf wincmd L") -- hurl

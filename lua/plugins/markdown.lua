@@ -60,5 +60,17 @@ return {
       })
     end,
     ft = { "markdown", "tex", "latex", "vimwiki" },
+    dependencies = {
+      {
+        "hrsh7th/nvim-cmp",
+        opts = function(_, opts)
+          local cmp = require("cmp")
+          opts.sources = cmp.config.sources(vim.list_extend(opts.sources, {
+            { name = "dictionary", keyword_length = 2 },
+          }))
+        end,
+        ft = { "markdown", "tex", "latex", "vimwiki" },
+      },
+    },
   },
 }

@@ -21,3 +21,11 @@ vim.api.nvim_create_autocmd("BufRead", {
   end,
   desc = "Set hurl ft to .hurl files",
 })
+
+vim.api.nvim_create_autocmd("BufRead", {
+  pattern = "*.md",
+  callback = function()
+    vim.cmd("set syntax=markdown")
+  end,
+  desc = "Set markdown syntax on markdown files",
+})

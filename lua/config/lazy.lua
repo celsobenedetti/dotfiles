@@ -66,5 +66,3 @@ require("lazy").setup({
     },
   },
 })
-
-require("config.dap")

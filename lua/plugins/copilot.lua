@@ -3,7 +3,11 @@ return {
     "zbirenbaum/copilot.lua",
     event = "VeryLazy",
     cmd = "Copilot",
-    config = true,
+    opts = {
+      filetypes = {
+        yaml = true,
+      },
+    },
   },
   -- copilot
   {

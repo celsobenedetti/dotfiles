@@ -46,48 +46,4 @@ return {
       { "<leader>uC", require("functions.cmp").toggle, { desc = "Toggle autocompletion (cmp)" } },
     },
   },
-
-  {
-    "ray-x/web-tools.nvim",
-    ft = { "hurl" },
-    keys = {
-      { "<leader>rq", ":HurlRun<CR>", mode = "v" },
-    },
-    opts = {
-      keymaps = {
-        rename = nil, -- by default use same setup of lspconfig
-        repeat_rename = ".", -- . to repeat
-      },
-      hurl = { -- hurl default
-        show_headers = false, -- do not show http headers
-        floating = false, -- use floating windows (need guihua.lua)
-        formatters = { -- format the result by filetype
-          json = { "jq" },
-          html = { "prettier", "--parser", "html" },
-        },
-      },
-    },
-  },
-
-  {
-    "leoluz/nvim-dap-go",
-    ft = { "go" },
-    opts = {
-      dap_configurations = {
-        {
-          type = "go",
-          name = "Debug Attach remote",
-          mode = "remote",
-          request = "attach",
-          connect = {
-            host = "127.0.0.1",
-            port = "8181",
-          },
-        },
-      },
-      delve = {
-        port = "8181",
-      },
-    },
-  },
 }

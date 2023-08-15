@@ -3,7 +3,7 @@ return {
     "neovim/nvim-lspconfig",
     ---@class PluginLspOpts
     opts = function(_, opts)
-      opts.autoformat = false
+      opts.autoformat = true
       opts.servers = vim.tbl_deep_extend("force", opts.servers, {
         cssls = {},
         prismals = {},

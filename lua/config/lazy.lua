@@ -38,6 +38,7 @@ require("lazy").setup({
 
     -- import/override with your plugins
     { import = "plugins" },
+    { import = "plugins.lang" },
 
     --disable plugins
     { "folke/flash.nvim", enabled = false },

@@ -68,7 +68,7 @@ return {
     event = "VeryLazy",
     config = function()
       local harpoon = require("harpoon.ui")
-      Map("<leader>m", require("harpoon.mark").add_file)
+      Map("<leader>M", require("harpoon.mark").add_file)
       Map("mm", harpoon.toggle_quick_menu)
       Map("<A-h>", harpoon.nav_prev, { desc = "Harpoon previous" })
       Map("<A-l>", harpoon.nav_next, { desc = "Harpoon next" })

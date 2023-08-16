@@ -6,7 +6,7 @@ local colors = {
   rose = "rose-pine",
 }
 
-local colorscheme = colors.github
+local colorscheme = colors.catppuccin
 
 local function is_enabled(color)
   return colorscheme == colors[color]

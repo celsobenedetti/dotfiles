@@ -27,6 +27,7 @@ return {
     opts = function(_, opts)
       local nls = require("null-ls")
       table.insert(opts.sources, nls.builtins.formatting.sqlfluff.with({ extra_args = { "--dialect", "tsql" } }))
+      table.insert(opts.sources, nls.builtins.formatting.black)
       table.insert(opts.sources, nls.builtins.diagnostics.shellcheck)
       table.insert(opts.sources, nls.builtins.code_actions.shellcheck)
     end,

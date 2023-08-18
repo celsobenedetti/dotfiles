@@ -132,4 +132,15 @@ return {
       },
     },
   },
+  {
+    "akinsho/git-conflict.nvim",
+    version = "*",
+    config = true,
+    event = "VeryLazy",
+    keys = {
+      { "<leader>gC", ":GitConflictListQf<CR>" },
+      { "<leader>gO", ":GitConflictChooseOurs<CR>" },
+      { "<leader>gT", ":GitConflictChooseTheirs<CR>" },
+    },
+  },
 }

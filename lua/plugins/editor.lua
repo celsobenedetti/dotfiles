@@ -132,6 +132,7 @@ return {
       },
     },
   },
+
   {
     "akinsho/git-conflict.nvim",
     version = "*",
@@ -141,6 +142,19 @@ return {
       { "<leader>gC", ":GitConflictListQf<CR>" },
       { "<leader>gO", ":GitConflictChooseOurs<CR>" },
       { "<leader>gT", ":GitConflictChooseTheirs<CR>" },
+      { "[C", ":GitConflictPrevConflict<CR>" },
+      { "]C", ":GitConflictNextConflict<CR>" },
+    },
+  },
+
+  {
+    "ThePrimeagen/git-worktree.nvim",
+    opts = true,
+    config = function()
+      require("telescope").load_extension("git_worktree")
+    end,
+    keys = {
+      { "<leader>gw", ":Telescope git_worktree git_worktrees<CR>" },
     },
   },
 }

@@ -1,6 +1,8 @@
 return {
+  -- { "rcarriga/nvim-notify", enabled = false },
   {
     "folke/noice.nvim",
+    enabled = false,
     event = "VeryLazy",
     opts = function(_, opts)
       opts.presets = {

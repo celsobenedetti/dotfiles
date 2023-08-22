@@ -8,12 +8,6 @@ return {
       { "<leader>cm", false },
       { "<leader>ma", "<cmd>Mason<cr>", desc = "Mason" },
     },
-    opts = function(_, opts)
-      opts.ensure_installed = opts.ensure_installed or {}
-      vim.list_extend(opts.ensure_installed, {
-        "debugpy",
-      })
-    end,
   },
 
   {

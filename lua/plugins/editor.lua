@@ -66,10 +66,11 @@ return {
     "ThePrimeagen/harpoon",
     dependencies = { "nvim-lua/plenary.nvim" },
     event = "VeryLazy",
+    vscode = true,
     config = function()
       local harpoon = require("harpoon.ui")
       Map("<leader>M", require("harpoon.mark").add_file)
-      Map("mm", harpoon.toggle_quick_menu)
+      Map("<leader>hc", require("harpoon.mark").clear_all)
       Map("<A-h>", harpoon.nav_prev, { desc = "Harpoon previous" })
       Map("<A-l>", harpoon.nav_next, { desc = "Harpoon next" })
 
@@ -91,6 +92,10 @@ return {
         Map("m" .. power_fingers2[i], function()
           harpoon.nav_file(i)
         end)
+      end
+
+      if not vim.g.vscode then
+        Map("mm", harpoon.toggle_quick_menu)
       end
     end,
   },

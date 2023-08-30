@@ -7,7 +7,9 @@ return {
 
     local bundles = {}
 
-    if mason_registry.has_package("java-test") and mason_registry.has_package("java-debug-adapter") then
+    if
+      mason_registry.has_package("java-test") and mason_registry.has_package("java-debug-adapter")
+    then
       -- jdtls tools configuration for debugging support
       local java_test_pkg = mason_registry.get_package("java-test")
       local java_test_path = java_test_pkg:get_install_path()

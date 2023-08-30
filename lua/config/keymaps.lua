@@ -32,5 +32,13 @@ Map("k", track_position_before_relative_jump.up)
 Map("j", track_position_before_relative_jump.down)
 
 -- Markdown
-Map("<leader>xS", require("functions.markdown.misspelled_words").trouble, { desc = "Mispelled Words (Trouble)" })
-Map("<leader>ll", require("functions.markdown.toggle_checkbox").toggle, { desc = "Toggle to-do checkbox (Markdown)" })
+Map(
+  "<leader>xS",
+  require("functions.markdown.misspelled_words").trouble,
+  { desc = "Mispelled Words (Trouble)" }
+)
+Map(
+  "<leader>ll",
+  require("functions.markdown.toggle_checkbox").toggle,
+  { desc = "Toggle to-do checkbox (Markdown)" }
+)

@@ -50,6 +50,7 @@ return {
 
   {
     "schrieveslaach/sonarlint.nvim",
+    ft = { "python", "cpp", "java" },
     url = "https://gitlab.com/schrieveslaach/sonarlint.nvim",
     opts = {
       server = {

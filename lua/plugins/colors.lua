@@ -1,3 +1,5 @@
+local enableall = false
+
 local colors = {
   github = "github_dark_high_contrast",
   github_light = "github_light",
@@ -5,7 +7,7 @@ local colors = {
   mocha = "catppuccin",
   frappe = "catppuccin-frappe",
   tundra = "tundra",
-  rose = "rose-pine",
+  rose = "rose-pine-moon",
   dracula = "dracula-soft",
   nordic = "nordic",
 }
@@ -24,7 +26,7 @@ set guicursor+=i:blinkwait10
 end
 
 local function is_enabled(color)
-  return colorscheme == color
+  return enableall or colorscheme == color
 end
 
 return {

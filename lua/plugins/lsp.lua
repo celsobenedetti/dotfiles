@@ -8,7 +8,8 @@ return {
         cssls = {},
         prismals = {},
         angularls = {},
-        emmet_ls = { filetypes = { "html", "gohtml" } },
+        volar = {},
+        -- emmet_ls = { filetypes = { "html", "gohtml", "vue" } },
       })
 
       opts.setup = {
@@ -44,6 +45,7 @@ return {
         "shellcheck",
         "sqlfluff",
         "sonarlint-language-server",
+        "vue-language-server",
       })
     end,
   },

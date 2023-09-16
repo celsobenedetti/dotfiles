@@ -15,12 +15,22 @@ return {
 
   {
     "nvim-tree/nvim-web-devicons",
-    opts = {
-      [".Dockerfile"] = {
-        icon = "",
-        color = "#007acc",
-        name = "dockerfile_test",
-      },
-    },
+    config = function()
+      local icon = require("nvim-web-devicons")
+      icon.set_icon({
+        [".Dockerfile"] = {
+          icon = "",
+          color = "#007acc",
+          name = "dockerfile_test",
+        },
+      })
+      icon.set_icon({
+        proto = {
+          icon = "󰿘",
+          color = "#FF5C77",
+          name = "protobuf",
+        },
+      })
+    end,
   },
 }

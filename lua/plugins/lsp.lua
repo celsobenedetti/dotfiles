@@ -31,10 +31,9 @@ return {
         opts.sources,
         nls.builtins.formatting.sqlfluff.with({ extra_args = { "--dialect", "tsql" } })
       )
-      -- table.insert(opts.sources, nls.builtins.diagnostics.alex.with({ filetype = { "markdown" } }))
       table.insert(opts.sources, nls.builtins.formatting.black)
       table.insert(opts.sources, nls.builtins.diagnostics.shellcheck)
-      table.insert(opts.sources, nls.builtins.diagnostics.alex)
+      -- table.insert(opts.sources, nls.builtins.diagnostics.alex)
       table.insert(opts.sources, nls.builtins.code_actions.shellcheck)
     end,
   },

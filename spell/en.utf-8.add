@@ -110,3 +110,9 @@ SSR
 DownloadsUI
 Snyk
 vulns
+Kubernetes
+autoscaling
+runtimes
+etcd
+Kube
+kubelet

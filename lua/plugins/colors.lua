@@ -9,14 +9,15 @@ local colors = {
   frappe = "catppuccin-frappe",
   tundra = "tundra",
   rose = "rose-pine-moon",
-  dracula = "dracula-soft",
+  dracula = "dracula",
+  dracula_soft = "dracula-soft",
   nordic = "nordic",
   materialgruv = "gruvbox-material",
   gruvbaby = "gruvbox-baby",
   gruvbox = "gruvbox",
 }
 
-local colorscheme = colors.frappe
+local colorscheme = colors.mocha
 local gruvbox = { colors.gruvbox, colors.gruvbaby, colors.materialgruv, colors.nordic }
 local light = { colors.github_light, colors.tokyo_day }
 

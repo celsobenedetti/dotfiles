@@ -28,6 +28,8 @@ Map("<leader>dd", ":bdelete<cr>", { desc = "Delete buffer" })
 --hold on to register when pasting and replace text
 Map("p", '"_dP', { mode = "v", desc = "Paste without losing register" })
 
+Map("<leader>T", "<cmd>!make test<CR>", { desc = "Run make test" })
+
 local track_position_before_relative_jump = require("functions.relative_jump")
 Map("k", track_position_before_relative_jump.up)
 Map("j", track_position_before_relative_jump.down)

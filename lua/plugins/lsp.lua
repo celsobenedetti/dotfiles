@@ -9,6 +9,7 @@ return {
         prismals = {},
         angularls = {},
         volar = {},
+        bufls = {}, -- protobuf
         -- emmet_ls = { filetypes = { "html", "gohtml", "vue" } },
       })
 
@@ -32,9 +33,12 @@ return {
         nls.builtins.formatting.sqlfluff.with({ extra_args = { "--dialect", "tsql" } })
       )
       table.insert(opts.sources, nls.builtins.formatting.black)
+
       table.insert(opts.sources, nls.builtins.diagnostics.shellcheck)
-      -- table.insert(opts.sources, nls.builtins.diagnostics.alex)
       table.insert(opts.sources, nls.builtins.code_actions.shellcheck)
+
+      table.insert(opts.sources, nls.builtins.formatting.buf)
+      table.insert(opts.sources, nls.builtins.diagnostics.buf)
     end,
   },
 
@@ -47,6 +51,8 @@ return {
         "sqlfluff",
         "sonarlint-language-server",
         "vue-language-server",
+        "buf-language-server",
+        "buf",
       })
     end,
   },

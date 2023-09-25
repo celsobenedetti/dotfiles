@@ -1,4 +1,5 @@
-local enableall = false
+local enableall = true
+local bg = "dark"
 
 local colors = {
   github = "github_dark_high_contrast",
@@ -15,17 +16,21 @@ local colors = {
   materialgruv = "gruvbox-material",
   gruvbaby = "gruvbox-baby",
   gruvbox = "gruvbox",
+  everforest = "everforest",
+  nord = "nord",
+  oxocarbon = "oxocarbon",
+  zen = "zenbones",
 }
 
-local colorscheme = colors.mocha
+local colorscheme = colors.oxocarbon
 local gruvbox = { colors.gruvbox, colors.gruvbaby, colors.materialgruv, colors.nordic }
 local light = { colors.github_light, colors.tokyo_day }
 
 local function check_black_cursor(theme)
   for _, v in pairs(light) do
-    if theme == v then
+    if theme == v or bg == "light" then
       vim.cmd([[
-highlight Cursor guifg=white guibg=black
+highlight Cursor guifg=white guibg=#2f1e4d
 highlight iCursor guifg=white guibg=steelblue
 set guicursor=n-v-c:block-Cursor
 set guicursor+=i:ver100-iCursor
@@ -36,6 +41,8 @@ set guicursor+=i:blinkwait10
   end
 end
 check_black_cursor(colorscheme)
+
+vim.opt.background = bg
 
 local function is_enabled(themes)
   if type(themes) == "table" then
@@ -66,7 +73,20 @@ return {
   { "sam4llis/nvim-tundra", enabled = is_enabled(colors.tundra) },
   { "Mofiqul/dracula.nvim", config = true, enabled = is_enabled(colors.dracula) },
   { "AlexvZyl/nordic.nvim", enabled = is_enabled(colors.nordic) },
+
   { "sainnhe/gruvbox-material", enabled = is_enabled(gruvbox) },
   { "luisiacc/gruvbox-baby", enabled = is_enabled(gruvbox) },
   { "ellisonleao/gruvbox.nvim", enabled = is_enabled(gruvbox) },
+
+  { "sainnhe/everforest", enabled = is_enabled(colors.everforest) },
+  { "shaunsingh/nord.nvim", enabled = is_enabled(colors.nord) },
+  { "nyoom-engineering/oxocarbon.nvim", enabled = is_enabled(colors.oxocarbon) },
+  {
+    "mcchrish/zenbones.nvim",
+    enabled = is_enabled(colors.zen),
+    config = function()
+      vim.g.zenbones_compat = 1
+    end,
+    dependencies = { "rktjmp/lush.nvim" },
+  },
 }

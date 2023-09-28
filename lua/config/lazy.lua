@@ -43,6 +43,7 @@ require("lazy").setup({
     --disable plugins
     { "folke/flash.nvim", enabled = false },
     { "echasnovski/mini.surround", enabled = false },
+    { "lukas-reineke/indent-blankline.nvim", enabled = false },
   },
   defaults = {
     lazy = false,

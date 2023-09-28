@@ -117,3 +117,8 @@ etcd
 Kube
 kubelet
 config
+CQRS
+MongoDB
+MySQL
+MySQL
+DDD

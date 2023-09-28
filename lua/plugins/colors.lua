@@ -2,7 +2,8 @@ local enableall = true
 local bg = "dark"
 
 local colors = {
-  github = "github_dark_high_contrast",
+  github = "github_dark",
+  github_dark = "github_dark_high_contrast",
   github_light = "github_light",
   tokyo = "tokyonight",
   tokyo_day = "tokyonight-day",
@@ -19,10 +20,9 @@ local colors = {
   everforest = "everforest",
   nord = "nord",
   oxocarbon = "oxocarbon",
-  zen = "zenbones",
 }
 
-local colorscheme = colors.oxocarbon
+local colorscheme = colors.github
 local gruvbox = { colors.gruvbox, colors.gruvbaby, colors.materialgruv, colors.nordic }
 local light = { colors.github_light, colors.tokyo_day }
 
@@ -81,12 +81,4 @@ return {
   { "sainnhe/everforest", enabled = is_enabled(colors.everforest) },
   { "shaunsingh/nord.nvim", enabled = is_enabled(colors.nord) },
   { "nyoom-engineering/oxocarbon.nvim", enabled = is_enabled(colors.oxocarbon) },
-  {
-    "mcchrish/zenbones.nvim",
-    enabled = is_enabled(colors.zen),
-    config = function()
-      vim.g.zenbones_compat = 1
-    end,
-    dependencies = { "rktjmp/lush.nvim" },
-  },
 }

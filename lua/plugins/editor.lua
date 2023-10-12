@@ -49,13 +49,6 @@ return {
   },
 
   {
-    "nvim-lualine/lualine.nvim",
-    opts = function(_, opts)
-      table.insert(opts.sections.lualine_x, require("functions.lualine").get_lsp_client_list)
-    end,
-  },
-
-  {
     "simrat39/symbols-outline.nvim",
     cmd = "SymbolsOutline",
     keys = { { "<leader>sO", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },

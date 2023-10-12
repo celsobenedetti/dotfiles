@@ -18,6 +18,7 @@ Map("n", "nzz", { desc = "Jump to next occurence and center" })
 Map("N", "Nzz", { desc = "Jumpt to prev occurence and center" })
 
 Map("p", '"_dP', { mode = "v", desc = "Paste without losing register" }) --hold on to register when pasting and replace text
+Map("<leader>p", '"_dP', { mode = "v", desc = "Paste without losing register" }) --hold on to register when pasting and replace text
 Map("jk", "<esc>", { mode = "i", desc = "Escape insert mode" }) --hold on to register when pasting and replace text
 
 Map("<leader>wq", "<cmd>wqa<cr>", { desc = "Save all buffers" })

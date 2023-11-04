@@ -52,7 +52,7 @@ return {
 
         local jdtls = require("jdtls")
         local jdtls_config = vim.tbl_deep_extend("force", opts, {
-          on_attach = require("lazyvim.util").on_attach(function(client, buffer)
+          on_attach = require("lazyvim.util").lsp.on_attach(function(client, buffer)
             -- vim.keymap.set("n", "<leader>ct", function()
             --   require("jdtls").pick_test({ bufnr = buffer, after_test = print_test_results })
             -- end, { buffer = buffer, desc = "Run Test" })

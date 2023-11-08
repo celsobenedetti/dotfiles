@@ -13,9 +13,10 @@ vim.api.nvim_create_user_command(
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "*",
   callback = function()
-    vim.cmd("setlocal formatoptions-=cro")
+    vim.cmd("setlocal formatoptions-=cro") -- Stop comment continuation on line below
+    vim.cmd("TSDisable highlight") -- Disable TreeSitter highlighting
   end,
-  desc = "Stop comment continuation on line below",
+  desc = "Run on every file",
 })
 
 vim.api.nvim_create_autocmd("BufRead", {

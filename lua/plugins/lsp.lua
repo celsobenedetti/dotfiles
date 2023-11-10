@@ -4,12 +4,15 @@ return {
     ---@class PluginLspOpts
     opts = function(_, opts)
       opts.servers = vim.tbl_deep_extend("force", opts.servers, {
-        cssls = {},
         prismals = {},
-        angularls = {},
-        volar = {},
         bufls = {}, -- protobuf
-        -- emmet_ls = { filetypes = { "html", "gohtml", "vue" } },
+
+        -- web
+        html = {},
+        cssls = { filetypes = { "html", "gohtml", "vue" } },
+        emmet_ls = { filetypes = { "html", "gohtml", "vue" } },
+        volar = {},
+        angularls = {},
       })
 
       opts.setup = {
@@ -52,6 +55,7 @@ return {
         "sqlfluff",
         "buf-language-server",
         "buf",
+        "html-lsp",
       })
     end,
   },

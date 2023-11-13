@@ -22,7 +22,7 @@ local colors = {
   oxocarbon = "oxocarbon",
 }
 
-local colorscheme = colors.tokyo
+local colorscheme = colors.gruvbaby
 
 local gruvbox = { colors.gruvbox, colors.gruvbaby, colors.materialgruv, colors.nordic }
 local light = { colors.github_light, colors.tokyo_day }

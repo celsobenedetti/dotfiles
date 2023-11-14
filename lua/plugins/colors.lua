@@ -20,6 +20,7 @@ local colors = {
   everforest = "everforest",
   nord = "nord",
   oxocarbon = "oxocarbon",
+  solarized = "solarized-osaka",
 }
 
 local colorscheme = colors.gruvbaby
@@ -82,4 +83,11 @@ return {
   { "sainnhe/everforest", enabled = is_enabled(colors.everforest) },
   { "shaunsingh/nord.nvim", enabled = is_enabled(colors.nord) },
   { "nyoom-engineering/oxocarbon.nvim", enabled = is_enabled(colors.oxocarbon) },
+  {
+    "craftzdog/solarized-osaka.nvim",
+    enabled = is_enabled(colors.solarzied),
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
 }

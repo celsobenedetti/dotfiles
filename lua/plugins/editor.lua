@@ -151,6 +151,4 @@ return {
       { "<leader>gw", ":Telescope git_worktree git_worktrees<CR>" },
     },
   },
-
-  { "b0o/incline.nvim", config = true },
 }

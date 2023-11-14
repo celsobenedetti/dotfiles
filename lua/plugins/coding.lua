@@ -46,4 +46,13 @@ return {
       { "<leader>uC", require("functions.cmp").toggle, { desc = "Toggle autocompletion (cmp)" } },
     },
   },
+
+  {
+    "stevearc/conform.nvim",
+    opts = function(_, opts)
+      opts.formatters.goimports = {
+        prepend_args = { "-local", "github.com/celsobenedetti/" },
+      }
+    end,
+  },
 }

@@ -23,7 +23,7 @@ local colors = {
   solarized = "solarized-osaka",
 }
 
-local colorscheme = colors.gruvbaby
+local colorscheme = colors.tokyo
 
 local gruvbox = { colors.gruvbox, colors.gruvbaby, colors.materialgruv, colors.nordic }
 local light = { colors.github_light, colors.tokyo_day }

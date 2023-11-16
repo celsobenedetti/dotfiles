@@ -36,10 +36,6 @@ Map("p", '"_dP', { mode = "v", desc = "Paste without losing register" })
 Map("dw", "vbd", { desc = "Delete word backwards" })
 Map("cw", "vbc", { desc = "Delete word backwards and go to insert mode" })
 
--- cicle tas
-Map("<tab>", ":tabnext<Return>", { desc = "Next tab" })
-Map("<s-tab>", ":tabprev<Return>", { desc = "Prev tab" })
-
 Map("<leader>T", "<cmd>!make test<CR>", { desc = "Run make test" })
 
 local track_position_before_relative_jump = require("functions.relative_jump")

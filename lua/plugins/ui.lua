@@ -12,6 +12,7 @@ return {
 
       -- ignore notifications which contain any of these
       local ignore_notifications = {
+        { "notify", "No information available" },
         { "notify", "Config Change" },
         { "msg_show", "Keyboard interrupt" },
         { "msg_show", ":qa" },

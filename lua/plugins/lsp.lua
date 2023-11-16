@@ -26,24 +26,6 @@ return {
     end,
   },
 
-  -- {
-  --   "nvimtools/none-ls.nvim",
-  --   opts = function(_, opts)
-  --     local nls = require("null-ls")
-  --     table.insert(
-  --       opts.sources,
-  --       nls.builtins.formatting.sqlfluff.with({ extra_args = { "--dialect", "tsql" } })
-  --     )
-  --     table.insert(opts.sources, nls.builtins.formatting.black)
-  --
-  --     table.insert(opts.sources, nls.builtins.diagnostics.shellcheck)
-  --     table.insert(opts.sources, nls.builtins.code_actions.shellcheck)
-  --
-  --     table.insert(opts.sources, nls.builtins.formatting.buf)
-  --     table.insert(opts.sources, nls.builtins.diagnostics.buf)
-  --   end,
-  -- },
-
   {
     "williamboman/mason.nvim",
     opts = function(_, opts)
@@ -57,6 +39,16 @@ return {
         "buf",
         "html-lsp",
       })
+    end,
+  },
+
+  {
+    "mfussenegger/nvim-lint",
+    optional = true,
+    opts = function(_, opts)
+      opts.linters_by_ft = {
+        zsh = { "shellcheck" },
+      }
     end,
   },
 }

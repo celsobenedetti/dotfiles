@@ -48,6 +48,8 @@ return {
     opts = function(_, opts)
       opts.linters_by_ft = {
         zsh = { "shellcheck" },
+        sh = { "shellcheck" },
+        bash = { "shellcheck" },
       }
     end,
   },

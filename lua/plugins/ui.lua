@@ -1,7 +1,10 @@
 return {
-  { "rcarriga/nvim-notify", opts = {
-    timeout = 10000,
-  } },
+  {
+    "rcarriga/nvim-notify",
+    opts = {
+      timeout = 5000, -- 5s
+    },
+  },
   {
     "folke/noice.nvim",
     opts = function(_, opts)
@@ -14,6 +17,7 @@ return {
       local ignore_notifications = {
         { "notify", "No information available" },
         { "notify", "Config Change" },
+        { "msg_show", "invalid node type" },
         { "msg_show", "Keyboard interrupt" },
         { "msg_show", ":qa" },
       }

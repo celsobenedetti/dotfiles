@@ -1,4 +1,11 @@
 return {
+  {
+    "mbbill/undotree",
+    event = "VeryLazy",
+    keys = {
+      { "<leader>U", "<cmd>UndotreeToggle<cr>", desc = "Undotree Toggle" },
+    },
+  },
   { "wakatime/vim-wakatime", event = "VeryLazy" },
   { "christoomey/vim-tmux-navigator", event = "VeryLazy" },
 

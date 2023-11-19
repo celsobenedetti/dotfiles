@@ -90,4 +90,14 @@ return {
     priority = 1000,
     opts = {},
   },
+  {
+    "folke/tokyonight.nvim",
+    opts = {
+      transparent = true,
+      styles = {
+        sidebars = "transparent",
+        floats = "transparent",
+      },
+    },
+  },
 }

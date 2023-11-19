@@ -34,3 +34,12 @@ vim.api.nvim_create_autocmd("BufRead", {
   end,
   desc = "Set markdown syntax on markdown files",
 })
+
+vim.api.nvim_create_autocmd("BufRead", {
+  pattern = "*.json*",
+  callback = function()
+    local conceallevel = vim.o.conceallevel > 0 and vim.o.conceallevel or 3
+    require("lazyvim.util").toggle("conceallevel", false, { 0, conceallevel })
+  end,
+  desc = "Run on json files",
+})

@@ -10,11 +10,10 @@ vim.api.nvim_create_user_command(
 )
 
 -- run on every file
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "*",
+vim.api.nvim_create_autocmd("VimEnter", {
   callback = function()
     vim.cmd("setlocal formatoptions-=cro") -- Stop comment continuation on line below
-    vim.cmd("TSDisable highlight") -- Disable TreeSitter highlighting
+    -- vim.cmd("TSDisable highlight") -- Disable TreeSitter highlighting
   end,
   desc = "Run on every file",
 })

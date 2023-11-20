@@ -1,5 +1,6 @@
 local enableall = true
 local bg = "dark"
+local transparent = true
 
 local colors = {
   github = "github_dark",
@@ -10,7 +11,8 @@ local colors = {
   mocha = "catppuccin",
   frappe = "catppuccin-frappe",
   tundra = "tundra",
-  rose = "rose-pine-moon",
+  rose = "rose-pine",
+  rosemoon = "rose-pine-moon",
   dracula = "dracula",
   dracula_soft = "dracula-soft",
   nordic = "nordic",
@@ -23,7 +25,7 @@ local colors = {
   solarized = "solarized-osaka",
 }
 
-local colorscheme = colors.tokyo
+local colorscheme = colors.rose
 
 local gruvbox = { colors.gruvbox, colors.gruvbaby, colors.materialgruv, colors.nordic }
 local light = { colors.github_light, colors.tokyo_day }
@@ -71,7 +73,15 @@ return {
     "projekt0n/github-nvim-theme",
     enabled = true,
   },
-  { "rose-pine/neovim", enabled = is_enabled(colors.rose) },
+  {
+    "rose-pine/neovim",
+    main = "rose-pine",
+    enabled = is_enabled(colors.rose),
+    opts = {
+      disable_background = transparent,
+      disable_italics = true,
+    },
+  },
   { "sam4llis/nvim-tundra", enabled = is_enabled(colors.tundra) },
   { "Mofiqul/dracula.nvim", config = true, enabled = is_enabled(colors.dracula) },
   { "AlexvZyl/nordic.nvim", enabled = is_enabled(colors.nordic) },
@@ -93,7 +103,7 @@ return {
   {
     "folke/tokyonight.nvim",
     opts = {
-      transparent = true,
+      transparent = transparent,
       styles = {
         sidebars = "transparent",
         floats = "transparent",

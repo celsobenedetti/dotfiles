@@ -21,6 +21,7 @@ return {
       local ignore_notifications = {
         { "notify", "No information available" },
         { "notify", "Config Change" },
+        { "notify", "'NotifyBackground' has no background highlight" },
         { "msg_show", "invalid node type" },
         { "msg_show", "Keyboard interrupt" },
         { "msg_show", ":qa" },

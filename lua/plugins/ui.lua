@@ -13,6 +13,10 @@ return {
       opts.presets.command_palette = false -- position the cmdline and popupmenu together
       opts.presets.long_message_to_split = true -- long messages will be sent to a split
 
+      opts.lsp.signature = {
+        enabled = false, -- use lsp_signature.nvim instead
+      }
+
       -- ignore notifications which contain any of these
       local ignore_notifications = {
         { "notify", "No information available" },

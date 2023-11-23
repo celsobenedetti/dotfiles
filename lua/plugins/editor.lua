@@ -7,7 +7,16 @@ return {
     },
   },
   { "wakatime/vim-wakatime", event = "VeryLazy" },
-  { "christoomey/vim-tmux-navigator", event = "VeryLazy" },
+  {
+    "christoomey/vim-tmux-navigator",
+    event = "VeryLazy",
+    keys = {
+      { "<C-h>", ":TmuxNavigateLeft<CR>", desc = "Go to Left tmux pane" },
+      { "<C-j>", ":TmuxNavigateDown<CR>", desc = "Go to Down tmux pane" },
+      { "<C-k>", ":TmuxNavigateUp<CR>", desc = "Go to Up tmux pane" },
+      { "<C-l>", ":TmuxNavigateRight<CR>", desc = "Go to Right tmux pane" },
+    },
+  },
 
   {
     "williamboman/mason.nvim",

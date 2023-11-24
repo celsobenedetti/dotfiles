@@ -22,6 +22,7 @@ return {
         { "notify", "No information available" },
         { "notify", "Config Change" },
         { "notify", "'NotifyBackground' has no background highlight" },
+        { "notify", "Set conceallevel to 0" },
         { "msg_show", "invalid node type" },
         { "msg_show", "Keyboard interrupt" },
         { "msg_show", ":qa" },

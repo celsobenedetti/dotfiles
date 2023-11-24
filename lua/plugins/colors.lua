@@ -1,4 +1,4 @@
-local enableall = true
+local enableall = false
 local bg = "dark"
 local transparent = false
 
@@ -27,6 +27,7 @@ local colors = {
 
 local colorscheme = colors.rose
 
+local github = { colors.github_light, colors.github, colors.github_dark }
 local gruvbox = { colors.gruvbox, colors.gruvbaby, colors.materialgruv, colors.nordic }
 local light = { colors.github_light, colors.tokyo_day }
 
@@ -71,7 +72,7 @@ return {
 
   {
     "projekt0n/github-nvim-theme",
-    enabled = true,
+    enabled = is_enabled(github),
   },
   {
     "rose-pine/neovim",

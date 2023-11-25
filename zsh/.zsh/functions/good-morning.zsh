@@ -13,9 +13,6 @@ morning () {
     git pull
     echo "Updating dotfiles..."
     cd ~/.dotfiles/ || exit
-    git pull
-    echo "Updating nvim config..."
-    cd ~/.config/nvim/ || exit
     git restore lazy-lock.json # annoying to deal with
     git pull
     lazy

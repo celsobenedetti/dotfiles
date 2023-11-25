@@ -1,9 +1,0 @@
-#!/bin/bash
-
-cd /home/celso/documents/zk
-
-output=$(zk list --interactive -q | head -n 1)
-
-filename=$(grep -oE '[a-zA-Z0-9\-]+\.md' <<< $output)
-
-glow -p $filename

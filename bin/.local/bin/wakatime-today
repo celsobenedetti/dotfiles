@@ -1,6 +1,0 @@
-#!/bin/bash
-
-while true; do
-    echo "$(wakatime-cli --today > /tmp/wakatime_today.txt)";
-    sleep 60;
-done

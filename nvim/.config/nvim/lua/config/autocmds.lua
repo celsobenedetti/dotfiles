@@ -4,7 +4,7 @@
 
 local all = nil --  vim.api.nvim_create_augroup("AllFilesGroup", { clear = true })
 local markdown = vim.api.nvim_create_augroup("MarkdownGroup", { clear = true })
-local typeScript = vim.api.nvim_create_augroup("TypeScriptGroup", { clear = true })
+local typeScript = nil -- vim.api.nvim_create_augroup("TypeScriptGroup", { clear = true })
 local json = vim.api.nvim_create_augroup("JSONGroup", { clear = true })
 
 -- All files --------------------------------------------------------------

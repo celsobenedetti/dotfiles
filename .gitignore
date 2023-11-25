@@ -1,1 +1,3 @@
-git/.gituser-work
+# all work files, except encrypted ones
+work/*
+!work/*.crypt

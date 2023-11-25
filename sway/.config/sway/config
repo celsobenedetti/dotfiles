@@ -75,14 +75,13 @@ for_window [title="scratchpad"] floating enable, move workspace current
 bindsym $mod+w exec "~/.local/bin/sway-select-window.sh"
 
 ### Output configuration
-#
+
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # output * bg ~/Pictures/cyberpunk/takeaway.webp fill
 # output * bg ~/Pictures/cyberpunk/tokyo.jpg fill
 # output * bg ~/Pictures/sunset.jpg fill
 # output * bg ~/Pictures/cyberpunk/tokyo.jpg fill
 output * bg /usr/share/backgrounds/gnome/adwaita-d.webp fill
-
 
 set $monitor DP-1
 set $laptop eDP-1
@@ -94,6 +93,8 @@ exec_always /home/celso/.local/bin/sway_check_monitor.sh
 
 exec swaymsg "workspace 1; exec alacritty;"
 exec swaymsg "workspace 2; exec brave-browser;"
+exec swaymsg "workspace 10; exec gnome-control-center calendar;"
+exec swaymsg "workspace 10; exec gnome-system-monitor;"
 
 # master stack tiling layout
 # https://github.com/ViliamV/stacki3

@@ -67,7 +67,7 @@ alias ze="zk edit -i"
 alias today="date +%Y-%m-%d"
 
 export NAP_HOME="~/.nap"
-export NOTES=~/documents/notes
+export NOTES=~/Documents/notes
 export TODO=$NOTES/TODO.md
 
 alias src='source ~/.zshrc'

@@ -8,7 +8,7 @@ lazy (){
 
 morning () {
     current_dir=$(pwd)
-    cd ~/documents/notes/ || exit
+    cd ~/Documents/notes/ || exit
     echo "Updating notes..."
     git pull
     echo "Updating dotfiles..."

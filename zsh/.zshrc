@@ -33,7 +33,7 @@ source $ZSH/oh-my-zsh.sh
 unalias ll
 unalias gcm
 
-source ~/.dotfiles/zsh/path.zsh
+source ~/.zsh/path.zsh
 
 source ~/.dotfiles/zsh/.zsh/functions/git.zsh
 source ~/.dotfiles/zsh/.zsh/functions/fzf.zsh

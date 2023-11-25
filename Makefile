@@ -1,4 +1,4 @@
-DIRS = alacritty bin git gtk nvim snippets sway tmux wofi zsh
+DIRS = alacritty bin git gtk nvim sway tmux wofi zsh
 
 link:
 	stow $(DIRS)

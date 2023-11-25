@@ -10,7 +10,7 @@ return {
     },
     config = function()
       require("luasnip.loaders.from_vscode").lazy_load({
-        paths = { "~/.local/share/nvim/snippets" },
+        paths = { "~/.config/nvim/snippets" },
       })
     end,
   },

@@ -13,7 +13,7 @@ morning () {
     git pull
     echo "Updating dotfiles..."
     cd ~/.dotfiles/ || exit
-    git restore lazy-lock.json # annoying to deal with
+    git restore nvim/.config/nvim/lazy-lock.json # annoying to deal with
     git pull
     lazy
     cd "$current_dir" || exit

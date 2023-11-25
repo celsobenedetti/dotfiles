@@ -4,7 +4,7 @@ return {
     ---@class PluginLspOpts
     opts = function(_, opts)
       opts.servers = vim.tbl_deep_extend("force", opts.servers, {
-        prismals = {},
+        -- prismals = {},
         bufls = {}, -- protobuf
 
         -- web
@@ -19,6 +19,10 @@ return {
         zk = function()
           require("zk").setup()
           return true --let zk.nvim handle zk lsp
+        end,
+
+        tailwindcss = function()
+          return Disable_Tailwind
         end,
 
         jdtls = require("config.jdtls").setup,

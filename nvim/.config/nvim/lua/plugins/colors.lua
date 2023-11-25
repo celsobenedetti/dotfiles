@@ -1,6 +1,6 @@
 local enableall = false
 local bg = "dark"
-local transparent = true
+local transparent = false
 
 local colors = {
   github = "github_dark",

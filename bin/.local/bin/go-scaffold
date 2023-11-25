@@ -1,0 +1,6 @@
+#!/bin/bash
+
+go build -C ~/local/go-blueprint/ -o ~/.local/bin/go-blueprint
+
+# add args to following command
+~/.local/bin/go-blueprint $@

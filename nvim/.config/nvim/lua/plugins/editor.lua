@@ -1,15 +1,13 @@
 return {
   {
     "mbbill/undotree",
-    event = "VeryLazy",
     keys = {
       { "<leader>U", "<cmd>UndotreeToggle<cr>", desc = "Undotree Toggle" },
     },
   },
-  { "wakatime/vim-wakatime", event = "VeryLazy" },
+  { "wakatime/vim-wakatime" },
   {
     "christoomey/vim-tmux-navigator",
-    event = "VeryLazy",
     keys = {
       { "<C-h>", ":TmuxNavigateLeft<CR>", desc = "Go to Left tmux pane" },
       { "<C-j>", ":TmuxNavigateDown<CR>", desc = "Go to Down tmux pane" },
@@ -74,7 +72,6 @@ return {
   {
     "ThePrimeagen/harpoon",
     dependencies = { "nvim-lua/plenary.nvim" },
-    event = "VeryLazy",
     vscode = true,
     config = function()
       local harpoon = require("harpoon.ui")
@@ -116,7 +113,14 @@ return {
       opts.ensure_installed = opts.ensure_installed or {}
       vim.list_extend(opts.ensure_installed, {
         "css",
+        "http",
+        "hurl",
+        "make",
+        "mermaid",
         "sql",
+        "proto",
+        "vue",
+        "xml",
       })
     end,
   },
@@ -147,7 +151,6 @@ return {
     "akinsho/git-conflict.nvim",
     version = "*",
     config = true,
-    event = "VeryLazy",
     keys = {
       { "<leader>gC", ":GitConflictListQf<CR>" },
       { "<leader>gO", ":GitConflictChooseOurs<CR>" },

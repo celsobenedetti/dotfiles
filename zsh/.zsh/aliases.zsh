@@ -3,7 +3,6 @@
 BROWSER="brave-browser"
 
 alias t="npm run test"
-alias workspace="tmux-sessionizer"
 alias vim="nvim"
 alias vi='nvim .'
 # alias lazy='echo "lazy.nvim: Updating and syncing neovim plugins...";nvim --headless "+Lazy! sync" +qa; echo "lazy.nvim: Sync done!"'

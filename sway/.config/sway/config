@@ -44,7 +44,10 @@ default_floating_border pixel 1
 # disable borders on single window
 hide_edge_borders smart
 
-set $accent #c4a7e7 
+
+# @define-color rose #ebbcba;
+# @define-color iris #c4a7e7
+set $accent #ebbcba 
 
 # window focus
 # class                 border  backgr. text    indicator child_border                                                                     
@@ -72,7 +75,8 @@ bindsym $mod+colon exec dmenu_path | dmenu | xargs swaymsg exec --
 
 # for_window [workspace="^__scratchpad$"] floating enable, move workspace current
 for_window [title="scratchpad"] floating enable, move workspace current
-bindsym $mod+w exec "~/.local/bin/sway-select-window.sh"
+bindsym $mod+o exec "~/.local/bin/sway-select-window.sh"
+
 
 ### Output configuration
 
@@ -93,7 +97,7 @@ exec_always /home/celso/.local/bin/sway_check_monitor.sh
 
 exec swaymsg "workspace 1; exec alacritty;"
 exec swaymsg "workspace 2; exec brave-browser;"
-exec swaymsg "workspace 10; exec gnome-control-center calendar;"
+exec swaymsg "workspace 10; exec gnome-calendar;"
 exec swaymsg "workspace 10; exec gnome-system-monitor;"
 
 # master stack tiling layout
@@ -276,7 +280,7 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 
-bindsym $mod+s mode "resize"
+bindsym $mod+w mode "resize"
 
 #
 # Status Bar:

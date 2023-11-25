@@ -1,9 +1,9 @@
-# Config files handled with GNU stow
+# ~/.dotfiles
 
-- [Alacritty](https://github.com/alacritty/alacritty)
-- [tmux](https://github.com/tmux/tmux)
-- [Neovim](https://github.com/neovim/neovim)
-- [zsh](https://www.zsh.org/)
-- [zk](https://github.com/mickael-menu/zk)
+<samp><b>Celso's Linux config files</b></samp>
 
-![november-2023](./.github/2023-11-24.png)
+- Terminal centric workflow with [tmux](https://github.com/tmux/tmux) and [neovim](https://github.com/neovim/neovim) .
+- Managed with symlinks through [GNU stow](https://www.gnu.org/software/stow/)
+- Installed with [Ansible](https://github.com/celsobenedetti/debian-ansible/blob/main/tasks/dotfiles.yml) on a fresh machine
+
+![november-2023](./.github/2023-11-25.png)

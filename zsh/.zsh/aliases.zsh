@@ -73,3 +73,7 @@ alias src='source ~/.zshrc'
 alias zn="zk new -t"
 alias todo="nvim $TODO"
 alias mornin='morning'
+
+deadlinks(){
+    find "$1" -xtype l -delete
+}

@@ -34,6 +34,7 @@ unalias ll
 unalias gcm
 
 source ~/.zsh/path.zsh
+source ~/.zsh/aliases.zsh
 
 source ~/.dotfiles/zsh/.zsh/functions/git.zsh
 source ~/.dotfiles/zsh/.zsh/functions/fzf.zsh
@@ -43,6 +44,7 @@ source ~/.dotfiles/zsh/.zsh/functions/work.zsh
 source ~/.dotfiles/zsh/.zsh/functions/tmux.zsh
 source ~/.dotfiles/zsh/.zsh/functions/vim.zsh
 source ~/.dotfiles/zsh/.zsh/functions/zk.zsh
+
 
 # Enable emacs mode by default
 # bindkey -v
@@ -136,6 +138,7 @@ eval "$(pyenv virtualenv-init -)"
 
 # protobuf
 export PATH="/usr/local/protobuf/bin:$PATH"
+
 
 # Load Angular CLI autocompletion.
 # source <(ng completion script)

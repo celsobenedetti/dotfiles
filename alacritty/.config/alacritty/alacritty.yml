@@ -97,8 +97,8 @@ window:
 # Font configuration
 font:
   normal:
-    # family: JetBrainsMonoNL Nerd Font Mono
     family: MapleMono NF
+    # family: JetBrainsMonoNL Nerd Font Mono
     style: Regular
 
   bold:

@@ -25,6 +25,8 @@ COMMIT_TYPES=(
 	"🔒️ security"
 	"⚓ deploy"
 	"⚙️  config"
+	"📔 vim"
+	"🖥️ tmux"
 )
 
 # pick commit type

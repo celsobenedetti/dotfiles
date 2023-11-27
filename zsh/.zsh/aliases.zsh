@@ -12,7 +12,6 @@ alias tx="tmuxinator"
 alias dpip="~/.local/share/nvim/mason/packages/debugpy/venv/bin/pip"
 
 # https://github.com/bogem/dotfiles/blob/main/.aliases
-alias fdfind='fd'
 alias fd="fd -E=node_modules -E=temp -E=.DS_Store -E=.lock$ --no-ignore-vcs"
 
 alias chad-fd="fd -t f -E .git -E build/ -E target/ -E .next/ -E .angular/ -E dist/ -H | sed 's/ /\\ /g'"
@@ -61,7 +60,7 @@ alias rmvolumes='rm-docker-volumes'
 alias py='python3'
 
 alias tz='gotz --timezones "India:Asia/Calcutta,CST:America/Rio_Branco,Europe/Rome"'
-alias zo="zoxide"
+alias z="zoxide"
 alias ze="zk edit -i"
 alias today="date +%Y-%m-%d"
 
@@ -72,6 +71,7 @@ export TODO=$NOTES/TODO.md
 alias src='source ~/.zshrc'
 alias zn="zk new -t"
 alias todo="nvim $TODO"
+#alias fdfind='fd'
 alias mornin='morning'
 
 deadlinks(){

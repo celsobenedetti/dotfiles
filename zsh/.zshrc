@@ -1,3 +1,4 @@
+#!/bin/bash
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -28,7 +29,6 @@ export EDITOR='nvim'
 eval "$(direnv hook zsh)"
 
 source $ZSH/oh-my-zsh.sh
-
 
 unalias ll
 unalias gcm
@@ -64,44 +64,10 @@ export W="/mnt/c/Users/celso_benedetti/"
 export BROWSER=wslview
 
 # IF ON WSL
-if uname -r | grep -qi "microsoft"; then
-    alias code="~/.local/bin//code.sh"
-else
-fi
-
-#### functions ######################################
-surround_argument() {
-  local current_command=$BUFFER
-  BUFFER="$(echo "\$($current_command)")"
-  CURSOR=0
-}
-
-awk_first_arg(){
-  local current_command=$BUFFER
-  BUFFER="$(echo "$current_command awk '{print \$1}'")"
-  CURSOR=${#BUFFER}
-}
-
-insert_today(){
-  local current_command=$BUFFER
-  BUFFER="$(echo "$current_command \$(today)")"
-  CURSOR=${#BUFFER}
-}
-
-go_to_beginning(){ CURSOR=0 }
-go_to_end(){ CURSOR=${#BUFFER} }
-
-zle -N insert_today
-zle -N awk_first_arg
-zle -N surround_argument
-zle -N go_to_beginning
-zle -N go_to_end
-
-bindkey '^[t' insert_today
-bindkey '^[1' awk_first_arg
-bindkey '^[a' surround_argument
-bindkey '^A' go_to_beginning
-bindkey '^E' go_to_end
+# if uname -r | grep -qi "microsoft"; then
+#     alias code="~/.local/bin//code.sh"
+# else
+# fi
 
 #### functions ######################################
 #
@@ -142,3 +108,10 @@ export PATH="/usr/local/protobuf/bin:$PATH"
 
 # Load Angular CLI autocompletion.
 # source <(ng completion script)
+
+# bun completions
+[ -s "/home/celso/.bun/_bun" ] && source "/home/celso/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

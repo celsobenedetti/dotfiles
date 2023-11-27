@@ -25,10 +25,10 @@ local colors = {
   solarized = "solarized-osaka",
 }
 
-local colorscheme = colors.rose
+local colorscheme = colors.nord
 
 local github = { colors.github_light, colors.github, colors.github_dark }
-local gruvbox = { colors.gruvbox, colors.gruvbaby, colors.materialgruv, colors.nordic }
+local gruvbox = { colors.gruvbox, colors.gruvbaby, colors.materialgruv }
 local light = { colors.github_light, colors.tokyo_day }
 
 local function check_black_cursor(theme)
@@ -92,7 +92,13 @@ return {
   { "ellisonleao/gruvbox.nvim", enabled = is_enabled(gruvbox) },
 
   { "sainnhe/everforest", enabled = is_enabled(colors.everforest) },
-  { "shaunsingh/nord.nvim", enabled = is_enabled(colors.nord) },
+  {
+    "shaunsingh/nord.nvim",
+    enabled = is_enabled(colors.nord),
+    config = function()
+      vim.g.nord_italic = true
+    end,
+  },
   { "nyoom-engineering/oxocarbon.nvim", enabled = is_enabled(colors.oxocarbon) },
   {
     "craftzdog/solarized-osaka.nvim",

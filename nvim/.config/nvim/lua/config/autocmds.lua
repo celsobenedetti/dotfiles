@@ -2,7 +2,7 @@
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 -- Add any additional autocmds here
 
-local all = nil --  vim.api.nvim_create_augroup("AllFilesGroup", { clear = true })
+local all = vim.api.nvim_create_augroup("AllFilesGroup", { clear = true })
 local markdown = vim.api.nvim_create_augroup("MarkdownGroup", { clear = true })
 local typeScript = nil -- vim.api.nvim_create_augroup("TypeScriptGroup", { clear = true })
 local json = vim.api.nvim_create_augroup("JSONGroup", { clear = true })
@@ -13,7 +13,8 @@ if all then
   vim.api.nvim_create_autocmd({ "VimEnter" }, {
     callback = function()
       vim.cmd("setlocal formatoptions-=cro") -- Stop comment continuation on line below
-      vim.cmd("TSDisable highlight") -- Disable TreeSitter highlighting
+      vim.cmd("hi SpellBad guifg=#d8dee9")
+      -- vim.cmd("TSDisable highlight") -- Disable TreeSitter highlighting
     end,
     group = all,
     desc = "Set markdown syntax on markdown files",

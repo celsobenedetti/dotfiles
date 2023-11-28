@@ -64,10 +64,10 @@ export W="/mnt/c/Users/celso_benedetti/"
 export BROWSER=wslview
 
 # IF ON WSL
-# if uname -r | grep -qi "microsoft"; then
-#     alias code="~/.local/bin//code.sh"
-# else
-# fi
+if uname -r | grep -qi "microsoft"; then
+    alias code="~/.local/bin//code.sh"
+else
+fi
 
 #### functions ######################################
 #

@@ -101,7 +101,22 @@ return {
     "shaunsingh/nord.nvim",
     enabled = is_enabled(colors.nord),
     config = function()
-      vim.g.nord_italic = true
+      vim.g.nord_italic = false
+      require("headlines").setup({
+        markdown = {
+          headline_highlights = {
+            "Headline1",
+            "Headline2",
+            "Headline3",
+            "Headline4",
+            "Headline5",
+            "Headline6",
+          },
+          codeblock_highlight = "CodeBlock",
+          dash_highlight = "Dash",
+          quote_highlight = "Quote",
+        },
+      })
     end,
   },
   { "nyoom-engineering/oxocarbon.nvim", enabled = is_enabled(colors.oxocarbon) },

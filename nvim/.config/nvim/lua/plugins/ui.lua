@@ -23,6 +23,8 @@ return {
         { "notify", "Config Change" },
         { "notify", "'NotifyBackground' has no background highlight" },
         { "notify", "Set conceallevel to 0" },
+        { "msg_show", "search hit BOTTOM, continuing at TOP" },
+        { "msg_show", "Pattern not found" },
         { "msg_show", "invalid node type" },
         { "msg_show", "Keyboard interrupt" },
         { "msg_show", ":qa" },

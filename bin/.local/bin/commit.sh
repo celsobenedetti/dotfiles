@@ -40,7 +40,7 @@ TYPE=$(
 test -z "$TYPE" && exit 0
 
 # if -e is passed as command line argument, strip emoji
-if [[ $1 == "-e" ]]; then
+if ! [[ $1 == "-e" ]]; then
 	TYPE=$(echo "$TYPE" | awk '{print $2}')
 fi
 

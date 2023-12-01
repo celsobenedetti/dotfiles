@@ -4,6 +4,9 @@ return {
     keys = {
       { "<leader>U", "<cmd>UndotreeToggle<cr>", desc = "Undotree Toggle" },
     },
+    config = function()
+      vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+    end,
   },
   { "wakatime/vim-wakatime" },
   {
@@ -123,51 +126,5 @@ return {
         "xml",
       })
     end,
-  },
-
-  {
-    "ray-x/web-tools.nvim",
-    ft = { "hurl" },
-    keys = {
-      { "<leader>rq", ":HurlRun<CR>", mode = "v" },
-    },
-    opts = {
-      keymaps = {
-        rename = nil, -- by default use same setup of lspconfig
-        repeat_rename = ".", -- . to repeat
-      },
-      hurl = { -- hurl default
-        show_headers = false, -- do not show http headers
-        floating = false, -- use floating windows (need guihua.lua)
-        formatters = { -- format the result by filetype
-          json = { "jq" },
-          html = { "prettier", "--parser", "html" },
-        },
-      },
-    },
-  },
-
-  {
-    "akinsho/git-conflict.nvim",
-    version = "*",
-    config = true,
-    keys = {
-      { "<leader>gC", ":GitConflictListQf<CR>" },
-      { "<leader>gO", ":GitConflictChooseOurs<CR>" },
-      { "<leader>gT", ":GitConflictChooseTheirs<CR>" },
-      { "[C", ":GitConflictPrevConflict<CR>" },
-      { "]C", ":GitConflictNextConflict<CR>" },
-    },
-  },
-
-  {
-    "ThePrimeagen/git-worktree.nvim",
-    opts = true,
-    config = function()
-      require("telescope").load_extension("git_worktree")
-    end,
-    keys = {
-      { "<leader>gw", ":Telescope git_worktree git_worktrees<CR>" },
-    },
   },
 }

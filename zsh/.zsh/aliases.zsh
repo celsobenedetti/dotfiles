@@ -41,6 +41,8 @@ alias lt='exa -T --level=2 --icons -I=".git|node_modules" --git -a'
 alias dust="dust -c"
 alias clip="xclip -sel clip"
 
+alias yac="httpyac"
+
 #
 alias lg='lazygit'
 alias lad="lazydocker"
@@ -71,7 +73,6 @@ export NOTES=~/Documents/notes
 export TODO=$NOTES/TODO.md
 
 alias src='source ~/.zshrc'
-alias zn="zk new -t"
 alias todo="nvim $TODO"
 #alias fdfind='fd'
 alias mornin='morning'

@@ -4,8 +4,8 @@ local bg = "dark"
 local transparent = false
 
 local colors = {
-  github = "github_dark",
-  github_dark = "github_dark_high_contrast",
+  github = "github_dark_dimmed",
+  github_dark = "github_dark",
   github_light = "github_light",
   tokyo = "tokyonight",
   tokyo_day = "tokyonight-day",
@@ -23,10 +23,10 @@ local colors = {
   everforest = "everforest",
   nord = "nord",
   oxocarbon = "oxocarbon",
-  solarized = "solarized-osaka",
+  sonokai = "sonokai",
 }
 
-local colorscheme = colors.nord
+local colorscheme = colors.frappe
 
 if hostname == "debian" then
   colorscheme = colors.rose
@@ -120,13 +120,8 @@ return {
     end,
   },
   { "nyoom-engineering/oxocarbon.nvim", enabled = is_enabled(colors.oxocarbon) },
-  {
-    "craftzdog/solarized-osaka.nvim",
-    enabled = is_enabled(colors.solarzied),
-    lazy = false,
-    priority = 1000,
-    opts = {},
-  },
+  { "sainnhe/sonokai", enabled = is_enabled(colors.sonokai) },
+
   {
     "folke/tokyonight.nvim",
     opts = {

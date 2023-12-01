@@ -8,10 +8,8 @@ if [[ $# -eq 1 ]]; then
 else
 	dirs=$(
 		fd . ~ ~/projects ~/work ~/Documents/ ~/local/interesting/ ~/local \
-			/mnt/c/Users/celso_benedetti/Projects \
 			/mnt/c/Users/celso_benedetti/work \
 			--min-depth 1 --max-depth 1 --type d 2>/dev/null &
-		echo "/mnt/c/Users/celso_benedetti/Projects" &
 		echo "$HOME/.dotfiles" &
 		echo "$HOME/.local/share/nvim/lazy"
 	)

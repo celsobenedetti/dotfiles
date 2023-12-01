@@ -23,6 +23,7 @@ return {
         { "notify", "Config Change" },
         { "notify", "'NotifyBackground' has no background highlight" },
         { "notify", "Set conceallevel to 0" },
+        { "notify", "Plugin Updates" },
         { "msg_show", "search hit BOTTOM, continuing at TOP" },
         { "msg_show", "Pattern not found" },
         { "msg_show", "invalid node type" },
@@ -84,8 +85,6 @@ return {
 
   {
     "lukas-reineke/headlines.nvim",
-    ft = "markdown",
-    dependencies = "nvim-treesitter/nvim-treesitter",
     opts = {
       markdown = {
         fat_headlines = false,

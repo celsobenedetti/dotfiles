@@ -17,20 +17,22 @@ Map("<leader>la", "<cmd>Lazy<cr>", { desc = "Open lazy.nvim" })
 Map("n", "nzz", { desc = "Jump to next occurence and center" })
 Map("N", "Nzz", { desc = "Jumpt to prev occurence and center" })
 
-Map("p", '"_dP', { mode = "v", desc = "Paste without losing register" }) --hold on to register when pasting and replace text
+Map("p", function()
+  -- used to mitigate LuaSnip pasting when pressing p
+  if require("luasnip").in_snippet() then
+    vim.api.nvim_feedkeys("p", "n", false)
+  else
+    vim.api.nvim_feedkeys('"_dP', "n", false)
+  end
+end, { mode = "v", desc = "Paste without losing register" }) --hold on to register when pasting and replace text
+
 Map("<leader>p", '"_dP', { mode = "v", desc = "Paste without losing register" }) --hold on to register when pasting and replace text
-Map("jk", "<esc>", { mode = "i", desc = "Escape insert mode" }) --hold on to register when pasting and replace text
 
 Map("<leader>wq", "<cmd>wqa<cr>", { desc = "Save all buffers" })
 Map("<leader>ww", ":e $CURR_WORK_WEEK<cr>", { desc = "Save all buffers" })
 
 Map("<leader>todo", ":e $TODO<CR>", { mode = { "n", "v" } })
-Map("<leader>wodo", ":e $WORK_TODO<CR>", { mode = { "n", "v" } })
-
 Map("<leader>dd", ":bdelete<cr>", { desc = "Delete buffer" })
-
---hold on to register when pasting and replace text
-Map("p", '"_dP', { mode = "v", desc = "Paste without losing register" })
 
 -- delete word bacwards
 Map("dw", "vbd", { desc = "Delete word backwards" })

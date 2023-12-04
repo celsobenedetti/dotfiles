@@ -81,11 +81,11 @@ bindsym $mod+o exec "~/.local/bin/sway-select-window.sh"
 ### Output configuration
 
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-# output * bg ~/Pictures/cyberpunk/takeaway.webp fill
-# output * bg ~/Pictures/cyberpunk/tokyo.jpg fill
-# output * bg ~/Pictures/sunset.jpg fill
-# output * bg ~/Pictures/cyberpunk/tokyo.jpg fill
-output * bg /usr/share/backgrounds/gnome/adwaita-d.webp fill
+# output * bg /usr/share/backgrounds/gnome/adwaita-d.webp fill
+
+output * bg ~/Pictures/wallpapers/japanese-pixelart.png fill
+# set $wallpapers_path ~/Pictures/wallpapers
+# output * bg `find $wallpapers_path -type f | shuf -n 1` fill
 
 set $monitor DP-1
 set $laptop eDP-1
@@ -98,7 +98,7 @@ exec_always /home/celso/.local/bin/sway_check_monitor.sh
 exec swaymsg "workspace 1; exec alacritty;"
 exec swaymsg "workspace 2; exec brave-browser;"
 exec swaymsg "workspace 9; exec gnome-system-monitor;"
-exec swaymsg "workspace 10; exec gnome-calendar;"
+exec swaymsg "workspace 10; exec brave-browser --new-window https://google.com/calendar;"
 
 # master stack tiling layout
 # https://github.com/ViliamV/stacki3

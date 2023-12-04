@@ -1,13 +1,5 @@
 return {
-  {
-    "mbbill/undotree",
-    keys = {
-      { "<leader>U", "<cmd>UndotreeToggle<cr>", desc = "Undotree Toggle" },
-    },
-    config = function()
-      vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-    end,
-  },
+
   { "wakatime/vim-wakatime" },
   {
     "christoomey/vim-tmux-navigator",
@@ -17,6 +9,26 @@ return {
       { "<C-k>", ":TmuxNavigateUp<CR>", desc = "Go to Up tmux pane" },
       { "<C-l>", ":TmuxNavigateRight<CR>", desc = "Go to Right tmux pane" },
     },
+  },
+
+  {
+    "mbbill/undotree",
+    keys = {
+      { "<leader>U", "<cmd>UndotreeToggle<cr>", desc = "Undotree Toggle" },
+    },
+    config = function()
+      vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+    end,
+  },
+
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    opts = function(_, opts)
+      opts.filesystem.filtered_items = {
+        hide_gitignored = false,
+        hide_dotfiles = false,
+      }
+    end,
   },
 
   {
@@ -48,6 +60,11 @@ return {
       { "<leader>fn", require("telescope.builtin").treesitter, desc = "Find Treesitter nodes" },
       { "<leader>dot", require("functions.telescope").search_dotfiles, desc = "Search Dotfiles" },
       { "<leader>uC", false },
+      {
+        "<leader><leader>",
+        require("telescope.builtin").buffers,
+        desc = "Telescope find open buffers",
+      },
       {
         "<leader>fC",
         require("lazyvim.util").telescope("colorscheme", { enable_preview = true }),

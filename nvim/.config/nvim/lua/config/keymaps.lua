@@ -9,7 +9,6 @@ vim.api.nvim_del_keymap("n", "<leader>fT")
 vim.api.nvim_del_keymap("n", "<c-_>")
 vim.api.nvim_del_keymap("n", "<c-/>")
 vim.api.nvim_del_keymap("n", "<leader>l")
-vim.api.nvim_del_keymap("n", "<leader><leader>")
 
 Map("<leader>la", "<cmd>Lazy<cr>", { desc = "Open lazy.nvim" })
 
@@ -57,9 +56,4 @@ Map(
   { desc = "Toggle to-do checkbox (Markdown)" }
 )
 
--- Plugins
-Map(
-  "<leader><leader>",
-  require("telescope.builtin").buffers,
-  { desc = "Telescope find open buffers" }
-)
+Map("<leader>G", "<cmd>ChatGPT<CR>", { desc = "Open ChatGPT" })

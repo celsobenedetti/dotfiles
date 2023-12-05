@@ -42,11 +42,29 @@ return {
   {
     "nvim-telescope/telescope.nvim",
     dependencies = {
-      "nvim-telescope/telescope-fzf-native.nvim",
-      build = "make",
-      config = function()
-        require("telescope").load_extension("fzf")
-      end,
+      {
+        "nvim-telescope/telescope-fzf-native.nvim",
+        build = "make",
+        config = function()
+          require("telescope").load_extension("fzf")
+        end,
+      },
+      {
+        "nvim-telescope/telescope-live-grep-args.nvim",
+        version = "^1.0.0",
+        config = function()
+          require("telescope").load_extension("live_grep_args")
+        end,
+        keys = {
+          {
+            "<leader>sG",
+            function()
+              require("telescope").extensions.live_grep_args.live_grep_args()
+            end,
+            desc = "Telescope grep with args",
+          },
+        },
+      },
     },
     opts = {
       defaults = {
@@ -57,9 +75,10 @@ return {
       },
     },
     keys = {
+      { "<leader>uC", false },
+      { "<leader>sG", false },
       { "<leader>fn", require("telescope.builtin").treesitter, desc = "Find Treesitter nodes" },
       { "<leader>dot", require("functions.telescope").search_dotfiles, desc = "Search Dotfiles" },
-      { "<leader>uC", false },
       {
         "<leader><leader>",
         require("telescope.builtin").buffers,

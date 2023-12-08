@@ -47,7 +47,8 @@ hide_edge_borders smart
 
 # @define-color rose #ebbcba;
 # @define-color iris #c4a7e7
-set $accent #ebbcba 
+# @define-color pine-dawn #286983
+set $accent #286983
 
 # window focus
 # class                 border  backgr. text    indicator child_border                                                                     
@@ -95,10 +96,15 @@ bindswitch --reload --locked lid:on output $laptop disable
 bindswitch --reload --locked lid:off output $laptop enable
 exec_always /home/celso/.local/bin/sway_check_monitor.sh
 
+# Startup processees
+exec copyq
+
+# GUI apps
 exec swaymsg "workspace 1; exec alacritty;"
 exec swaymsg "workspace 2; exec brave-browser;"
 exec swaymsg "workspace 9; exec gnome-system-monitor;"
 exec swaymsg "workspace 10; exec brave-browser --new-window https://google.com/calendar;"
+
 
 # master stack tiling layout
 # https://github.com/ViliamV/stacki3

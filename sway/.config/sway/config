@@ -44,11 +44,11 @@ default_floating_border pixel 1
 # disable borders on single window
 hide_edge_borders smart
 
-
 # @define-color rose #ebbcba;
 # @define-color iris #c4a7e7
 # @define-color pine-dawn #286983
-set $accent #286983
+# @define-color neovim #005078
+set $accent #005078
 
 # window focus
 # class                 border  backgr. text    indicator child_border                                                                     

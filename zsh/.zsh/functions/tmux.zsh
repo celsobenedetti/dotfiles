@@ -9,7 +9,7 @@ tclean() {
     done
     sessions="$(echo "$sessions" | grep -v "notes")"
 
-    printf "Kiling sessions...\n\n"
+    printf "Killing sessions...\n\n"
 
     echo "$sessions" | while read -r session; do
         echo " $session"

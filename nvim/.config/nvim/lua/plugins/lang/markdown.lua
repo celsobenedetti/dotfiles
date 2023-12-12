@@ -58,7 +58,7 @@ return {
         },
       })
     end,
-    ft = { "markdown", "tex", "latex", "vimwiki" },
+    ft = { "markdown", "tex", "latex", "vimwiki", "gitcommit" },
     dependencies = {
       {
         "hrsh7th/nvim-cmp",
@@ -68,7 +68,6 @@ return {
             { name = "dictionary", keyword_length = 2 },
           }))
         end,
-        ft = { "markdown", "tex", "latex", "vimwiki" },
       },
     },
   },

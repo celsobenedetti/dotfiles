@@ -1,13 +1,15 @@
+local f = require("functions.luasnip")
+
 return {
 
   { "wakatime/vim-wakatime" },
   {
     "christoomey/vim-tmux-navigator",
     keys = {
-      { "<C-h>", ":TmuxNavigateLeft<CR>", desc = "Go to Left tmux pane" },
-      { "<C-j>", ":TmuxNavigateDown<CR>", desc = "Go to Down tmux pane" },
-      { "<C-k>", ":TmuxNavigateUp<CR>", desc = "Go to Up tmux pane" },
-      { "<C-l>", ":TmuxNavigateRight<CR>", desc = "Go to Right tmux pane" },
+      { "<C-h>", f.navigate_tmux("TmuxNavigateLeft"), desc = "Go to Left tmux pane" },
+      { "<C-j>", f.navigate_tmux("TmuxNavigateDown"), desc = "Go to Down tmux pane" },
+      { "<C-k>", f.navigate_tmux("TmuxNavigateUp"), desc = "Go to Up tmux pane" },
+      { "<C-l>", f.navigate_tmux("TmuxNavigateRight"), desc = "Go to Right tmux pane" },
     },
   },
 

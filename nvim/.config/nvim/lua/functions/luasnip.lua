@@ -18,4 +18,12 @@ return {
       ls.change_choice(1)
     end
   end,
+
+  navigate_tmux = function(cmd)
+    return function()
+      if not require("luasnip").in_snippet() then
+        vim.cmd(cmd)
+      end
+    end
+  end,
 }

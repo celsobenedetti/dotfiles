@@ -25,7 +25,9 @@ return {
           return Disable_Tailwind
         end,
 
-        jdtls = require("config.jdtls").setup,
+        jdtls = function()
+          return true
+        end,
       }
     end,
   },

@@ -158,4 +158,18 @@ return {
       })
     end,
   },
+
+  {
+    "simrat39/symbols-outline.nvim",
+    config = true,
+    keys = {
+      {
+        "<leader>sO",
+        function()
+          require("symbols-outline").toggle_outline()
+        end,
+        desc = "SymbolsOutline toggle",
+      },
+    },
+  },
 }

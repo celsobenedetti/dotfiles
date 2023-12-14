@@ -2,7 +2,6 @@ local hostname = vim.loop.os_gethostname()
 local enableall = false
 local bg = "dark"
 local transparent = false
-
 local colors = {
   github = "github_dark_dimmed",
   github_dark = "github_dark",
@@ -24,17 +23,19 @@ local colors = {
   nord = "nord",
   oxocarbon = "oxocarbon",
   sonokai = "sonokai",
+  poimandres = "poimandres",
 }
 
 local colorscheme = colors.frappe
 
 if hostname == "debian" then
-  colorscheme = colors.rose
+  colorscheme = colors.rosemoon
 end
 
 local github = { colors.github_light, colors.github, colors.github_dark }
 local gruvbox = { colors.gruvbox, colors.gruvbaby, colors.materialgruv }
 local light = { colors.github_light, colors.tokyo_day }
+local rose = { colors.rose, colors.rosemoon }
 
 local function check_black_cursor(theme)
   for _, v in pairs(light) do
@@ -82,7 +83,7 @@ return {
   {
     "rose-pine/neovim",
     main = "rose-pine",
-    enabled = is_enabled(colors.rose),
+    enabled = is_enabled(rose),
     opts = {
       disable_background = transparent,
       disable_italics = true,
@@ -121,6 +122,7 @@ return {
   },
   { "nyoom-engineering/oxocarbon.nvim", enabled = is_enabled(colors.oxocarbon) },
   { "sainnhe/sonokai", enabled = is_enabled(colors.sonokai) },
+  { "olivercederborg/poimandres.nvim", enabled = is_enabled(colors.poimandres) },
 
   {
     "folke/tokyonight.nvim",

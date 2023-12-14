@@ -103,8 +103,6 @@ exec copyq
 exec swaymsg "workspace 1; exec alacritty;"
 exec swaymsg "workspace 2; exec brave-browser;"
 exec swaymsg "workspace 9; exec gnome-system-monitor;"
-exec swaymsg "workspace 10; exec brave-browser --new-window https://google.com/calendar;"
-
 
 # master stack tiling layout
 # https://github.com/ViliamV/stacki3

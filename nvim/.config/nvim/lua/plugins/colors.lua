@@ -29,7 +29,7 @@ local colors = {
 local colorscheme = colors.frappe
 
 if hostname == "debian" then
-  colorscheme = colors.rosemoon
+  colorscheme = colors.rose
 end
 
 local github = { colors.github_light, colors.github, colors.github_dark }

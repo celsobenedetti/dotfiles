@@ -23,12 +23,13 @@ local colors = {
   oxocarbon = "oxocarbon",
   sonokai = "sonokai",
   poimandres = "poimandres",
+  default = "default",
 }
 
 local colorscheme = colors.frappe
 
 if vim.loop.os_gethostname() == "pop-os" then
-  colorscheme = colors.tundra
+  colorscheme = colors.default
 end
 
 local github = { colors.github_light, colors.github, colors.github_dark }

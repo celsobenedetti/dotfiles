@@ -1,4 +1,3 @@
-local hostname = vim.loop.os_gethostname()
 local enableall = false
 local bg = "dark"
 local transparent = false
@@ -28,8 +27,8 @@ local colors = {
 
 local colorscheme = colors.frappe
 
-if hostname == "debian" then
-  colorscheme = colors.rose
+if vim.loop.os_gethostname() == "pop-os" then
+  colorscheme = colors.tundra
 end
 
 local github = { colors.github_light, colors.github, colors.github_dark }

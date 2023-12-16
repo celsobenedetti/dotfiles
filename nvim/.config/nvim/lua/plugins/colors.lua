@@ -26,12 +26,16 @@ local colors = {
   default = "default",
 }
 
-local colorscheme = colors.frappe
+Colorschemes = {
+  default = colors.frappe,
+  markdown = colors.mocha,
+}
 
 if vim.loop.os_gethostname() == "pop-os" then
-  colorscheme = colors.default
+  Colorschemes.default = colors.default
 end
 
+local catppuccin = { colors.mocha, colors.frappe }
 local github = { colors.github_light, colors.github, colors.github_dark }
 local gruvbox = { colors.gruvbox, colors.gruvbaby, colors.materialgruv }
 local light = { colors.github_light, colors.tokyo_day }
@@ -51,31 +55,33 @@ set guicursor+=i:blinkwait10
     end
   end
 end
-check_black_cursor(colorscheme)
+check_black_cursor(Colorschemes.default)
 
 vim.opt.background = bg
 
 local function is_enabled(themes)
   if type(themes) == "table" then
     for _, v in pairs(themes) do
-      if v == colorscheme then
-        return true
+      for _, c in pairs(Colorschemes) do
+        if v == c then
+          return true
+        end
       end
     end
     return false
   end
 
-  return enableall or colorscheme == themes
+  return enableall or Colorschemes.default == themes
 end
 
 return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = colorscheme,
+      colorscheme = Colorschemes.default,
     },
   },
-
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000, lazy = false },
   {
     "projekt0n/github-nvim-theme",
     enabled = is_enabled(github),

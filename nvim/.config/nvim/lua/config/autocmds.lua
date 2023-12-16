@@ -17,7 +17,7 @@ if all then
       -- vim.cmd("TSDisable highlight") -- Disable TreeSitter highlighting
     end,
     group = all,
-    desc = "Set markdown syntax on markdown files",
+    desc = "Run on all files",
   })
 end
 -- Markdown --------------------------------------------------------------
@@ -27,6 +27,7 @@ if markdown then
     pattern = "*.md",
     callback = function()
       vim.cmd("set syntax=markdown")
+      vim.cmd.colorscheme(Colorschemes.markdown)
     end,
     group = markdown,
     desc = "Run when entering Markdown files",

@@ -1148,6 +1148,6 @@ color_schemes:
         - { index: 20, color: "#8796b0" }
         - { index: 21, color: "#959dcb" }
 
-# colors: *mocha
+colors: *mocha
 import:
-  - ~/.config/alacritty/rose-pine-moon.yml
+  - ~/.config/alacritty/rose-pine.yml

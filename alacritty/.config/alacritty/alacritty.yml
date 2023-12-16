@@ -1147,7 +1147,7 @@ color_schemes:
         - { index: 19, color: "#32374d" }
         - { index: 20, color: "#8796b0" }
         - { index: 21, color: "#959dcb" }
-
-colors: *mocha
+# colors: *tokyo
 import:
-  - ~/.config/alacritty/rose-pine.yml
+  # - ~/.config/alacritty/rose-pine.yml
+  - ~/.config/alacritty/poimandres.yml

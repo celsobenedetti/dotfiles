@@ -105,6 +105,9 @@ eval "$(pyenv virtualenv-init -)"
 # protobuf
 export PATH="/usr/local/protobuf/bin:$PATH"
 
+# Golang GOPATH
+export PATH="/home/celso/go/bin/:$PATH"
+
 
 # Load Angular CLI autocompletion.
 # source <(ng completion script)

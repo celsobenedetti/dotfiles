@@ -56,6 +56,7 @@ return {
         zsh = { "shellcheck" },
         sh = { "shellcheck" },
         bash = { "shellcheck" },
+        go = { "staticcheck" },
       }
     end,
   },

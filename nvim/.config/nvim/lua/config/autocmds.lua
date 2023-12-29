@@ -23,7 +23,7 @@ end
 -- Markdown --------------------------------------------------------------
 
 if markdown then
-  vim.api.nvim_create_autocmd({ "VimEnter" }, {
+  vim.api.nvim_create_autocmd({ "BufEnter" }, {
     pattern = "*.md",
     callback = function()
       vim.cmd("set syntax=markdown")
@@ -31,6 +31,15 @@ if markdown then
     end,
     group = markdown,
     desc = "Run when entering Markdown files",
+  })
+
+  vim.api.nvim_create_autocmd({ "BufLeave" }, {
+    pattern = "*.md",
+    callback = function()
+      vim.cmd.colorscheme(Colorschemes.default)
+    end,
+    group = markdown,
+    desc = "Run when leaving Markdown files",
   })
 end
 

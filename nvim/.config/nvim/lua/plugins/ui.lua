@@ -29,6 +29,7 @@ return {
         { "msg_show", "invalid node type" },
         { "msg_show", "Keyboard interrupt" },
         { "msg_show", ":qa" },
+        { "msg_show", "Error in decoration provider" },
       }
 
       for _, filter in ipairs(ignore_notifications) do

@@ -6,8 +6,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
-Disable_Tailwind = true
-
 require("lazy").setup({
   spec = {
     {

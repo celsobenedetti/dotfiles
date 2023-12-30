@@ -10,19 +10,20 @@ return {
         -- web
         html = {},
         cssls = { filetypes = { "html", "gohtml", "vue" } },
-        emmet_ls = { filetypes = { "html", "gohtml", "vue" } },
+        emmet_ls = { filetypes = { "none" } },
         volar = {},
         angularls = {},
       })
 
       opts.setup = {
+
         zk = function()
           require("zk").setup()
           return true --let zk.nvim handle zk lsp
         end,
 
         tailwindcss = function()
-          return Disable_Tailwind
+          return vim.g.disable_tailwind
         end,
 
         jdtls = function()

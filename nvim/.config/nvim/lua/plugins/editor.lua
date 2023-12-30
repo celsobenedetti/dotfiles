@@ -173,4 +173,10 @@ return {
       },
     },
   },
+
+  {
+    "windwp/nvim-ts-autotag",
+    config = true,
+    ft = { "javascriptreact", "typescriptreact" },
+  },
 }

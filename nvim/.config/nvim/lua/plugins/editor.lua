@@ -80,6 +80,7 @@ return {
       { "<leader>uC", false },
       { "<leader>sG", false },
       { "<leader>fn", require("telescope.builtin").treesitter, desc = "Find Treesitter nodes" },
+      { "<leader>fF", require("telescope.builtin").git_files, desc = "Search Dotfiles" },
       { "<leader>dot", require("functions.telescope").search_dotfiles, desc = "Search Dotfiles" },
       {
         "<leader><leader>",

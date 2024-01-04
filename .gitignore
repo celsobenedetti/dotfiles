@@ -1,3 +1,2 @@
-# all work files, except encrypted ones
-work/*
-!work/*.crypt
+# ignore senstitive files
+git/.gitconfig

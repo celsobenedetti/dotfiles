@@ -44,6 +44,7 @@ source ~/.dotfiles/zsh/.zsh/functions/work.zsh
 source ~/.dotfiles/zsh/.zsh/functions/tmux.zsh
 source ~/.dotfiles/zsh/.zsh/functions/vim.zsh
 source ~/.dotfiles/zsh/.zsh/functions/zk.zsh
+source ~/.dotfiles/zsh/.zsh/functions/stopwatch.zsh
 
 
 # Enable emacs mode by default

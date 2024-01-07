@@ -51,7 +51,9 @@ require("lazy").setup({
     { "folke/flash.nvim", enabled = false },
     { "echasnovski/mini.surround", enabled = false },
     { "lukas-reineke/indent-blankline.nvim", enabled = false },
+    { "lukas-reineke/headlines.nvim", enabled = false },
     { "iamcco/markdown-preview.nvim", enabled = false },
+    -- { "akinsho/bufferline.nvim", enabled = false },
   },
   defaults = {
     lazy = false,

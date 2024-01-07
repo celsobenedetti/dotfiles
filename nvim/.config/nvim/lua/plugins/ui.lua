@@ -22,7 +22,7 @@ return {
         { "notify", "No information available" },
         { "notify", "Config Change" },
         { "notify", "'NotifyBackground' has no background highlight" },
-        { "notify", "Set conceallevel to 0" },
+        { "notify", "Set conceallevel to" },
         { "notify", "Plugin Updates" },
         { "msg_show", "search hit BOTTOM, continuing at TOP" },
         { "msg_show", "Pattern not found" },

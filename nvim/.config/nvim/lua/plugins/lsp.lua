@@ -12,7 +12,6 @@ return {
         cssls = { filetypes = { "html", "gohtml", "vue" } },
         emmet_ls = { filetypes = { "none" } },
         volar = {},
-        angularls = {},
       })
 
       opts.setup = {

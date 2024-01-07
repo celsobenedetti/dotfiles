@@ -7,6 +7,11 @@ local markdown = vim.api.nvim_create_augroup("MarkdownGroup", { clear = true })
 local typeScript = nil -- vim.api.nvim_create_augroup("TypeScriptGroup", { clear = true })
 local json = vim.api.nvim_create_augroup("JSONGroup", { clear = true })
 
+local function disable_conceal()
+  local conceallevel = vim.o.conceallevel > 0 and vim.o.conceallevel or 3
+  require("lazyvim.util").toggle("conceallevel", false, { 0, conceallevel })
+end
+
 -- All files --------------------------------------------------------------
 
 if all then
@@ -20,6 +25,7 @@ if all then
     desc = "Run on all files",
   })
 end
+
 -- Markdown --------------------------------------------------------------
 
 if markdown then
@@ -27,19 +33,10 @@ if markdown then
     pattern = "*.md",
     callback = function()
       vim.cmd("set syntax=markdown")
-      vim.cmd.colorscheme(Colorschemes.markdown)
+      disable_conceal()
     end,
     group = markdown,
     desc = "Run when entering Markdown files",
-  })
-
-  vim.api.nvim_create_autocmd({ "BufLeave" }, {
-    pattern = "*.md",
-    callback = function()
-      vim.cmd.colorscheme(Colorschemes.default)
-    end,
-    group = markdown,
-    desc = "Run when leaving Markdown files",
   })
 end
 
@@ -62,9 +59,7 @@ if json then
   vim.api.nvim_create_autocmd({ "VimEnter" }, {
     pattern = "*.json",
     callback = function()
-      -- disable conceal
-      local conceallevel = vim.o.conceallevel > 0 and vim.o.conceallevel or 3
-      require("lazyvim.util").toggle("conceallevel", false, { 0, conceallevel })
+      disable_conceal()
     end,
     group = json,
     desc = "Run when entering JSON files",

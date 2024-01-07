@@ -27,13 +27,8 @@ local colors = {
 }
 
 Colorschemes = {
-  default = colors.frappe,
-  markdown = colors.mocha,
+  default = colors.default,
 }
-
-if vim.loop.os_gethostname() == "pop-os" then
-  Colorschemes.default = colors.default
-end
 
 local catppuccin = { colors.mocha, colors.frappe }
 local github = { colors.github_light, colors.github, colors.github_dark }
@@ -81,7 +76,13 @@ return {
       colorscheme = Colorschemes.default,
     },
   },
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000, lazy = false },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    lazy = false,
+    enabled = is_enabled(catppuccin),
+  },
   {
     "projekt0n/github-nvim-theme",
     enabled = is_enabled(github),

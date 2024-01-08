@@ -39,7 +39,7 @@ alias ll='exa --git -I=".git|node_modules" -a'
 alias l='exa --icons --git -I=".git|node_modules" -a -l'
 alias lt='exa -T --level=2 --icons -I=".git|node_modules" --git -a'
 alias dust="dust -c"
-alias clip="xargs copyq copy >> /dev/null"
+alias clip="xclip -sel clip"
 
 alias yac="httpyac"
 

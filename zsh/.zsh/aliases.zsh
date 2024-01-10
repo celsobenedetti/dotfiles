@@ -14,7 +14,7 @@ alias dpip="~/.local/share/nvim/mason/packages/debugpy/venv/bin/pip"
 # https://github.com/bogem/dotfiles/blob/main/.aliases
 alias fd="fd -E=node_modules -E=temp -E=.DS_Store -E=.lock$ --no-ignore-vcs"
 
-alias chad-fd="fd -t f -E .git -E build/ -E target/ -E .next/ -E .angular/ -E dist/ -H | sed 's/ /\\ /g'"
+alias chad-fd="fd -t f -E .git -E build/ -E target/ -E .next/ -E .angular/ -E dist/ -E \"**/**/db-data/\" -H | sed 's/ /\\ /g'"
 alias fzfx='fzf --multi --prompt "$FZF_PROMPT file -> " --preview "bat {1} --color always --theme=Nord" | xargs -r -d "\n"'
 alias v='FZF_PROMPT=Open; chad-fd | fzfx nvim'
 alias c='FZF_PROMPT=Cat; chad-fd | fzfx bat'

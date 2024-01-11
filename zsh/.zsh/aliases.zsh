@@ -11,27 +11,30 @@ alias vmux=' ~/.dotfiles/tmux/.tmux.conf'
 alias tx="tmuxinator"
 alias dpip="~/.local/share/nvim/mason/packages/debugpy/venv/bin/pip"
 
-# https://github.com/bogem/dotfiles/blob/main/.aliases
-alias fd="fd -E=node_modules -E=temp -E=.DS_Store -E=.lock$ --no-ignore-vcs"
-
-alias chad-fd="fd -t f \
+alias fd="fd -t f --no-ignore-vcs \
     -E .git \
-    -E build/ \
-    -E target/ \
     -E .next/ \
     -E .angular/ \
     -E .nx/ \
+    -E node_modules/ \
     -E dist/ \
+    -E build/ \
+    -E target/ \
+    -E temp/ \
+    -E .DS_Store \
+    -E .lock$ \
+    -E .eslintcache \
     -E python/ \
     -E vendor/ \
     -E drupal/ \
     -E db-data/ \
-    -E \"**/**/fatvai-*\" \
-    -H | sed 's/ /\\ /g'"
+    -E \"fatvai-*\""
+    
+alias fds="fd -H | sed 's/ /\\ /g'" # remove whitespaces in file paths
 
 alias fzfx='fzf --multi --prompt "$FZF_PROMPT file -> " --preview "bat {1} --color always --theme=Nord" | xargs -r -d "\n"'
-alias v='FZF_PROMPT=Open; chad-fd | fzfx nvim'
-alias c='FZF_PROMPT=Cat; chad-fd | fzfx bat'
+alias v='FZF_PROMPT=Open; fds | fzfx nvim'
+alias c='FZF_PROMPT=Cat; fds | fzfx bat'
 
 alias gcm='git commit'
 alias d='git-diff'

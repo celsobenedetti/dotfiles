@@ -11,6 +11,13 @@ alias vmux=' ~/.dotfiles/tmux/.tmux.conf'
 alias tx="tmuxinator"
 alias dpip="~/.local/share/nvim/mason/packages/debugpy/venv/bin/pip"
 
+alias rg="rg \
+    --glob \"!*min.{js,css}\" \
+    --glob \"!init.sql\" \
+    --glob \"!dev-mocks\" \
+    --glob \"!python\" \
+    --glob \"!fatvai-*\""
+
 alias fd="fd -t f --no-ignore-vcs \
     -E .git \
     -E .next/ \

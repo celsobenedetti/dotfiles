@@ -87,7 +87,7 @@ alias rmvolumes='rm-docker-volumes'
 
 alias py='python3'
 
-alias tz='gotz --timezones "India:Asia/Calcutta,CST:America/Rio_Branco,Europe/Rome"'
+alias tz='gotz --timezones "CST:America/New_York,Pacific:America/Los_Angeles"'
 alias z="zoxide"
 alias ze="zk edit -i"
 alias today="date +%Y-%m-%d"

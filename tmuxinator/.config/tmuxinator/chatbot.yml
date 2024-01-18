@@ -1,0 +1,10 @@
+name: chatbot
+root: ~/work/chatbot/
+
+windows:
+  - neovim: nvim
+  - servers:
+      layout: even-vertical
+      panes:
+        - nx run @ocelot/conversation:dev:hi-mem
+        - nx run @ocelot/admin:dev

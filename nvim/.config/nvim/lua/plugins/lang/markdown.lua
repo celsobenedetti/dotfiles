@@ -37,6 +37,8 @@ return {
 
   {
     "uga-rosa/cmp-dictionary",
+    -- TODO: see if newer versions work
+    commit = "d17bc1f87736b6a7f058b2f246e651d34d648b47",
     config = function()
       local dict = require("cmp_dictionary")
       dict.setup({

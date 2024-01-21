@@ -10,7 +10,7 @@ get_curr_work_week() {
     ordered_work_weeks=$(
         fd . $WORK --type f |
             rg "work-week"|
-            awk -F '-to-' '{print $2}' |
+            awk -F 'work-week-' '{print $2}' |
             cut -d '.' -f 1 |
             sort -r 
         )

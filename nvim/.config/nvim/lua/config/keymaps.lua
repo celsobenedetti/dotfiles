@@ -57,3 +57,5 @@ Map(
 )
 
 Map("<leader>G", "<cmd>ChatGPT<CR>", { desc = "Open ChatGPT" })
+
+Map("<leader>C", "<cmd>Clip<CR>", { desc = "Copy file path to clipboard" })

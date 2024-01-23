@@ -5,6 +5,10 @@ windows:
   - servers:
       layout: tiled
       panes:
-        - nx run @ocelot/conversation:dev:hi-mem
-        - nx run @ocelot/admin:dev
+        - conversation:
+            - cd packages/conversation
+            - pnpm dev:hi-mem
+        - admin:
+            - cd packages/admin
+            - pnpm dev
         - zsh

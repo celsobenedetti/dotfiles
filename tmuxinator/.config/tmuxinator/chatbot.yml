@@ -1,7 +1,7 @@
 name: chatbot
 root: ~/work/chatbot/
 windows:
-  - editor: nvim
+  - editor:
   - servers:
       layout: tiled
       panes:

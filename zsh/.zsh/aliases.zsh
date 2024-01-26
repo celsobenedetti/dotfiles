@@ -12,6 +12,7 @@ alias tx="tmuxinator"
 alias dpip="~/.local/share/nvim/mason/packages/debugpy/venv/bin/pip"
 
 alias rg="rg \
+    --glob \"!.git\" \
     --glob \"!*min.{js,css}\" \
     --glob \"!init.sql\" \
     --glob \"!dev-mocks\" \

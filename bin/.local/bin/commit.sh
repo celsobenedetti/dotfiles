@@ -20,6 +20,7 @@ note
 perf
 refactor
 remove
+rename
 security
 test
 tmux

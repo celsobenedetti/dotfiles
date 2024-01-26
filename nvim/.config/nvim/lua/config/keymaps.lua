@@ -58,4 +58,6 @@ Map(
 
 Map("<leader>G", "<cmd>ChatGPT<CR>", { desc = "Open ChatGPT" })
 
+-- Commands
 Map("<leader>C", "<cmd>Clip<CR>", { desc = "Copy file path to clipboard" })
+Map("<leader>D", "<cmd>Diff<CR>", { desc = "Copy git diff to clipboard" })

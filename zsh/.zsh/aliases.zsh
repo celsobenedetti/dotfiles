@@ -54,6 +54,7 @@ alias gs='git status'
 alias psm="ps aux --sort=-rss | awk '{print \$6/1024 \" MB\t\t\" substr(\$0, index(\$0,\$11))}'"
 
 alias commit='commit.sh'
+alias nord="nordvpn"
 
 alias nerd="$BROWSER --new-window https://www.nerdfonts.com/cheat-sheet"
 alias emoji="$BROWSER --new-window https://www.freetool.dev/emoji-picker"

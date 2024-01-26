@@ -9,6 +9,10 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+if ! nordvpn status | grep -q "Status: Connected"; then
+    nordvpn connect
+fi
+
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # catppuccin mocha

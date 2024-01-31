@@ -56,6 +56,12 @@ Map(
   { desc = "Toggle to-do checkbox (Markdown)" }
 )
 
+Map(
+  "<C-k>",
+  require("functions.markdown.link"),
+  { mode = "v", desc = "Wrap current selection in markdown link" }
+)
+
 Map("<leader>G", "<cmd>ChatGPT<CR>", { desc = "Open ChatGPT" })
 
 -- Commands

@@ -2,6 +2,7 @@ name: chatbot
 root: ~/work/chatbot/
 windows:
   - editor:
+      - git pull
   - servers:
       layout: tiled
       panes:
@@ -11,4 +12,4 @@ windows:
         - admin:
             - cd packages/admin
             - pnpm dev
-        - zsh
+        -  # regular zsh shell

@@ -9,7 +9,7 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-if ! nordvpn status | grep -q "Status: Connected"; then
+if ! nordvpn status | rg -q "Status: Connected"; then
     nordvpn connect
 fi
 
@@ -68,14 +68,8 @@ export RAW=https://raw.githubusercontent.com
 export W="/mnt/c/Users/celso_benedetti/"
 export BROWSER=wslview
 
-# IF ON WSL
-if uname -r | grep -qi "microsoft"; then
-    alias code="~/.local/bin//code.sh"
-else
-fi
-
 #### functions ######################################
-#
+
 source ~/.fzf/shell/key-bindings.zsh
 source ~/.fzf/shell/completion.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

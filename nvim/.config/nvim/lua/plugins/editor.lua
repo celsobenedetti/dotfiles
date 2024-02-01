@@ -181,4 +181,19 @@ return {
     config = true,
     ft = { "javascriptreact", "typescriptreact" },
   },
+
+  {
+    "danymat/neogen",
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    opts = {
+      snippet_engine = "luasnip",
+    },
+    keys = {
+      {
+        "<leader>A",
+        ":Neogen<CR>",
+        desc = "Neogen annotation",
+      },
+    },
+  },
 }

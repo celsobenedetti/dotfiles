@@ -12,8 +12,11 @@ return {
   fold = function()
     local file = vim.fn.expand("%:t")
 
-    -- if file contains "work" then
-    if type(file) == "string" and string.match(file, "work") then
+    local is_work_week = function()
+      return type(file) == "string" and string.match(file, "work") and string.match(file, "week")
+    end
+
+    if is_work_week() then
       -- fold all
       vim.api.nvim_feedkeys("zM", "n", true)
 

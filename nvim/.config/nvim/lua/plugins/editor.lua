@@ -144,6 +144,8 @@ return {
 
   {
     "nvim-treesitter/nvim-treesitter",
+    -- TODO: update this
+    commit = "ba6454783493ac3a5dd209c25e491640b07bd8de",
     lazy = false,
     opts = function(_, opts)
       opts.ensure_installed = opts.ensure_installed or {}

@@ -14,4 +14,5 @@ return function()
   vim.api.nvim_feedkeys("a(", "n", true)
   vim.api.nvim_feedkeys(clipboard, "n", true)
   vim.api.nvim_feedkeys(")", "n", true)
+  vim.api.nvim_feedkeys(Escape("<esc>"), "n", true)
 end

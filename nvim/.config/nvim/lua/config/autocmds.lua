@@ -34,6 +34,7 @@ if markdown then
     callback = function()
       vim.cmd("set syntax=markdown")
       disable_conceal()
+      require("functions.markdown.work_week").fold()
     end,
     group = markdown,
     desc = "Run when entering Markdown files",

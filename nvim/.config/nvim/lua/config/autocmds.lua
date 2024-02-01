@@ -1,6 +1,7 @@
 -- Autocmds are automatically loaded on the VeryLazy event
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 -- Add any additional autocmds here
+local fold = require("functions.markdown.fold")
 
 local all = vim.api.nvim_create_augroup("AllFilesGroup", { clear = true })
 local markdown = vim.api.nvim_create_augroup("MarkdownGroup", { clear = true })
@@ -34,7 +35,15 @@ if markdown then
     callback = function()
       vim.cmd("set syntax=markdown")
       disable_conceal()
-      require("functions.markdown.work_week").fold()
+
+      local file = vim.fn.expand("%:t")
+      if type(file) == "string" then
+        local n_lines = tonumber(vim.fn.system({ "wc", "-l", file }):match("%d+"))
+        if n_lines > 70 then
+          fold.one_level()
+          fold.work_week(file)
+        end
+      end
     end,
     group = markdown,
     desc = "Run when entering Markdown files",

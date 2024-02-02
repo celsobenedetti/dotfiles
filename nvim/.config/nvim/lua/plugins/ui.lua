@@ -17,6 +17,12 @@ return {
   },
   {
     "folke/noice.nvim",
+    dependencies = {
+      {
+        "nvim-telescope/telescope.nvim",
+        keys = { { "<leader>snm", ":Telescope noice<CR>" } },
+      },
+    },
     opts = function(_, opts)
       opts.presets.bottom_search = true -- use a classic bottom cmdline for search
       opts.presets.lsp_doc_border = true -- add a border to hover docs and signature help
@@ -50,6 +56,10 @@ return {
           },
           opts = { skip = true },
         })
+      end
+
+      config = function()
+        require("telescope").load_extension("noice")
       end
     end,
   },

@@ -24,6 +24,7 @@ alias fd="fd -t f --no-ignore-vcs \
     -E .next/ \
     -E .angular/ \
     -E .nx/ \
+    -E .obsidian/ \
     -E node_modules/ \
     -E dist/ \
     -E build/ \

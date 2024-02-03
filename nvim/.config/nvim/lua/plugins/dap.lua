@@ -2,6 +2,16 @@ return {
   {
     "mfussenegger/nvim-dap",
     optional = true,
+    keys = {
+      { "<leader>bC", require("dap").clear_breakpoints, { desc = "Clear DAP Breakpoints" } },
+      {
+        "<leader>bL",
+        function()
+          require("dap").list_breakpoints(true)
+        end,
+        { desc = "List DAP Breakpoints" },
+      },
+    },
     dependencies = {
       {
         "williamboman/mason.nvim",
@@ -12,7 +22,7 @@ return {
       },
     },
     opts = function()
-      local filetype = vim.api.nvim_buf_get_option(0, "filetype")
+      local filetype = vim.api.nvim_get_option_value("filetype", {})
       if filetype == "typescript" or filetype == "javascript" then
         require("config.dap.typescript").setup()
       end

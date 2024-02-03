@@ -30,6 +30,11 @@ return {
           name = "Attach ",
           processId = require("dap.utils").pick_process,
           cwd = "${workspaceFolder}",
+          resolveSourceMapLocations = {
+            "${workspaceFolder}/**",
+            "!**/node_modules/**",
+            "!**/.pnpm/**",
+          },
         },
       }
     end

@@ -8,7 +8,7 @@ windows:
       panes:
         - conversation:
             - cd packages/conversation
-            - pnpm dev:hi-mem
+            - pnpm dev
         - admin:
             - cd packages/admin
             - pnpm dev

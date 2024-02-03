@@ -14,10 +14,14 @@ local function work_week(file)
   local is_work_week = string.match(file, "work") and string.match(file, "week")
 
   if is_work_week then
+    vim.cmd("Twilight")
     local day = vim.fn.system("date +%u") + 1
     if day > #week then
       day = #week
     end
+
+    -- close all folds
+    vim.api.nvim_feedkeys("zM", "n", true)
 
     -- search for the day of the week
     local searchWeekDay = "/" .. week[tonumber(day)] .. "<CR>"
@@ -28,12 +32,6 @@ local function work_week(file)
   end
 end
 
---- Closes all folds in document and unfolds only the first level
-local function one_level()
-  vim.api.nvim_feedkeys("zMza", "n", true)
-end
-
 return {
   work_week = work_week,
-  one_level = one_level,
 }

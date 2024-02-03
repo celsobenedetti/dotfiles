@@ -38,11 +38,7 @@ if markdown then
 
       local file = vim.fn.expand("%:t")
       if type(file) == "string" then
-        local n_lines = tonumber(vim.fn.system({ "wc", "-l", file }):match("%d+"))
-        if n_lines > 70 then
-          fold.one_level()
-          fold.work_week(file)
-        end
+        fold.work_week(file)
       end
     end,
     group = markdown,

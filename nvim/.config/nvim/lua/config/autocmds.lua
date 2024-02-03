@@ -30,16 +30,14 @@ end
 -- Markdown --------------------------------------------------------------
 
 if markdown then
-  vim.api.nvim_create_autocmd({ "BufEnter" }, {
+  vim.api.nvim_create_autocmd({ "VimEnter" }, {
     pattern = "*.md",
     callback = function()
       vim.cmd("set syntax=markdown")
       disable_conceal()
 
-      local file = vim.fn.expand("%:t")
-      if type(file) == "string" then
-        fold.work_week(file)
-      end
+      vim.cmd("Twilight")
+      fold.work_week()
     end,
     group = markdown,
     desc = "Run when entering Markdown files",

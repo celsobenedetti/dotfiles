@@ -57,7 +57,7 @@ Map(
 )
 
 Map(
-  "<C-k>",
+  "<leader>l",
   require("functions.markdown.link"),
   { mode = "v", desc = "Wrap current selection in markdown link" }
 )

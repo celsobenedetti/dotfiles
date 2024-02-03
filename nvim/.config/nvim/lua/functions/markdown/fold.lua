@@ -9,12 +9,16 @@ local week = {
 }
 
 --- If file is a work-week file, go to section for current week day and unfold it
----@param file string name for current buffer
-local function work_week(file)
+
+local function work_week()
+  local file = vim.fn.expand("%:t")
+  if type(file) ~= "string" then
+    return
+  end
+
   local is_work_week = string.match(file, "work") and string.match(file, "week")
 
   if is_work_week then
-    vim.cmd("Twilight")
     local day = vim.fn.system("date +%u") + 1
     if day > #week then
       day = #week

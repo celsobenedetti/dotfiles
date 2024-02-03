@@ -134,5 +134,7 @@ return {
   {
     "folke/twilight.nvim",
     opts = {},
+    ft = { "markdown" },
+    keys = { { "<leader>tw", ":Twilight<CR>" } },
   },
 }

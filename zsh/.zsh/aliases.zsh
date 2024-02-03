@@ -2,12 +2,11 @@
 
 BROWSER="brave-browser"
 
-alias t="npm run test"
-alias vim="nvim"
-alias vi='nvim .'
-# alias lazy='echo "lazy.nvim: Updating and syncing neovim plugins...";nvim --headless "+Lazy! sync" +qa; echo "lazy.nvim: Sync done!"'
-alias venv='nvim ~/.zshenv'
-alias vmux=' ~/.dotfiles/tmux/.tmux.conf'
+alias vim='/usr/local/bin/nvim'
+alias vi='vim .'
+alias nvim='nvim --clean'
+alias todo="vim $TODO"
+
 alias tx="tmuxinator"
 alias dpip="~/.local/share/nvim/mason/packages/debugpy/venv/bin/pip"
 
@@ -95,12 +94,8 @@ alias z="zoxide"
 alias ze="zk edit -i"
 alias today="date +%Y-%m-%d"
 
-export NAP_HOME="~/.nap"
-export NOTES=~/Documents/notes
-export TODO=$NOTES/TODO.md
 
 alias src='source ~/.zshrc'
-alias todo="nvim $TODO"
 #alias fdfind='fd'
 alias mornin='morning'
 

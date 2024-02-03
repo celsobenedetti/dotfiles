@@ -2,7 +2,7 @@
 
 lazy (){
     echo "lazy.nvim: Updating and syncing neovim plugins..."
-    nvim --headless "+Lazy! sync" +qa
+    vim --headless "+Lazy! sync" +qa
     echo "lazy.nvim: Sync done!"
 }
 

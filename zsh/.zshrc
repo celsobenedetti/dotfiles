@@ -37,6 +37,10 @@ source $ZSH/oh-my-zsh.sh
 unalias ll
 unalias gcm
 
+export NAP_HOME="~/.nap"
+export NOTES=~/Documents/notes
+export TODO=$NOTES/TODO.md
+
 source ~/.zsh/path.zsh
 source ~/.zsh/aliases.zsh
 

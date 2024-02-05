@@ -4,7 +4,7 @@ BROWSER="brave-browser"
 
 alias vim='/usr/local/bin/nvim'
 alias vi='vim .'
-alias nvim='nvim --clean'
+# alias nvim='nvim --clean'
 alias todo="vim $TODO"
 
 alias tx="tmuxinator"
@@ -53,6 +53,7 @@ alias gs='git status'
 
 alias psm="ps aux --sort=-rss | awk '{print \$6/1024 \" MB\t\t\" substr(\$0, index(\$0,\$11))}'"
 
+alias books='fd . ~/Documents/books | sed "s/ /\\ /g" | fzf | xargs -r -d "\n" evince'
 alias commit='commit.sh'
 alias nord="nordvpn"
 

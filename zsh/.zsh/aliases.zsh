@@ -3,13 +3,19 @@
 BROWSER="brave-browser"
 
 alias vim='/usr/local/bin/nvim'
-alias vi='vim .'
-# alias nvim='nvim --clean'
-alias todo="vim $TODO"
-alias para="exa -T --level 2 ~/Documents/notes/ -I '.git*|README*|TODO*'"
 
-alias tx="tmuxinator"
-alias dpip="~/.local/share/nvim/mason/packages/debugpy/venv/bin/pip"
+alias note='~/.local/bin/note.sh'
+alias commit='~/.local/bin/commit.sh'
+
+alias book='fd . ~/Documents/books | sed "s/ /\\ /g" | fzf | xargs -r -d "\n" evince'
+alias para="exa -T --level 2 ~/Documents/notes/ -I '.git*|README*|TODO*'"
+alias today="date +%Y-%m-%d"
+
+export TODO=$HOME/Documents/notes/TODO.md
+alias todo="vim $TODO"
+
+alias v='FZF_PROMPT=Open; fds | fzfx nvim'
+alias c='FZF_PROMPT=Cat; fds | fzfx bat'
 
 alias rg="rg \
     --glob \"!.git\" \
@@ -39,24 +45,18 @@ alias fd="fd -t f --no-ignore-vcs \
     -E db-data/ \
     -E \"fatvai-*\""
     
-alias fds="fd -H | sed 's/ /\\ /g'" # remove whitespaces in file paths
+# remove whitespaces in file paths
+alias fds="fd -H | sed 's/ /\\ /g'" 
 
+# xargs result of fzf
 alias fzfx='fzf --multi --prompt "$FZF_PROMPT file -> " --preview "bat {1} --color always --theme=Nord" | xargs -r -d "\n"'
-alias v='FZF_PROMPT=Open; fds | fzfx nvim'
-alias c='FZF_PROMPT=Cat; fds | fzfx bat'
+
+# run interactive docker container -> "dev $IMAGE $COMMAND"
+alias dev='docker run --rm -it -v $(pwd):/home/app -w /home/app -v ~/.docker_bash_history:/root/.bash_history -u $(id -u):$(id -g)'
 
 alias gcm='git commit'
 alias d='git-diff'
-alias a='git-add'
-alias s='git status'
 alias r='git-restore'
-alias gs='git status'
-
-alias psm="ps aux --sort=-rss | awk '{print \$6/1024 \" MB\t\t\" substr(\$0, index(\$0,\$11))}'"
-
-alias books='fd . ~/Documents/books | sed "s/ /\\ /g" | fzf | xargs -r -d "\n" evince'
-alias commit='commit.sh'
-alias nord="nordvpn"
 
 alias nerd="$BROWSER --new-window https://www.nerdfonts.com/cheat-sheet"
 alias emoji="$BROWSER --new-window https://www.freetool.dev/emoji-picker"
@@ -71,13 +71,16 @@ alias clip="xclip -sel clip"
 
 alias yac="httpyac"
 
-#
-alias lg='lazygit'
-alias lad="lazydocker"
+
+alias py='python3'
 alias dc='docker compose'
-alias dstart='sudo service docker start'
-alias nf='neofetch'
+alias lg='lazygit'
+alias ldo="lazydocker"
 alias tf='terraform'
+alias nf='neofetch'
+alias tx="tmuxinator"
+alias nord="nordvpn"
+alias tz='gotz --timezones "CST:America/New_York,Pacific:America/Los_Angeles"'
 
 # alias k='kubectl'
 alias k='k3s kubectl'
@@ -86,20 +89,14 @@ alias mnctl='minikube kubectl --'
 
 alias whalehunt='docker rm -f \$(docker ps -aq)'
 alias doclean='rm ~/.docker/config.json'
-alias dev='docker run --rm -it -v $(pwd):/home/app -w /home/app -v ~/.docker_bash_history:/root/.bash_history -u $(id -u):$(id -g)'
 alias rmvolumes='rm-docker-volumes'
 
-alias py='python3'
-
-alias tz='gotz --timezones "CST:America/New_York,Pacific:America/Los_Angeles"'
-alias z="zoxide"
-alias ze="zk edit -i"
-alias today="date +%Y-%m-%d"
-
-
 alias src='source ~/.zshrc'
-#alias fdfind='fd'
-alias mornin='morning'
+alias dpip="~/.local/share/nvim/mason/packages/debugpy/venv/bin/pip"
+
+psm() {
+    ps aux --sort=-rss | awk '{print $6/1024 " MB\t\t" substr($0, index($0,$11))}'
+}
 
 deadlinks(){
     find "$1" -xtype l -delete

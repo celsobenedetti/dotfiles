@@ -2,7 +2,7 @@
 _gitLogLineToHash="echo {} | grep -o '[a-f0-9]\{7\}' | head -1"
 _viewGitLogLine="$_gitLogLineToHash | xargs -I % sh -c 'git show --color=always % | delta'"
 
-flog(){ 
+vlog(){ 
     git log \
         --color=always \
         --format="%C(cyan)%h %C(blue)%ar%C(auto)%d \
@@ -23,7 +23,7 @@ flog(){
                 xsel -ib"
 }
 
-gch(){
+gswitch(){
     git branch \
         -a \
         --sort=-committerdate |
@@ -32,7 +32,7 @@ gch(){
         --preview "git diff --color=always {1}" |
     sed  's/remotes.origin.//' | #remove remotes/origin/ prefix
     xargs -r \
-        git checkout
+        git switch
 }
 
 git-diff(){

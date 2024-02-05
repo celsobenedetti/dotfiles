@@ -37,9 +37,6 @@ source $ZSH/oh-my-zsh.sh
 unalias ll
 unalias gcm
 
-export NAP_HOME="~/.nap"
-export NOTES=~/Documents/notes
-export TODO=$NOTES/TODO.md
 
 source ~/.zsh/path.zsh
 source ~/.zsh/aliases.zsh
@@ -51,7 +48,6 @@ source ~/.dotfiles/zsh/.zsh/functions/toggle-command-prefix.zsh
 source ~/.dotfiles/zsh/.zsh/functions/work.zsh
 source ~/.dotfiles/zsh/.zsh/functions/tmux.zsh
 source ~/.dotfiles/zsh/.zsh/functions/vim.zsh
-source ~/.dotfiles/zsh/.zsh/functions/zk.zsh
 source ~/.dotfiles/zsh/.zsh/functions/stopwatch.zsh
 
 

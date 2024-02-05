@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-export WORK=$NOTES/areas/work
+export WORK=~/Documents/notes/2-areas/work/
 export QUARTER=$WORK/fy24-Q1/
 alias wn="echo $QUARTER | xargs zk new -t $1"
 alias workmd="code $QUARTER"

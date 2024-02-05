@@ -6,6 +6,7 @@ alias vim='/usr/local/bin/nvim'
 alias vi='vim .'
 # alias nvim='nvim --clean'
 alias todo="vim $TODO"
+alias para="exa -T --level 2 ~/Documents/notes/ -I '.git*|README*|TODO*'"
 
 alias tx="tmuxinator"
 alias dpip="~/.local/share/nvim/mason/packages/debugpy/venv/bin/pip"

@@ -8,11 +8,11 @@ alias note='~/.local/bin/note.sh'
 alias commit='~/.local/bin/commit.sh'
 
 alias book='fd . ~/Documents/books | sed "s/ /\\ /g" | fzf | xargs -r -d "\n" evince'
-alias para="exa -T --level 2 ~/Documents/notes/ -I '.git*|README*|TODO*'"
+alias para="exa -T --level=2 --sort=type ~/Documents/notes/ -I '.git*|README*|TODO*'"
 alias today="date +%Y-%m-%d"
 
 export TODO=$HOME/Documents/notes/TODO.md
-alias todo="vim $TODO"
+alias todo="vim ~/Documents/notes/TODO.md"
 
 alias v='FZF_PROMPT=Open; fds | fzfx nvim'
 alias c='FZF_PROMPT=Cat; fds | fzfx bat'
@@ -44,6 +44,9 @@ alias fd="fd -t f --no-ignore-vcs \
     -E drupal/ \
     -E db-data/ \
     -E \"fatvai-*\""
+
+alias venv="nvim ~/.zshenv"
+alias al="nvim ~/.zsh/aliases.zsh"
     
 # remove whitespaces in file paths
 alias fds="fd -H | sed 's/ /\\ /g'" 

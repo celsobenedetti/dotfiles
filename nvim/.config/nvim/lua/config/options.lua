@@ -9,7 +9,7 @@ vim.g.autoformat = true
 vim.opt.swapfile = false
 vim.opt.pumblend = 0 -- disable transparent completion menu
 
-vim.opt.shiftwidth = 4 -- Size of an indent
+vim.opt.shiftwidth = 2 -- Size of an indent
 vim.opt.tabstop = 4 -- Size of an indent
 
 -- open buffers verticaly

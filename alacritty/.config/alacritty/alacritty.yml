@@ -1150,4 +1150,4 @@ color_schemes:
 # colors: *tokyo
 import:
   # - ~/.config/alacritty/rose-pine.yml
-  - ~/.config/alacritty/poimandres.yml
+  - ~/.config/alacritty/neovim.yml

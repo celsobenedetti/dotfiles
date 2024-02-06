@@ -27,9 +27,6 @@ return {
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
       local cmp = require("cmp")
-      -- opts.sources = cmp.config.sources(vim.list_extend(opts.sources, {
-      --   { name = "dictionary", keyword_length = 2 },
-      -- }))
 
       ---@diagnostic disable-next-line: missing-fields
       opts.matching = {

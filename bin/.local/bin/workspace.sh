@@ -14,8 +14,8 @@ else
 		echo "$HOME/.dotfiles" &
 		echo "$HOME/.local/share/nvim/lazy"
 	)
-	session=$(echo "$dirs" | fzf-tmux -p 80% --prompt "Open tmux session -> ") # fzf-tmux is a little bit slower than i'd like
-	# session=$(echo "$dirs" | fzf --prompt "Open tmux session -> ")
+	# session=$(echo "$dirs" | fzf-tmux -p 80% --prompt "Open tmux session -> ") # fzf-tmux is a little bit slower than i'd like
+	session=$(echo "$dirs" | fzf --prompt "Open tmux session -> ")
 
 fi
 

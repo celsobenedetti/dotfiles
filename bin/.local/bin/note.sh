@@ -27,4 +27,8 @@ if [[ -z $TITLE ]]; then
 	exit 0
 fi
 
-zk new -t "$TITLE" "$HOME/Documents/notes/0-inbox/" 2>/dev/null
+if [[ -n "$2" ]]; then
+	zk new -t "$TITLE" "$2" 2>/dev/null
+else
+	zk new -t "$TITLE" "$NOTES/0-inbox/" 2>/dev/null
+fi

@@ -8,13 +8,13 @@ alias note='~/.local/bin/note.sh'
 alias workspace="~/.local/bin/workspace.sh"
 alias para="~/.local/bin/para.sh"
 alias commit='~/.local/bin/commit.sh'
-alias ww="nvim ~/Documents/notes/work-week.md"
+
+alias wn="~/.local/bin/work-note.sh"
+alias ww="vim ~/Documents/notes/work-week.md"
+alias todo="vim \$TODO"
 
 alias today="date +%Y-%m-%d"
 alias book='fd . ~/Documents/books | sed "s/ /\\ /g" | fzf | xargs -r -d "\n" evince'
-
-export TODO=$HOME/Documents/notes/todo.md
-alias todo="vim ~/Documents/notes/todo.md"
 
 alias v='FZF_PROMPT=Open; fds | fzfx nvim'
 alias c='FZF_PROMPT=Cat; fds | fzfx bat'
@@ -63,9 +63,9 @@ alias gcm='git commit'
 alias d='git-diff'
 alias r='git-restore'
 
-alias nerd="$BROWSER --new-window https://www.nerdfonts.com/cheat-sheet"
-alias emoji="$BROWSER --new-window https://www.freetool.dev/emoji-picker"
-alias gpt="$BROWSER --new-window https://chat.openai.com"
+alias nerd="\$BROWSER --new-window https://www.nerdfonts.com/cheat-sheet"
+alias emoji="\$BROWSER --new-window https://www.freetool.dev/emoji-picker"
+alias gpt="\$BROWSER --new-window https://chat.openai.com"
 
 alias cat='bat'
 alias ll='exa --git -I=".git|node_modules" -a'

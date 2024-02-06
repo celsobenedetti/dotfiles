@@ -17,3 +17,9 @@ export ZK=$ZK_NOTEBOOK_DIR
 
 export DENO_INSTALL="/home/celso/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
+
+# protobuf
+export PATH="/usr/local/protobuf/bin:$PATH"
+
+# Golang GOPATH
+export PATH="/home/celso/go/bin/:$PATH"

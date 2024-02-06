@@ -45,7 +45,6 @@ source ~/.dotfiles/zsh/.zsh/functions/git.zsh
 source ~/.dotfiles/zsh/.zsh/functions/fzf.zsh
 source ~/.dotfiles/zsh/.zsh/functions/good-morning.zsh
 source ~/.dotfiles/zsh/.zsh/functions/toggle-command-prefix.zsh
-source ~/.dotfiles/zsh/.zsh/functions/work.zsh
 source ~/.dotfiles/zsh/.zsh/functions/tmux.zsh
 source ~/.dotfiles/zsh/.zsh/functions/vim.zsh
 source ~/.dotfiles/zsh/.zsh/functions/stopwatch.zsh

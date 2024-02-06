@@ -6,7 +6,7 @@
 # if argument is passed, title is arg
 # else opens neovim to edit a title
 
-# TODO: Adjust note script to not rm /tmp, but only the first line
+# TODO:  ability to edit second line and add path to zk new
 
 TITLE=""
 

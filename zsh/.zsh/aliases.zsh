@@ -6,13 +6,13 @@ alias vim='/usr/local/bin/nvim'
 
 alias note='~/.local/bin/note.sh'
 alias commit='~/.local/bin/commit.sh'
+alias para="~/.local/bin/para.sh"
 
 alias book='fd . ~/Documents/books | sed "s/ /\\ /g" | fzf | xargs -r -d "\n" evince'
-alias para="exa -T --level=2 --sort=type ~/Documents/notes/ -I '.git*|README*|TODO*'"
 alias today="date +%Y-%m-%d"
 
-export TODO=$HOME/Documents/notes/TODO.md
-alias todo="vim ~/Documents/notes/TODO.md"
+export TODO=$HOME/Documents/notes/todo.md
+alias todo="vim ~/Documents/notes/todo.md"
 
 alias v='FZF_PROMPT=Open; fds | fzfx nvim'
 alias c='FZF_PROMPT=Cat; fds | fzfx bat'

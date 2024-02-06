@@ -5,18 +5,16 @@ BROWSER="brave-browser"
 alias vim='nvim'
 
 alias note='~/.local/bin/note.sh'
-alias workspace="~/.local/bin/work-week.sh"
+alias workspace="~/.local/bin/workspace.sh"
 alias para="~/.local/bin/para.sh"
 alias commit='~/.local/bin/commit.sh'
+alias ww="nvim ~/Documents/notes/work-week.md"
 
 alias today="date +%Y-%m-%d"
 alias book='fd . ~/Documents/books | sed "s/ /\\ /g" | fzf | xargs -r -d "\n" evince'
 
 export TODO=$HOME/Documents/notes/todo.md
 alias todo="vim ~/Documents/notes/todo.md"
-
-alias ww="nvim $(~/.local/bin/work-week.sh)"
-export CURR_WORK_WEEK=$(~/.local/bin/work-week.sh)
 
 alias v='FZF_PROMPT=Open; fds | fzfx nvim'
 alias c='FZF_PROMPT=Cat; fds | fzfx bat'

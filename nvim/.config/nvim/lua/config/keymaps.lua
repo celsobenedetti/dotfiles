@@ -29,7 +29,7 @@ end, { mode = "v", desc = "Paste without losing register" }) --hold on to regist
 Map("<leader>p", '"_dP', { mode = "v", desc = "Paste without losing register" }) --hold on to register when pasting and replace text
 
 Map("<leader>wq", "<cmd>wqa<cr>", { desc = "Save all buffers" })
-Map("<leader>ww", ":e $CURR_WORK_WEEK<cr>", { desc = "Save all buffers" })
+Map("<leader>ww", ":e ~/Documents/notes/work-week.md<cr>", { desc = "Save all buffers" })
 
 Map("<leader>todo", ":e $TODO<CR>", { mode = { "n", "v" } })
 Map("<leader>dd", ":bdelete<cr>", { desc = "Delete buffer" })

@@ -54,7 +54,7 @@ source ~/.dotfiles/zsh/.zsh/functions/stopwatch.zsh
 # bindkey -v
 
 alias flush="echo 2>/dev/null"
-bindkey -s ^f "workspace\n"
+bindkey -s ^f "workspace.sh\n"
 
 alias launchchrome="\"/mnt/c/Program Files/Google/Chrome/Application/chrome.exe\""
 export CHROME_BIN=launchchrome

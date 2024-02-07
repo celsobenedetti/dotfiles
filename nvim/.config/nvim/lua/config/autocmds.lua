@@ -8,11 +8,6 @@ local markdown = vim.api.nvim_create_augroup("MarkdownGroup", { clear = true })
 local typeScript = nil -- vim.api.nvim_create_augroup("TypeScriptGroup", { clear = true })
 local json = vim.api.nvim_create_augroup("JSONGroup", { clear = true })
 
-local function disable_conceal()
-  local conceallevel = vim.o.conceallevel > 0 and vim.o.conceallevel or 3
-  require("lazyvim.util").toggle("conceallevel", false, { 0, conceallevel })
-end
-
 -- All files --------------------------------------------------------------
 
 if all then
@@ -34,9 +29,7 @@ if markdown then
     pattern = "*.md",
     callback = function()
       vim.cmd("set syntax=markdown")
-      disable_conceal()
-
-      vim.cmd("Twilight")
+      vim.cmd("ZenMode")
       fold.work_week()
     end,
     group = markdown,

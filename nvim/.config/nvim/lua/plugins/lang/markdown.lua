@@ -127,27 +127,42 @@ return {
     ft = "markdown",
     keys = {
       { "<leader>os", ":ObsidianSearch<CR>" },
+      { "<leader>oo", ":ObsidianOpen<CR>" },
     },
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
     opts = {
+      new_notes_location = "notes_subdir",
       workspaces = {
         {
           name = "notes",
           path = "~/Documents/notes",
+          overrides = {
+            notes_subdir = "0-inbox",
+          },
         },
       },
       note_id_func = function(title)
         if title ~= nil then
           title = title:gsub(" ", "-")
+          title = string.lower(title)
         end
         local suffix = ""
         for _ = 1, 4 do
           suffix = suffix .. random_letter_or_number()
         end
         -- title to lower case
-        return string.lower(title) .. "-" .. suffix
+        return title .. "-" .. suffix
+      end,
+      note_frontmatter_func = function(note)
+        local out = { id = note.id }
+        if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
+          for k, v in pairs(note.metadata) do
+            out[k] = v
+          end
+        end
+        return out
       end,
     },
   },

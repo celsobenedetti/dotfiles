@@ -10,7 +10,7 @@ alias para="~/.local/bin/para.sh"
 alias commit='~/.local/bin/commit.sh'
 
 alias wn="~/.local/bin/work-note.sh"
-alias ww="vim \$WW"
+alias ww="work-week.sh"
 alias todo="vim \$TODO"
 
 alias today="date +%Y-%m-%d"

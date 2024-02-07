@@ -1,7 +1,7 @@
 -- Autocmds are automatically loaded on the VeryLazy event
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 -- Add any additional autocmds here
-local fold = require("functions.markdown.fold")
+local work_week = require("functions.markdown.work_week")
 
 local all = vim.api.nvim_create_augroup("AllFilesGroup", { clear = true })
 local markdown = vim.api.nvim_create_augroup("MarkdownGroup", { clear = true })
@@ -29,8 +29,8 @@ if markdown then
     pattern = "*.md",
     callback = function()
       vim.cmd("set syntax=markdown")
-      vim.cmd("ZenMode")
-      fold.work_week()
+      vim.cmd("Twilight")
+      work_week.find_today()
     end,
     group = markdown,
     desc = "Run when entering Markdown files",

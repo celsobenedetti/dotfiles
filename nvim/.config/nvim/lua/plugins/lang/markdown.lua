@@ -96,11 +96,38 @@ return {
     end,
   },
 
+  -- zk
+  {
+    "mickael-menu/zk-nvim",
+    ft = "markdown",
+    keys = {
+      { "<leader>zn", ":ZkNewFromTitleSelection<CR>", mode = "v" },
+      { "<leader>zn", ":ZkNewFromTitleSelection<CR>", mode = "v" },
+      { "<leader>zz", ":ZkNotes<CR>" },
+      { "<leader>zb", ":ZkBacklinks<CR>" },
+      { "<leader>zl", ":ZkLinks<CR>" },
+      { "<leader>zt", ":ZkTags<CR>" },
+    },
+    dependencies = {
+      {
+        "williamboman/mason.nvim",
+        opts = function(_, opts)
+          if type(opts.ensure_installed) == "table" then
+            vim.list_extend(opts.ensure_installed, { "zk" })
+          end
+        end,
+      },
+    },
+  },
+
   {
     "epwalsh/obsidian.nvim",
     version = "*", -- recommended, use latest release instead of latest commit
     lazy = true,
     ft = "markdown",
+    keys = {
+      { "<leader>os", ":ObsidianSearch<CR>" },
+    },
     dependencies = {
       "nvim-lua/plenary.nvim",
     },

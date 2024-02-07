@@ -12,6 +12,7 @@ return {
         cssls = { filetypes = { "html", "gohtml", "vue" } },
         emmet_ls = { filetypes = { "none" } },
         volar = {},
+        zk = {},
       })
 
       opts.setup = {
@@ -19,7 +20,8 @@ return {
           return vim.g.disable_tailwind
         end,
 
-        jdtls = function()
+        zk = function()
+          require("zk").setup()
           return true
         end,
       }

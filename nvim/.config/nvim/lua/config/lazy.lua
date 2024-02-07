@@ -36,7 +36,6 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.tailwind" },
     { import = "lazyvim.plugins.extras.lang.docker" },
     { import = "lazyvim.plugins.extras.lang.terraform" },
-    { import = "lazyvim.plugins.extras.lang.markdown" },
 
     { import = "lazyvim.plugins.extras.dap.core" },
     { import = "lazyvim.plugins.extras.dap.nlua" },
@@ -51,8 +50,6 @@ require("lazy").setup({
     { "folke/flash.nvim", enabled = false },
     { "echasnovski/mini.surround", enabled = false },
     { "lukas-reineke/indent-blankline.nvim", enabled = false },
-    -- { "lukas-reineke/headlines.nvim", enabled = false },
-    { "iamcco/markdown-preview.nvim", enabled = false },
     -- { "akinsho/bufferline.nvim", enabled = false },
   },
   defaults = {

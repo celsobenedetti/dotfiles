@@ -155,9 +155,12 @@ return {
         "http",
         "hurl",
         "make",
+        "markdown",
+        "markdown_inline",
         "mermaid",
         "sql",
         "proto",
+        "tsx",
         "vue",
         "xml",
       })

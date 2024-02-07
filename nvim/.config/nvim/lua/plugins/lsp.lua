@@ -15,12 +15,6 @@ return {
       })
 
       opts.setup = {
-
-        zk = function()
-          require("zk").setup()
-          return true --let zk.nvim handle zk lsp
-        end,
-
         tailwindcss = function()
           return vim.g.disable_tailwind
         end,

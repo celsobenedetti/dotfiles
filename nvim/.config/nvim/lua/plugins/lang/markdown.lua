@@ -1,3 +1,12 @@
+local function random_letter_or_number()
+  local is_number = math.random(0, 1) == 1
+  if is_number then
+    return string.char(math.random(48, 57))
+  else
+    return string.char(math.random(97, 122))
+  end
+end
+
 return {
 
   {
@@ -9,30 +18,6 @@ return {
         "markdown_inline",
       })
     end,
-  },
-
-  -- zk
-  {
-    "mickael-menu/zk-nvim",
-    ft = "markdown",
-    keys = {
-      { "<leader>zn", ":ZkNewFromTitleSelection<CR>", mode = "v" },
-      { "<leader>zn", ":ZkNewFromTitleSelection<CR>", mode = "v" },
-      { "<leader>zz", ":ZkNotes<CR>" },
-      { "<leader>zb", ":ZkBacklinks<CR>" },
-      { "<leader>zl", ":ZkLinks<CR>" },
-      { "<leader>zt", ":ZkTags<CR>" },
-    },
-    dependencies = {
-      {
-        "williamboman/mason.nvim",
-        opts = function(_, opts)
-          if type(opts.ensure_installed) == "table" then
-            vim.list_extend(opts.ensure_installed, { "zk" })
-          end
-        end,
-      },
-    },
   },
 
   {
@@ -109,5 +94,34 @@ return {
       vim.keymap.set("n", "dd", "dd<cmd>AutolistRecalculate<cr>")
       vim.keymap.set("v", "d", "d<cmd>AutolistRecalculate<cr>")
     end,
+  },
+
+  {
+    "epwalsh/obsidian.nvim",
+    version = "*", -- recommended, use latest release instead of latest commit
+    lazy = true,
+    ft = "markdown",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    opts = {
+      workspaces = {
+        {
+          name = "notes",
+          path = "~/Documents/notes",
+        },
+      },
+      note_id_func = function(title)
+        if title ~= nil then
+          title = title:gsub(" ", "-")
+        end
+        local suffix = ""
+        for _ = 1, 4 do
+          suffix = suffix .. random_letter_or_number()
+        end
+        -- title to lower case
+        return string.lower(title) .. "-" .. suffix
+      end,
+    },
   },
 }

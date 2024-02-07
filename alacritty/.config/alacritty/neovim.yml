@@ -51,12 +51,12 @@ colors:
   # Normal colors
   normal:
     black: "#1b1e28"
-    red: "#d0679d"
+    red: "#ffbcb5"
     green: "#7FAD8A"
-    yellow: "#fffac2"
+    yellow: "#f4d88c"
     blue: "#7FAAC9"
-    magenta: "#F087BD"
-    cyan: "#add7ff"
+    magenta: "#ffbcb5"
+    cyan: "#9fd8ff"
     white: "#ffffff"
 
   # Bright colors

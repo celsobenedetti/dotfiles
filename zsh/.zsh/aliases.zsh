@@ -10,11 +10,11 @@ alias para="~/.local/bin/para.sh"
 alias commit='~/.local/bin/commit.sh'
 
 alias wn="~/.local/bin/work-note.sh"
-alias ww="vim ~/Documents/notes/work-week.md"
+alias ww="vim \$WW"
 alias todo="vim \$TODO"
 
 alias today="date +%Y-%m-%d"
-alias book='fd . ~/Documents/books | sed "s/ /\\ /g" | fzf | xargs -r -d "\n" evince'
+alias book="tmux neww -n evince 'fd . ~/Documents/books | sed \"s/ /\\ /g\" | fzf | xargs -r -d \"\n\" evince'"
 
 alias v='FZF_PROMPT=Open; fds | fzfx nvim'
 alias c='FZF_PROMPT=Cat; fds | fzfx bat'

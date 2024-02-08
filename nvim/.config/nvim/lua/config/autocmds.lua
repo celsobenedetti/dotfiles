@@ -63,7 +63,7 @@ if json then
   vim.api.nvim_create_autocmd({ "VimEnter" }, {
     pattern = "*.json",
     callback = function()
-      disable_conceal()
+      vim.o.conceallevel = 3
     end,
     group = json,
     desc = "Run when entering JSON files",

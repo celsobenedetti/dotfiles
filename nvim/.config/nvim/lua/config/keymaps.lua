@@ -66,4 +66,11 @@ Map("<leader>G", "<cmd>ChatGPT<CR>", { desc = "Open ChatGPT" })
 
 -- Commands
 Map("<leader>C", "<cmd>Clip<CR>", { desc = "Copy file path to clipboard" })
-Map("<leader>D", "<cmd>Diff<CR>", { desc = "Copy git diff to clipboard" })
+Map(
+  "<leader>D",
+  "<cmd>!tmux popup git diff %<CR>",
+  { desc = "Open tmux popup for with current file diff" }
+)
+
+Map("g[", "<cmd>Gitsigns prev_hunk<CR>", { desc = "Prev git diff hunk" })
+Map("g]", "<cmd>Gitsigns next_hunk<CR>", { desc = "Next git diff hunk" })

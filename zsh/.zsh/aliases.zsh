@@ -4,10 +4,12 @@ BROWSER="brave-browser"
 
 alias vim='nvim'
 
-alias note='~/.local/bin/note.sh'
 alias workspace="~/.local/bin/workspace.sh"
-alias para="~/.local/bin/para.sh"
 alias commit='~/.local/bin/commit.sh'
+
+alias note='~/.local/bin/note.sh'
+alias notes="fd -H . \$NOTES | fzfx nvim"
+alias para="~/.local/bin/para.sh"
 
 alias wn="~/.local/bin/work-note.sh"
 alias ww="work-week.sh"
@@ -63,6 +65,7 @@ alias gcm='git commit'
 alias d='git-diff'
 alias r='git-restore'
 
+alias cal="\$BROWSER --new-window https://calendar.google.com/calendar/u/2/r"
 alias nerd="\$BROWSER --new-window https://www.nerdfonts.com/cheat-sheet"
 alias emoji="\$BROWSER --new-window https://www.freetool.dev/emoji-picker"
 alias gpt="\$BROWSER --new-window https://chat.openai.com"

@@ -14,6 +14,8 @@ template=$(
 
 # Creating New Note 
 # Add title in first line
+# Leave empty to cancel
+#
 # $(date)
 EOF
 )

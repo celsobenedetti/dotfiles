@@ -1,8 +1,6 @@
 build:
-	@go build -C ./cmd/title/ -o title
-	@cp ./cmd/title/title ~/.local/bin/Title
-	@echo "title.go successfully built"
-	@echo "\tCLI: Title"
+	@go build -C ./cmd/title/ -o ~/.local/bin/Title
+	@echo "title.go successfully built\n\tCLI: Title"
 
 test:
 	go test ./...

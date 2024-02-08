@@ -8,8 +8,9 @@ alias workspace="~/.local/bin/workspace.sh"
 alias commit='~/.local/bin/commit.sh'
 
 alias note='~/.local/bin/note.sh'
-alias notes="fd -H . \$NOTES | fzfx nvim"
 alias para="~/.local/bin/para.sh"
+alias notes="notes.sh"
+alias fnotes="fd -H . \$NOTES | fzfx nvim"
 
 alias wn="~/.local/bin/work-note.sh"
 alias ww="work-week.sh"

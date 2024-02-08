@@ -29,14 +29,6 @@ if markdown then
     pattern = "*.md",
     callback = function()
       work_week.find_today()
-    end,
-    group = markdown,
-    desc = "Run when entering Markdown files",
-  })
-
-  vim.api.nvim_create_autocmd({ "BufEnter" }, {
-    pattern = "*.md",
-    callback = function()
       require("twilight").enable()
     end,
     group = markdown,

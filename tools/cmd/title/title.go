@@ -15,6 +15,8 @@ func main() {
 	fmt.Fprint(os.Stdout, Title(in))
 }
 
+var titleCaser = cases.Title(language.English)
+
 // all of these terms will be upper cased
 var shouldUpper = map[string]struct{}{
 	"oclt": {},
@@ -22,17 +24,16 @@ var shouldUpper = map[string]struct{}{
 	"para": {},
 }
 
-// title are divided into individual
-// terms once for each of these separators
+// for each of these separators
+// title is divided into individual terms
 var separators = []string{
-	" ", "-",
+	" ",
+	"-",
 }
-
-var titleCaser = cases.Title(language.English)
 
 // Title converts string to title case -> Title Case
 // For each separator, iterates over s splitting terms
-// Converts any terms in shouldUpper to  UPPER CASE
+// Converts any terms in shouldUpper to UPPER CASE
 func Title(s string) string {
 	title := titleCaser.String(s)
 

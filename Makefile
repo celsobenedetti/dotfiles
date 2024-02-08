@@ -24,3 +24,8 @@ build:
 	@echo "========= Building Tools =============" 
 	@$(MAKE) -s -C tools
 	@echo "======================================" 
+
+test:
+	@echo "========= Testing Tools =============" 
+	@$(MAKE) test -s -C tools 
+	@echo "======================================" 

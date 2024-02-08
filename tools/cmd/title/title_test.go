@@ -16,6 +16,7 @@ func TestTitle(t *testing.T) {
 		{in: "ocLT-1234", want: "OCLT-1234"},
 		{in: "fd-1234", want: "FD-1234"},
 		{in: "fD-1234", want: "FD-1234"},
+		{in: "8 - extending para across multiple platforms", want: "8 - Extending PARA Across Multiple Platforms"},
 	}
 	for i, tt := range tests {
 		t.Run(fmt.Sprintf("Test %d", i), func(t *testing.T) {

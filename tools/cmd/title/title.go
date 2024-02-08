@@ -10,51 +10,58 @@ import (
 	"golang.org/x/text/language"
 )
 
+func main() {
+	in := readStdin()
+	fmt.Fprint(os.Stdout, Title(in))
+}
+
+// all of these terms will be upper cased
 var shouldUpper = map[string]struct{}{
 	"oclt": {},
 	"fd":   {},
+	"para": {},
 }
 
+// title are divided into individual
+// terms once for each of these separators
 var separators = []string{
 	" ", "-",
 }
 
-func main() {
+var titleCaser = cases.Title(language.English)
+
+// Title converts string to title case -> Title Case
+// For each separator, iterates over s splitting terms
+// Converts any terms in shouldUpper to  UPPER CASE
+func Title(s string) string {
+	title := titleCaser.String(s)
+
+	for _, sep := range separators {
+		title = iterateTerms(title, sep)
+	}
+
+	return title
+}
+
+// iterateTerms splits strings by separator and uppters any individual terms
+func iterateTerms(in, separator string) string {
+	var result strings.Builder
+
+	for _, term := range strings.Split(in, separator) {
+		if _, ok := shouldUpper[strings.ToLower(term)]; ok {
+			term = strings.ToUpper(term)
+		}
+		result.WriteString(term + separator)
+	}
+
+	return strings.Trim(result.String(), separator)
+}
+
+func readStdin() string {
 	in, err := io.ReadAll(os.Stdin)
 	if err != nil {
 		fmt.Fprint(os.Stderr, err)
 		os.Exit(1)
 	}
-
-	title := Title(string(in))
-	fmt.Fprint(os.Stdout, title)
-}
-
-// Title converts string to Title Case
-// converts any strings in shouldUpper to upper case
-func Title(s string) string {
-	caser := cases.Title(language.English)
-	out := caser.String(string(s))
-
-	for _, sep := range separators {
-		out = processUpper(out, sep)
-	}
-
-	return out
-}
-
-// processUpper splits strings by separator and process individual terms
-func processUpper(in, separator string) string {
-	var result strings.Builder
-
-	for _, part := range strings.Split(in, separator) {
-		if _, ok := shouldUpper[strings.ToLower(part)]; ok {
-			result.WriteString(strings.ToUpper(part))
-		} else {
-			result.WriteString(part)
-		}
-		result.WriteString(separator)
-	}
-
-	return strings.Trim(result.String(), separator)
+	return string(in)
 }

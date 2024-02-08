@@ -21,4 +21,6 @@ decrypt:
 	@stow git
 
 build:
-	$(MAKE) -C tools
+	@echo "========= Building Tools =============" 
+	@$(MAKE) -s -C tools
+	@echo "======================================" 

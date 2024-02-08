@@ -5,9 +5,18 @@
 #
 # if argument is passed, title is arg
 # else opens neovim to edit a title
+#
+# if second arugment is passed, create note in folder
 
-# TODO: ability to edit second line and add path to zk new
-# TODO: Extra lines will be added as content
+template=$(
+	cat <<EOF
+
+
+# Creating New Note 
+# Add title in first line
+# $(date)
+EOF
+)
 
 TITLE=""
 
@@ -15,12 +24,9 @@ if [[ -n "$1" ]]; then
 	TITLE=$1
 else
 	temp='/tmp/note'
-
-	# Clear the first line using sed
-	sed -i '1s/.*//' "$temp" 2>/dev/null
-
+	echo "$template" >"$temp"
 	nvim -c 'set filetype=gitcommit' "$temp"
-	TITLE=$(head -n 1 "$temp")
+	TITLE=$(head -n 1 "$temp" | Title)
 fi
 
 if [[ -z $TITLE ]]; then

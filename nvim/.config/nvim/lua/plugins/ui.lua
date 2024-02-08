@@ -133,7 +133,10 @@ return {
 
   {
     "folke/twilight.nvim",
-    opts = {},
+    config = function()
+      require("twilight").setup()
+      require("twilight").enable()
+    end,
     ft = { "markdown" },
     keys = { { "<leader>tw", ":Twilight<CR>" } },
   },

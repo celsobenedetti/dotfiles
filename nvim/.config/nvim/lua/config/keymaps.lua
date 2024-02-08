@@ -31,6 +31,7 @@ Map("<leader>p", '"_dP', { mode = "v", desc = "Paste without losing register" })
 Map("<leader>wq", "<cmd>wqa<cr>", { desc = "Save all buffers" })
 Map("<leader>dd", ":bdelete<cr>", { desc = "Delete buffer" })
 
+Map("<leader>ww", ":e $WW<cr>", { desc = "Save all buffers" })
 Map("<leader>todo", ":e $TODO<CR>", { mode = { "n", "v" } })
 
 -- delete word bacwards

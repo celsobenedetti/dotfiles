@@ -128,6 +128,7 @@ return {
     keys = {
       { "<leader>os", ":ObsidianSearch<CR>" },
       { "<leader>oo", ":ObsidianOpen<CR>" },
+      { "<leader>ob", ":ObsidianBacklinks<CR>" },
     },
     dependencies = {
       "nvim-lua/plenary.nvim",
@@ -152,11 +153,11 @@ return {
         for _ = 1, 4 do
           suffix = suffix .. random_letter_or_number()
         end
-        -- title to lower case
+
         return title .. "-" .. suffix
       end,
       note_frontmatter_func = function(note)
-        local out = { id = note.id }
+        local out = { id = note.id, aliases = note.aliases }
         if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
           for k, v in pairs(note.metadata) do
             out[k] = v

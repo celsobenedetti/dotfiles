@@ -27,8 +27,8 @@ var shouldUpper = map[string]struct{}{
 // for each of these separators
 // title is divided into individual terms
 var separators = []string{
-	" ",
 	"-",
+	" ",
 }
 
 // Title converts string to title case -> Title Case
@@ -49,13 +49,15 @@ func iterateTerms(in, separator string) string {
 	var result strings.Builder
 
 	for _, term := range strings.Split(in, separator) {
-		if _, ok := shouldUpper[strings.ToLower(term)]; ok {
+
+		t := strings.TrimSpace(strings.ToLower(term))
+		if _, ok := shouldUpper[t]; ok {
 			term = strings.ToUpper(term)
 		}
 		result.WriteString(term + separator)
 	}
 
-	return strings.Trim(result.String(), separator)
+	return strings.TrimSuffix(result.String(), separator)
 }
 
 func readStdin() string {

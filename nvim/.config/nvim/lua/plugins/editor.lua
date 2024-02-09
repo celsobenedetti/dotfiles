@@ -83,6 +83,7 @@ return {
       { "<leader>fn", require("telescope.builtin").treesitter, desc = "Find Treesitter nodes" },
       { "<leader>fF", require("telescope.builtin").git_files, desc = "Search Dotfiles" },
       { "<leader>dot", require("functions.telescope").search_dotfiles, desc = "Search Dotfiles" },
+      { "<leader>mv", require("functions.telescope").move_note, desc = "Search Dotfiles" },
       {
         "<leader><leader>",
         require("telescope.builtin").buffers,

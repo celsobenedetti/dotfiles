@@ -68,6 +68,7 @@ Map("<leader>G", "<cmd>ChatGPT<CR>", { desc = "Open ChatGPT" })
 Map("<leader>C", "<cmd>Clip<CR>", { desc = "Copy file path to clipboard" })
 Map("<leader>D", "<cmd>Diff<CR>", { desc = "Open tmux popup for with current file diff" })
 Map("<leader>L", "<cmd>Log<CR>", { desc = "Open tmux popup for git log" })
+Map("<leader>gl", "<cmd>Glow<CR>", { desc = "Open tmux popup for git log" })
 
 Map("g[", "<cmd>Gitsigns prev_hunk<CR>", { desc = "Prev git diff hunk" })
 Map("g]", "<cmd>Gitsigns next_hunk<CR>", { desc = "Next git diff hunk" })

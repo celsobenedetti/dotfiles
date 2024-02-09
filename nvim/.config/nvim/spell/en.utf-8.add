@@ -189,3 +189,5 @@ timeframe
 nvim
 unstaged
 args
+dir
+dirs

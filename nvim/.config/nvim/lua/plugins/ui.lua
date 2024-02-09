@@ -46,6 +46,8 @@ return {
         { "msg_show", "Keyboard interrupt" },
         { "msg_show", ":qa" },
         { "msg_show", "Error in decoration provider" },
+        { "msg_show", "obsidian/async.lua" },
+        { "msg_show", "Error executing vim.schedule lua callback" },
       }
 
       for _, filter in ipairs(ignore_notifications) do

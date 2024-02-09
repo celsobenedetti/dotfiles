@@ -20,23 +20,27 @@ template=$(
 EOF
 )
 
-TITLE=""
+title=""
 
 if [[ -n "$1" ]]; then
-	TITLE=$1
+	title=$1
 else
 	temp='/tmp/note'
 	echo "$template" >"$temp"
 	nvim -c 'set filetype=gitcommit' "$temp"
-	TITLE=$(head -n 1 "$temp" | Title)
+	title=$(head -n 1 "$temp")
 fi
 
-if [[ -z $TITLE ]]; then
+title=$(echo "$title" | Title)
+
+if [[ -z $title ]]; then
 	exit 0
 fi
 
+destination="$NOTES/0-inbox/"
+
 if [[ -n "$2" ]]; then
-	zk new -t "$TITLE" "$2" 2>/dev/null
-else
-	zk new -t "$TITLE" "$NOTES/0-inbox/" 2>/dev/null
+	destination="$2"
 fi
+
+zk new -t "$title" "$destination" 2>/dev/null

@@ -21,16 +21,16 @@ case "$1" in
 inbox | i* | 0)
 	path=$inbox
 	;;
-projects | p* | 1)
+projects | p* | 1*)
 	path=$projects
 	;;
-arq* | 4)
+arq* | 4*)
 	path=$archives
 	;;
-areas | a* | 2)
+areas | a* | 2*)
 	path=$areas
 	;;
-resources | r* | 3)
+resources | r* | 3*)
 	path=$resources
 	;;
 work | w*)

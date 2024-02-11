@@ -39,9 +39,9 @@ if [[ -z $title ]]; then
 	exit 0
 fi
 
-if [[ -n "$2" ]]; then
+quick-note() {
 	# create note without opening in editor
-	new_note=$(zk new -t "$title" -n 2>&1)
+	new_note=$(zk new -t "$title" --template=quick-note.md -n 2>&1)
 	note_path=$(echo "$new_note" | head -n 1 | tr -d '\r')
 	note_file=$(basename "$note_path")
 	note_content=$(echo "$new_note" | tail -n +2)
@@ -49,6 +49,11 @@ if [[ -n "$2" ]]; then
 	note_path="$destination/$note_file"
 	echo "$note_content" >"$note_path"
 	exit
+
+}
+
+if [[ -n "$2" ]]; then
+	quick-note
 fi
 
 zk new -t "$title" "$destination" 2>/dev/null

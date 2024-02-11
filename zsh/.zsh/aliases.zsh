@@ -19,7 +19,7 @@ alias today="date +%Y-%m-%d"
 alias books="books.sh"
 
 alias v='FZF_PROMPT=Open; fds | fzfx nvim'
-alias c='FZF_PROMPT=Cat; fds | fzfx bat'
+alias c='FZF_PROMPT=Cat; fds | fzfx bat -p'
 
 alias rg="rg \
     --glob \"!.git\" \
@@ -29,7 +29,7 @@ alias rg="rg \
     --glob \"!python\" \
     --glob \"!fatvai-*\""
 
-alias fd="fd -t f --no-ignore-vcs \
+alias fd="fd --no-ignore-vcs \
     -E .git \
     -E .next/ \
     -E .angular/ \
@@ -50,7 +50,6 @@ alias fd="fd -t f --no-ignore-vcs \
     -E \"fatvai-*\""
 
 alias venv="nvim ~/.zshenv"
-alias al="nvim ~/.zsh/aliases.zsh"
     
 # remove whitespaces in file paths
 alias fds="fd -H | sed 's/ /\\ /g'" 
@@ -78,7 +77,6 @@ alias dust="dust -c"
 alias clip="xclip -sel clip"
 
 alias yac="httpyac"
-
 
 alias py='python3'
 alias dc='docker compose'

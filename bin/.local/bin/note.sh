@@ -9,9 +9,9 @@
 # if second arugment is passed, create note in folder
 
 title=""
-destination="$NOTES/0-inbox/"
+destination="$NOTES/0-inbox"
 
-template=$(
+title_editor_templ=$(
 	cat <<EOF
 
 
@@ -26,10 +26,11 @@ EOF
 if [[ -n "$1" ]]; then
 	title="$1"
 else
-	temp='/tmp/note'
-	echo "$template" >"$temp"
-	nvim -c 'set filetype=gitcommit' "$temp"
-	title=$(head -n 1 "$temp")
+	title_editor='/tmp/title_editor'
+
+	echo "$title_editor_templ" >"$title_editor"
+	nvim -c 'set filetype=gitcommit' "$title_editor"
+	title=$(head -n 1 "$title_editor")
 fi
 
 title=$(echo "$title" | Title)
@@ -38,9 +39,7 @@ if [[ -z $title ]]; then
 	exit 0
 fi
 
-if ! [[ "$2" == "ok" ]]; then
-	zk new -t "$title" "$destination" 2>/dev/null
-else
+if [[ -n "$2" ]]; then
 	# create note without opening in editor
 	new_note=$(zk new -t "$title" -n 2>&1)
 	note_path=$(echo "$new_note" | head -n 1 | tr -d '\r')
@@ -49,4 +48,7 @@ else
 
 	note_path="$destination/$note_file"
 	echo "$note_content" >"$note_path"
+	exit
 fi
+
+zk new -t "$title" "$destination" 2>/dev/null

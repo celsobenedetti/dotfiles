@@ -24,7 +24,7 @@ inbox | i* | 0)
 projects | p* | 1*)
 	path=$projects
 	;;
-arq* | 4*)
+arc* | 4*)
 	path=$archives
 	;;
 areas | a* | 2*)

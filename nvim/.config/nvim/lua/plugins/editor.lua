@@ -30,6 +30,7 @@ return {
         hide_gitignored = false,
         hide_dotfiles = false,
       }
+      opts.window.position = "right"
     end,
   },
 

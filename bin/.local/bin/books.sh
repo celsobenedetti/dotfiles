@@ -1,3 +1,5 @@
 #!/bin/bash
 
-fd . ~/Documents/books | sed "s/ /\\ /g" | fzf | xargs -r -d "\n" evince
+book=$(fd . ~/Documents/books | sed "s/ /\\ /g" | fzf)
+
+echo "$book" | xargs -r -d "\n" evince

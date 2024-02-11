@@ -17,47 +17,56 @@ func main() {
 
 var titleCaser = cases.Title(language.English)
 
-// all of these terms will be upper cased
-var shouldUpper = map[string]struct{}{
-	"oclt": {},
-	"fd":   {},
-	"para": {},
+// any of these term keys will be mapped to values
+var mappings = map[string]string{
+	"oclt":    "OCLT",
+	"fd":      "FD",
+	"para":    "PARA",
+	"github":  "GitHub",
+	"mongodb": "MongoDB",
 }
 
 // for each of these separators
 // title is divided into individual terms
 var separators = []string{
-	"-",
 	" ",
+	"-",
 }
 
 // Title converts string to title case -> Title Case
 // For each separator, iterates over s splitting terms
-// Converts any terms in shouldUpper to UPPER CASE
+// Converts any terms in keys of mappings to its mapped value
 func Title(s string) string {
 	title := titleCaser.String(s)
 
 	for _, sep := range separators {
-		title = iterateTerms(title, sep)
+		title = runMappings(title, sep)
 	}
 
 	return title
 }
 
-// iterateTerms splits strings by separator and uppters any individual terms
-func iterateTerms(in, separator string) string {
+// for each separator runMappings splits title into terms
+// convert each mapped term keys to it's mapped value
+func runMappings(in, separator string) string {
 	var result strings.Builder
 
 	for _, term := range strings.Split(in, separator) {
-
-		t := strings.TrimSpace(strings.ToLower(term))
-		if _, ok := shouldUpper[t]; ok {
-			term = strings.ToUpper(term)
-		}
-		result.WriteString(term + separator)
+		result.WriteString(mapTerm(term) + separator)
 	}
 
-	return strings.TrimSuffix(result.String(), separator)
+	r := strings.TrimSuffix(result.String(), separator)
+	r = strings.TrimSpace(r)
+	return r
+}
+
+// if there is mapping for term returns mapped value
+func mapTerm(term string) string {
+	t := strings.TrimSpace(strings.ToLower(term))
+	if value, ok := mappings[t]; ok {
+		return value
+	}
+	return term
 }
 
 func readStdin() string {

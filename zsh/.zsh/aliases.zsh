@@ -4,20 +4,19 @@ BROWSER="brave-browser"
 
 alias vim='nvim'
 
-alias workspace="~/.local/bin/workspace.sh"
-alias commit='~/.local/bin/commit.sh'
+alias workspace="workspace.sh"
+alias commit='commit.sh'
 
-alias note='~/.local/bin/note.sh'
-alias para="~/.local/bin/para.sh"
+alias note='note.sh'
+alias para="para.sh"
 alias notes="notes.sh"
+alias inbox="inbox.sh"
 
-alias wn="~/.local/bin/work-note.sh"
 alias ww="work-week.sh"
 alias todo="vim \$TODO"
 
 alias today="date +%Y-%m-%d"
 alias books="books.sh"
-alias inbox="inbox.sh"
 
 alias v='FZF_PROMPT=Open; fds | fzfx nvim'
 alias c='FZF_PROMPT=Cat; fds | fzfx bat'

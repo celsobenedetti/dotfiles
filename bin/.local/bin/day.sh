@@ -8,17 +8,17 @@
 path="$NOTES/2-areas/daily"
 day=$(date +"%d/%m")
 tomorrow=$(date +"%d/%m" -d "tomorrow")
+day_file_format=$(date +"%d-%m")
 
 if [[ -n "$1" ]]; then
 	day=$tomorrow
 fi
 
-note=$(ls "$path" | grep "$day")
+note=$(ls "$path" | grep "day-$day_file_format")
 
 if [ -n "$note" ]; then
 	nvim "$path/$note"
 	exit
 fi
 
-echo "Day $day"
 zk new --template="daily.md" -t "Day $day" "$path"

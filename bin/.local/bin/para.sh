@@ -41,6 +41,21 @@ ocelot | o*)
 	;;
 esac
 
-ignore='.git*|README.md'
+# Define ignore patterns in an array
+ignore=(
+	'README.md'
+	'todo.md'
+	'chores.md'
+	'insights.md'
+	'books.md'
+	'movies.md'
+	'done.md'
+	'Makefile'
+)
 
-exa --tree --sort=type --level="$depth" -I="$ignore" "$path"
+# Join patterns with '|' separator
+ignore_pattern=$(
+	IFS="|"
+	echo "${ignore[*]}"
+)
+exa --tree --sort=type --level="$depth" -I="$ignore_pattern" "$path"

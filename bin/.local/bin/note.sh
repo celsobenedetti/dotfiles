@@ -9,6 +9,7 @@
 # if second arugment is passed, create note in folder
 
 title=""
+quick=false
 destination="$NOTES/0-inbox"
 
 title_editor_templ=$(
@@ -31,6 +32,7 @@ else
 	echo "$title_editor_templ" >"$title_editor"
 	nvim -c 'set filetype=gitcommit' "$title_editor"
 	title=$(head -n 1 "$title_editor")
+	quick=$(awk 'NR==2 {print $1}' "$title_editor" | grep -q . && echo true)
 fi
 
 title=$(echo "$title" | Title)
@@ -39,8 +41,8 @@ if [[ -z $title ]]; then
 	exit 0
 fi
 
+# create note without opening in editor
 quick-note() {
-	# create note without opening in editor
 	new_note=$(zk new -t "$title" --template=quick-note.md -n 2>&1)
 	note_path=$(echo "$new_note" | head -n 1 | tr -d '\r')
 	note_file=$(basename "$note_path")
@@ -52,7 +54,7 @@ quick-note() {
 
 }
 
-if [[ -n "$2" ]]; then
+if [[ "$quick" || -n "$2" ]]; then
 	quick-note
 fi
 

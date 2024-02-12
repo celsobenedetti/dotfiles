@@ -55,7 +55,7 @@ alias fd="fd --no-ignore-vcs \
 alias venv="nvim ~/.zshenv"
     
 # remove whitespaces in file paths
-alias fds="fd -H | sed 's/ /\\ /g'" 
+alias fds="fd --type=file -H | sed 's/ /\\ /g'" 
 
 # xargs result of fzf
 alias fzfx='fzf --multi --prompt "$FZF_PROMPT file -> " --preview "bat {1} --color always --theme=Nord" | xargs -r -d "\n"'

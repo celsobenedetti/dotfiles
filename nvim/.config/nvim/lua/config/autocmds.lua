@@ -25,13 +25,23 @@ end
 -- Markdown --------------------------------------------------------------
 
 if markdown then
-  vim.api.nvim_create_autocmd({ "VimEnter" }, {
+  vim.api.nvim_create_autocmd({ "BufEnter" }, {
     pattern = "*.md",
     callback = function()
       -- go to main header of md file
       vim.api.nvim_feedkeys(Escape("/^# <CR>"), "n", true)
+      require("notify").dismiss({ silent = true, pending = true })
       work_week.find_today()
       require("twilight").enable()
+    end,
+    group = markdown,
+    desc = "Run when entering Markdown files",
+  })
+
+  vim.api.nvim_create_autocmd({ "BufLeave" }, {
+    pattern = "*.md",
+    callback = function()
+      require("twilight").disable()
     end,
     group = markdown,
     desc = "Run when entering Markdown files",

@@ -11,6 +11,7 @@ alias note='note.sh'
 alias para="para.sh"
 alias notes="notes.sh"
 alias inbox="inbox.sh"
+alias day="day.sh"
 
 alias ww="work-week.sh"
 alias todo="vim \$TODO"
@@ -21,6 +22,7 @@ alias quote="quote.sh"
 
 alias v='FZF_PROMPT=Open; fds | fzfx nvim'
 alias c='FZF_PROMPT=Cat; fds | fzfx bat -p'
+alias d="day"
 
 alias rg="rg \
     --glob \"!.git\" \
@@ -62,7 +64,7 @@ alias fzfx='fzf --multi --prompt "$FZF_PROMPT file -> " --preview "bat {1} --col
 alias dev='docker run --rm -it -v $(pwd):/home/app -w /home/app -v ~/.docker_bash_history:/root/.bash_history -u $(id -u):$(id -g)'
 
 alias gcm='git commit'
-alias d='git-diff'
+alias gdiff='git-diff'
 alias r='git-restore'
 
 alias cal="\$BROWSER --new-window https://calendar.google.com/calendar/u/2/r"

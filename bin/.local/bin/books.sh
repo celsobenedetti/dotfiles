@@ -26,3 +26,6 @@
 
 # TODO: change this if we can open files in Foliate directly through cli
 flatpak run com.github.johnfactotum.Foliate
+
+cd "$NOTES" || exit
+make cp

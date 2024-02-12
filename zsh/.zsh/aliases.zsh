@@ -17,6 +17,7 @@ alias todo="vim \$TODO"
 
 alias today="date +%Y-%m-%d"
 alias books="books.sh"
+alias quote="quote.sh"
 
 alias v='FZF_PROMPT=Open; fds | fzfx nvim'
 alias c='FZF_PROMPT=Cat; fds | fzfx bat -p'

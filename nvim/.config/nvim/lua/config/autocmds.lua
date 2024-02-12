@@ -28,8 +28,9 @@ if markdown then
   vim.api.nvim_create_autocmd({ "VimEnter" }, {
     pattern = "*.md",
     callback = function()
+      -- go to main header of md file
+      vim.api.nvim_feedkeys(Escape("/^# <CR>"), "n", true)
       work_week.find_today()
-      vim.api.nvim_feedkeys(Escape("/#<CR>"), "n", true)
       require("twilight").enable()
     end,
     group = markdown,

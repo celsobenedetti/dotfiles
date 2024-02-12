@@ -7,11 +7,11 @@
 
 path="$NOTES/2-areas/daily"
 day=$(date +"%d/%m")
-tomorrow=$(date +"%d/%m" -d "tomorrow")
 day_file_format=$(date +"%d-%m")
 
 if [[ -n "$1" ]]; then
-	day=$tomorrow
+	day=$(date +"%d/%m" -d "tomorrow")
+	day_file_format=$(date +"%d-%m" -d "tomorrow")
 fi
 
 note=$(ls "$path" | grep "day-$day_file_format")

@@ -3,8 +3,8 @@
 # Opens or create week file
 #
 # Usage:
-# week
-# week next
+# week - opens latest week
+# week next - creates next week if doesnt exist
 
 #!/bin/bash
 
@@ -29,12 +29,8 @@ latest() {
 if [ -n "$1" ]; then
 	curr_monday=$next_monday
 	curr_friday=$next_friday
-fi
-
-curr_monday_file=$(echo "$curr_monday" | sed 's/\//-/')
-
-if latest | grep -q "$curr_monday_file"; then
-	fd . "$DAILY" | rg "$(latest)" | xargs nvim
-else
 	zk new --template=week.md -t "Week $curr_monday to $curr_friday" "$DAILY"
+	exit 0
 fi
+
+fd . "$DAILY" | rg "$(latest)" | xargs nvim

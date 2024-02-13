@@ -6,7 +6,7 @@ import (
 )
 
 func TestTitle(t *testing.T) {
-	tests := []struct {
+	titleTests := []struct {
 		in   string
 		want string
 	}{
@@ -21,9 +21,23 @@ func TestTitle(t *testing.T) {
 		{in: "my title for github ", want: "My Title For GitHub"},
 		{in: "Oclt-2203 title title", want: "OCLT-2203 Title Title"},
 	}
-	for i, tt := range tests {
+	for i, tt := range titleTests {
 		t.Run(fmt.Sprintf("Test %d", i), func(t *testing.T) {
 			if got := Title(tt.in); got != tt.want {
+				t.Errorf("got = %v, want %v", got, tt.want)
+			}
+		})
+	}
+
+	slugTests := []struct {
+		in   string
+		want string
+	}{
+		{in: "my cool title", want: "my-cool-title"},
+	}
+	for i, tt := range slugTests {
+		t.Run(fmt.Sprintf("Test %d", i), func(t *testing.T) {
+			if got := Slug(tt.in); got != tt.want {
 				t.Errorf("got = %v, want %v", got, tt.want)
 			}
 		})

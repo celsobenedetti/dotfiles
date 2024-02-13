@@ -6,12 +6,20 @@ import (
 	"os"
 	"strings"
 
+	"github.com/gosimple/slug"
 	"golang.org/x/text/cases"
 	"golang.org/x/text/language"
 )
 
 func main() {
 	in := readStdin()
+
+	// if -s flag is provided, convert to slug case
+	if len(os.Args) > 1 && os.Args[1] == "-s" {
+		fmt.Fprint(os.Stdout, Slug(in))
+		return
+	}
+
 	fmt.Fprint(os.Stdout, Title(in))
 }
 
@@ -31,6 +39,11 @@ var mappings = map[string]string{
 var separators = []string{
 	" ",
 	"-",
+}
+
+// Slug converts title to slug case -> slug-case
+func Slug(s string) string {
+	return slug.Make(s)
 }
 
 // Title converts string to title case -> Title Case

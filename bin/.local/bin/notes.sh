@@ -21,10 +21,6 @@ if [[ $file == "" ]]; then
 	exit
 fi
 
-filename=$(tr ".md" " " <<<"$file")
-
-now=$(date +%Y-%m-%d)
-
 git add .
-git commit -m "🦉 $now - $filename" -q
+git commit -m "notes backup $(date +"%Y-%m-%d %H:%M:%S")" -q
 git push

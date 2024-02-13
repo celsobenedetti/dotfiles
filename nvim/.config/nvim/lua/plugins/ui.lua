@@ -48,6 +48,7 @@ return {
         { "msg_show", "Error in decoration provider" },
         { "msg_show", "obsidian/async.lua" },
         { "msg_show", "Error executing vim.schedule lua callback" },
+        { "msg_show", "Error detected while processing TextChangedI Autocommands" },
       }
 
       for _, filter in ipairs(ignore_notifications) do

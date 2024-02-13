@@ -38,6 +38,7 @@ Map("<leader>rm", function()
 end, { desc = "rm buffer file" })
 
 Map("<leader>ww", ":e $WW<cr>", { desc = "Save all buffers" })
+Map("<leader>today", ":e $TODAY<CR>", { mode = { "n", "v" } })
 Map("<leader>todo", ":e $TODO<CR>", { mode = { "n", "v" } })
 
 -- delete word bacwards

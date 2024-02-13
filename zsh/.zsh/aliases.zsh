@@ -13,6 +13,13 @@ alias notes="notes.sh"
 alias inbox="inbox.sh"
 alias day="day.sh"
 
+alias work="zk edit --sort modified -i \$NOTES/2-areas/work-quarter/"
+alias ocelot="zk edit --sort modified -i \$NOTES/3-resources/ocelot/"
+alias thoughts="zk edit -i --tag=thoughts --sort modified"
+alias seeds="zk edit -i --tag=seed --sort modified"
+alias projects="zk edit -i --tag=project --sort modified"
+alias quotes="zk edit -i --tag=quote --sort modified"
+
 alias ww="work-week.sh"
 alias todo="vim \$TODO"
 
@@ -79,7 +86,7 @@ alias lt='exa -T --level=2 --icons -I=".git|node_modules" --git -a'
 alias dust="dust -c"
 alias clip="xclip -sel clip"
 
-alias yac="httpyac"
+alias tz='gotz --timezones "CST:America/New_York,Pacific:America/Los_Angeles"'
 
 alias py='python3'
 alias dc='docker compose'
@@ -88,8 +95,9 @@ alias ldo="lazydocker"
 alias tf='terraform'
 alias nf='neofetch'
 alias tx="tmuxinator"
+alias yac="httpyac"
 alias nord="nordvpn"
-alias tz='gotz --timezones "CST:America/New_York,Pacific:America/Los_Angeles"'
+alias gcal="gcalcli"
 
 # alias k='kubectl'
 alias k='k3s kubectl'

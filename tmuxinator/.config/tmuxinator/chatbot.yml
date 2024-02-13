@@ -8,8 +8,10 @@ windows:
       panes:
         - conversation:
             - cd packages/conversation
+            - pnpm build:deps
             - pnpm dev
         - admin:
             - cd packages/admin
+            - pnpm build:deps
             - pnpm dev
         -  # regular zsh shell

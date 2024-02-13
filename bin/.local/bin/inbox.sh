@@ -18,24 +18,35 @@ clean() {
 	done
 }
 
-edit() {
+open_all() {
 	check_empty_inbox
 	fd . "$inbox" | xargs nvim
 }
 
-print() {
+interact_with_preview() {
 	check_empty_inbox
-	exa --tree "$inbox"
+	zk edit --sort modified -i "$inbox"
+}
+
+count() {
+	echo "$(fd . "$inbox" --type=file | wc -l) notes"
 }
 
 case "$1" in
-clean | c*)
+clean)
 	clean
 	;;
 edit | e*)
-	edit
+	open_all
+	;;
+tree | -t | t*)
+	exa --tree --sort=modified --reverse "$inbox"
+	count
+	;;
+count | -c | c*)
+	count
 	;;
 *)
-	print
+	interact_with_preview
 	;;
 esac

@@ -55,7 +55,6 @@ write-quick-note() {
 }
 
 if [[ "$quick_note" == true || -n "$2" ]]; then
-	echo "$quick_note"
 	write-quick-note
 fi
 

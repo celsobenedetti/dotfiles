@@ -138,9 +138,17 @@ return {
     "folke/twilight.nvim",
     config = function()
       require("twilight").setup()
-      require("twilight").enable()
     end,
     ft = { "markdown" },
     keys = { { "<leader>tw", ":Twilight<CR>" } },
+  },
+
+  {
+    "nvim-lualine/lualine.nvim",
+    event = "VeryLazy",
+    opts = function(_, opts)
+      opts.sections.lualine_a = { { "mode", color = { bg = "#1E1F26", fg = "#E8EBF3" } } }
+      opts.sections.lualine_z = {}
+    end,
   },
 }

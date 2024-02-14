@@ -9,6 +9,13 @@ function Map(lhs, rhs, opts)
     end
     options = vim.tbl_extend("force", options, opts)
   end
+  -- if lhs is list
+  if type(lhs) == "table" then
+    for _, mapping in ipairs(lhs) do
+      vim.keymap.set(mode, mapping, rhs, options)
+    end
+    return
+  end
   vim.keymap.set(mode, lhs, rhs, options)
 end
 

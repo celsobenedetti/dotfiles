@@ -57,21 +57,45 @@ Map(
   require("functions.markdown.misspelled_words").trouble,
   { desc = "Mispelled Words (Trouble)" }
 )
+
 Map(
-  "<leader>ll",
+  "<c-l>",
   require("functions.markdown.toggle_checkbox").toggle,
-  { desc = "Toggle to-do checkbox (Markdown)" }
+  { mode = "v", desc = "Toggle to-do checkbox (Markdown)" }
 )
 
 Map(
-  "<leader>l",
-  require("functions.markdown.link"),
+  { "<c-k>", "<leader>k" },
+  require("functions.markdown.wrap").link,
   { mode = "v", desc = "Wrap current selection in markdown link" }
 )
 
-Map("<leader>G", "<cmd>ChatGPT<CR>", { desc = "Open ChatGPT" })
+Map(
+  "<leader>i",
+  require("functions.markdown.wrap").italic,
+  { mode = "v", desc = "Wrap current selection in italic" }
+)
+
+Map(
+  { "<c-b>", "<leader>b" },
+  require("functions.markdown.wrap").bold,
+  { mode = "v", desc = "Wrap current selection in bold" }
+)
+
+Map(
+  "<leader>`",
+  require("functions.markdown.wrap").code,
+  { mode = "v", desc = "Wrap current selection in code" }
+)
+
+Map("gv", function()
+  vim.api.nvim_feedkeys(Escape("<c-w>v"), "n", true)
+  require("telescope.builtin").lsp_definitions({ reuse_win = true })
+end, { desc = "Split vertical and go to definition" })
 
 -- Commands
+
+Map("<leader>G", "<cmd>ChatGPT<CR>", { desc = "Open ChatGPT" })
 Map("<leader>C", "<cmd>Clip<CR>", { desc = "Copy file path to clipboard" })
 Map("<leader>D", "<cmd>Diff<CR>", { desc = "Open tmux popup for with current file diff" })
 Map("<leader>L", "<cmd>Log<CR>", { desc = "Open tmux popup for git log" })
@@ -79,7 +103,3 @@ Map("<leader>gl", "<cmd>Glow<CR>", { desc = "Open tmux popup for git log" })
 
 Map("g[", "<cmd>Gitsigns prev_hunk<CR>", { desc = "Prev git diff hunk" })
 Map("g]", "<cmd>Gitsigns next_hunk<CR>", { desc = "Next git diff hunk" })
-Map("gv", function()
-  vim.api.nvim_feedkeys(Escape("<c-w>v"), "n", true)
-  require("telescope.builtin").lsp_definitions({ reuse_win = true })
-end, { desc = "Split vertical and go to definition" })

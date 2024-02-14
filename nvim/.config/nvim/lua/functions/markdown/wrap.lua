@@ -1,4 +1,4 @@
-return function()
+local function link()
   local clipboard = vim.fn.getreg("+")
   -- if string is not of type string
   if type(clipboard) ~= "string" then
@@ -16,3 +16,23 @@ return function()
   vim.api.nvim_feedkeys(")", "n", true)
   vim.api.nvim_feedkeys(Escape("<esc>"), "n", true)
 end
+
+local function italic()
+  vim.api.nvim_feedkeys(Escape("S_"), "v", true)
+end
+
+local function bold()
+  vim.api.nvim_feedkeys(Escape("S*"), "v", true)
+  vim.api.nvim_feedkeys(Escape("ysi**"), "v", true)
+end
+
+local function code()
+  vim.api.nvim_feedkeys(Escape("S`"), "v", true)
+end
+
+return {
+  link = link,
+  italic = italic,
+  bold = bold,
+  code = code,
+}

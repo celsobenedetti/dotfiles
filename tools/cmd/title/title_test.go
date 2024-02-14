@@ -20,6 +20,7 @@ func TestTitle(t *testing.T) {
 		{in: "my title for Mongodb ", want: "My Title For MongoDB"},
 		{in: "my title for github ", want: "My Title For GitHub"},
 		{in: "Oclt-2203 title title", want: "OCLT-2203 Title Title"},
+		{in: "calendar cli", want: "Calendar CLI"},
 	}
 	for i, tt := range titleTests {
 		t.Run(fmt.Sprintf("Test %d", i), func(t *testing.T) {

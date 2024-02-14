@@ -43,6 +43,7 @@ esac
 
 # Define ignore patterns in an array
 ignore=(
+	'2024.md'
 	'README.md'
 	'todo.md'
 	'chores.md'

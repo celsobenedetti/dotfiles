@@ -32,6 +32,7 @@ var mappings = map[string]string{
 	"para":    "PARA",
 	"github":  "GitHub",
 	"mongodb": "MongoDB",
+	"cli":     "CLI",
 }
 
 // for each of these separators

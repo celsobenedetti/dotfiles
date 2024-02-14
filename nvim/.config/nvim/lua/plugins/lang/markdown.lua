@@ -3,7 +3,7 @@ local function random_letter_or_number()
   if is_number then
     return string.char(math.random(48, 57))
   else
-    return string.char(math.random(97, 122))
+    return string.char(math.random(65, 90))
   end
 end
 
@@ -149,12 +149,12 @@ return {
           title = title:gsub(" ", "-")
           title = string.lower(title)
         end
-        local suffix = ""
+        local prefix = ""
         for _ = 1, 4 do
-          suffix = suffix .. random_letter_or_number()
+          prefix = prefix .. random_letter_or_number()
         end
 
-        return title .. "-" .. suffix
+        return prefix .. "_" .. title
       end,
       note_frontmatter_func = function(note)
         local out = { id = note.id, aliases = note.aliases }

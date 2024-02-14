@@ -39,11 +39,8 @@ clean)
 edit | e*)
 	open_all
 	;;
-tree | -t | t*)
+recent | tree | count | r* | t* | c*)
 	exa --tree --sort=modified --reverse "$inbox"
-	count
-	;;
-count | -c | c*)
 	count
 	;;
 *)

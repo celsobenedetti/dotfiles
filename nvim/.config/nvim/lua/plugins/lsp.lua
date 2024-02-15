@@ -20,10 +20,10 @@ return {
           return vim.g.disable_tailwind
         end,
 
-        zk = function()
-          require("zk").setup()
-          return true
-        end,
+        -- zk = function()
+        --   require("zk").setup()
+        --   return true
+        -- end,
       }
     end,
   },

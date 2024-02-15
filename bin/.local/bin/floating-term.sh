@@ -1,7 +1,20 @@
 #! /bin/sh
 
-center() {
+handle_alacritty() {
+	# HACK: wait for alacritty to open
+	# forgive me father
 	sleep 0.16
+	center
+	open_note
+}
+
+open_note() {
+	# also a hack
+	xdotool type "note.sh"
+	xdotool key Return
+}
+
+center() {
 	# Get the screen resolution
 	screen_width=$(xdpyinfo | awk '/dimensions/{print $2}' | cut -d 'x' -f1)
 	screen_height=$(xdpyinfo | awk '/dimensions/{print $2}' | cut -d 'x' -f2)
@@ -20,5 +33,5 @@ center() {
 	xdotool windowmove "$fw" "$x_pos" "$y_pos"
 }
 
-center &
+handle_alacritty &
 alacritty -t floating

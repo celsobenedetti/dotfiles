@@ -7,6 +7,7 @@ local all = vim.api.nvim_create_augroup("AllFilesGroup", { clear = true })
 local markdown = vim.api.nvim_create_augroup("MarkdownGroup", { clear = true })
 local typeScript = nil -- vim.api.nvim_create_augroup("TypeScriptGroup", { clear = true })
 local json = vim.api.nvim_create_augroup("JSONGroup", { clear = true })
+local new_note = vim.api.nvim_create_augroup("NewNoteGroup", { clear = true })
 
 -- All files --------------------------------------------------------------
 
@@ -71,5 +72,18 @@ if json then
     end,
     group = json,
     desc = "Run when entering JSON files",
+  })
+end
+
+-- new_note --------------------------------------------------------------
+
+if new_note then
+  vim.api.nvim_create_autocmd({ "VimEnter" }, {
+    pattern = "title_editor",
+    callback = function()
+      vim.api.nvim_feedkeys(Escape("gg"), "n", true)
+    end,
+    group = new_note,
+    desc = "Run when entering new_note files",
   })
 end

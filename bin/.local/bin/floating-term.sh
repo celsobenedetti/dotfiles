@@ -1,16 +1,17 @@
 #! /bin/sh
-
+#
 handle_alacritty() {
 	# HACK: wait for alacritty to open
-	# forgive me father
-	sleep 0.16
+	while ! xdotool search --sync --name "floating" >/dev/null 2>&1; do
+		sleep 1
+	done
 	center
 	open_note
 }
 
 open_note() {
 	# also a hack
-	xdotool type "note.sh"
+	xdotool type "note.sh; exit"
 	xdotool key Return
 }
 
@@ -26,7 +27,7 @@ center() {
 	y_pos=$(((screen_height - window_height) / 2))
 
 	# Get the focused window
-	fw=$(xdotool getwindowfocus)
+	fw=$(xdotool search --name "floating")
 
 	# Resize and move the window to the calculated position
 	xdotool windowsize "$fw" "$window_width" "$window_height"
@@ -34,4 +35,5 @@ center() {
 }
 
 handle_alacritty &
+# Start Alacritty as a floating window
 alacritty -t floating

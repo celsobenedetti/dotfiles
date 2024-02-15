@@ -14,11 +14,16 @@ if [[ -n "$1" ]]; then
 	day_file_format=$(date +"%d-%m" -d "tomorrow")
 fi
 
-note=$(ls "$path" | grep "day-$day_file_format")
+note=$(ls "$path" | grep -E "day-([1-9]+)-$day_file_format")
 
 if [ -n "$note" ]; then
 	nvim "$path/$note"
 	exit
 fi
 
-zk new --template="daily.md" -t "Day $day" "$path"
+day_number=$(fd "day-([1-9]+)" "$path" | wc -l)
+
+# TODO: grab day count automatically
+# - total days all time
+# - total days in current period
+zk new --template="daily.md" -t "Day $day_number - $day" "$path"

@@ -4,10 +4,12 @@ cd "$ZK_NOTEBOOK_DIR" || exit
 
 git checkout main
 
-if [[ "$1" == "-f" ]]; then
+case "$1" in
+f* | -f)
 	fd . --type=f -H | fzf | xargs -r nvim
 	exit
-fi
+	;;
+esac
 
 zk edit -i
 

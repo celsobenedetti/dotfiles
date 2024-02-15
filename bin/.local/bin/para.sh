@@ -14,7 +14,7 @@ areas="$path/2-areas"
 resources="$path/3-resources"
 archives="$path/4-archives"
 
-work="$areas/work"
+work="$areas/work-quarter"
 ocelot="$resources/ocelot"
 
 case "$1" in

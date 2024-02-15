@@ -3,7 +3,7 @@
 handle_alacritty() {
 	# HACK: wait for alacritty to open
 	while ! xdotool search --sync --name "floating" >/dev/null 2>&1; do
-		sleep 1
+		sleep 0.1
 	done
 	center
 	open_note

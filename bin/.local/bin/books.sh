@@ -1,31 +1,24 @@
 #!/bin/bash
 
-# books_path="$HOME/Documents/books"
-#
-# pdfs=$(fd ./*.pdf "$books_path" | sed "s/ /\\ /g")
-# epubs=$(fd ./*.epub "$books_path" | sed "s/ /\\ /g")
-#
-# book=$(
-# 	(
-# 		echo "$pdfs" &
-# 		echo "$epubs"
-# 	) | fzf
-# )
-#
-# ext=$(echo "$book" | rev | cut -d "." -f 1 | rev)
-# flatpak run com.github.johnfactotum.Foliate
-#
-# case "$ext" in
-# pdf)
-# 	echo "$book" | xargs -r -d "\n" evince
-# 	;;
-# epub)
-# 	flatpak run com.github.johnfactotum.Foliate
-# 	;;
-# esac
+books_path="$HOME/Documents/books"
 
-# TODO: change this if we can open files in Foliate directly through cli
-flatpak run com.github.johnfactotum.Foliate
+pdfs=$(fd ./*.pdf "$books_path" | sed "s/ /\\ /g")
+epubs=$(fd ./*.epub "$books_path" | sed "s/ /\\ /g")
+awzs=$(fd ./*.azw3 "$books_path" | sed "s/ /\\ /g")
+
+book=$(
+	(
+		echo "$pdfs" &
+		echo "$epubs" &
+		echo "$awzs"
+	) | fzf
+)
+
+if [[ -z "$book" ]]; then
+	exit 0
+fi
+
+flatpak run --file-forwarding com.github.johnfactotum.Foliate @@ "$book" @@
 
 cd "$NOTES" || exit
 make cp

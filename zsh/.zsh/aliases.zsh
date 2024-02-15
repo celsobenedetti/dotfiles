@@ -30,6 +30,7 @@ alias quote="quote.sh"
 
 alias v='FZF_PROMPT=Open; fds | preview nvim'
 alias c='FZF_PROMPT=Cat; fds | preview bat -p'
+alias r='FZF_PROMPT=Remove file; fds | preview rm'
 alias d="day"
 
 alias rg="rg \
@@ -73,7 +74,7 @@ alias dev='docker run --rm -it -v $(pwd):/home/app -w /home/app -v ~/.docker_bas
 
 alias gcm='git commit'
 alias gdiff='git-diff'
-alias r='git-restore'
+alias gr='git-restore'
 
 alias cal="\$BROWSER --new-window https://calendar.google.com/calendar/u/2/r"
 alias nerd="\$BROWSER --new-window https://www.nerdfonts.com/cheat-sheet"

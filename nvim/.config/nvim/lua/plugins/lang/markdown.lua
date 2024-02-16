@@ -123,6 +123,7 @@ return {
 
   {
     "epwalsh/obsidian.nvim",
+    commit = "06154ec6f2964632d53c8fea9f0c175f31357192",
     version = "*", -- recommended, use latest release instead of latest commit
     lazy = true,
     ft = "markdown",
@@ -151,6 +152,7 @@ return {
           [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
           [">"] = { char = "", hl_group = "ObsidianRightArrow" },
           ["~"] = { char = "x", hl_group = "ObsidianTilde" },
+          ["-"] = { char = "x", hl_group = "ObsidianTilde" },
           -- Replace the above with this if you don't have a patched font:
           -- [" "] = { char = "☐", hl_group = "ObsidianTodo" },
           ["x"] = { char = "✔", hl_group = "ObsidianDone" },
@@ -196,5 +198,25 @@ return {
         return out
       end,
     },
+  },
+
+  {
+    "lukas-reineke/headlines.nvim",
+    config = function()
+      require("headlines").setup({
+        markdown = {
+          headline_highlights = { "DevIconEditorConfig" },
+          codeblock_highlight = "None",
+          dash_highlight = "None",
+          dash_string = "",
+
+          quote_highlight = "None",
+          quote_string = ">",
+          fat_headlines = true,
+          fat_headline_upper_string = "",
+          fat_headline_lower_string = "━",
+        },
+      })
+    end,
   },
 }

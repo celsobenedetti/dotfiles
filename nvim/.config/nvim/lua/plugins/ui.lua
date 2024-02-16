@@ -11,12 +11,14 @@ logo = string.rep("\n", 8) .. logo .. "\n\n"
 return {
   {
     "rcarriga/nvim-notify",
+    enabled = vim.g.perf,
     opts = {
       timeout = 5000, -- 5s
     },
   },
   {
     "folke/noice.nvim",
+    enabled = vim.g.perf,
     dependencies = {
       {
         "nvim-telescope/telescope.nvim",
@@ -108,24 +110,6 @@ return {
     end,
   },
 
-  {
-    "lukas-reineke/headlines.nvim",
-    config = function()
-      require("headlines").setup({
-        markdown = {
-          headline_highlights = { "DevIconEditorConfig" },
-          codeblock_highlight = "None",
-          dash_highlight = "None",
-          dash_string = "-",
-          quote_highlight = "CursorLine",
-          quote_string = "┃",
-          fat_headlines = true,
-          fat_headline_upper_string = "",
-          fat_headline_lower_string = "━",
-        },
-      })
-    end,
-  },
   {
     "nvimdev/dashboard-nvim",
     opts = {

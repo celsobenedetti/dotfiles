@@ -17,8 +17,13 @@ if [ -z "$branch" ]; then
 	)
 fi
 
+# selected branch is already checked out
 if echo "$branch" | grep -q -E "\*"; then
-	workspace.sh ~/work/chatbot/
+	if tmux has-session -t="chatbot" 2>/dev/null; then
+		tmux switch-client -t chatbot
+	else
+		tmuxinator start chatbot
+	fi
 	exit
 fi
 

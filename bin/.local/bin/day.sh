@@ -22,8 +22,9 @@ if [ -n "$note" ]; then
 fi
 
 day_number=$(fd "day-([1-9]+)" "$path" | wc -l)
+day_number=$((day_number + 1))
 
 # TODO: grab day count automatically
 # - total days all time
 # - total days in current period
-zk new --template="daily.md" -t "Day $day_number - $day" "$path"
+zk new --template="daily.md" -t "Today $day_number - $day" "$path"

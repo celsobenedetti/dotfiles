@@ -1,17 +1,19 @@
 name: chatbot
 root: ~/work/chatbot/
+on_project_start: git pull
 windows:
   - editor:
-      - git pull
   - servers:
       layout: tiled
       panes:
         - conversation:
             - cd packages/conversation
+            - pnpm i
             - pnpm build:deps
             - pnpm dev
         - admin:
             - cd packages/admin
+            - pnpm i
             - pnpm build:deps
             - pnpm dev
         -  # regular zsh shell

@@ -5,7 +5,9 @@ BROWSER="brave-browser"
 alias vim='nvim'
 
 alias workspace="workspace.sh"
+alias chatbot='chatbot.sh'
 alias commit='commit.sh'
+alias switch='git-switch.sh'
 
 alias note='note.sh'
 alias para="para.sh"
@@ -29,6 +31,7 @@ alias books="books.sh"
 alias quote="quote.sh"
 
 alias v='FZF_PROMPT=Open; fds | preview nvim'
+alias nc='FZF_PROMPT=Open; fds | preview nvim --clean'
 alias c='FZF_PROMPT=Cat; fds | preview bat -p'
 alias r='FZF_PROMPT=Remove file; fds | preview rm'
 alias d="day"

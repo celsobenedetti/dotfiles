@@ -33,6 +33,11 @@ session_name=$(basename "$session" | tr . _)
 # if session does not exist
 if ! tmux has-session -t="$session_name" 2>/dev/null; then
 
+	if [[ "$session_name" == "chatbot" ]]; then
+		chatbot.sh
+		exit
+	fi
+
 	# if there is a tmuxinator project for this session_name
 	if tmuxinator list | awk 'NR>1' | grep -q "^$session_name$"; then
 		tmuxinator start "$session_name"

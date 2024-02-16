@@ -16,6 +16,7 @@ archives="$path/4-archives"
 
 work="$areas/work-quarter"
 ocelot="$resources/ocelot"
+daily="$areas/daily"
 
 case "$1" in
 inbox | i* | 0)
@@ -39,6 +40,9 @@ work | w*)
 ocelot | o*)
 	path=$ocelot
 	;;
+daily | d*)
+	path=$daily
+	;;
 esac
 
 # Define ignore patterns in an array
@@ -59,4 +63,4 @@ ignore_pattern=$(
 	IFS="|"
 	echo "${ignore[*]}"
 )
-exa --tree --sort=type --level="$depth" -I="$ignore_pattern" "$path"
+exa --tree --sort=type --icons --level="$depth" -I="$ignore_pattern" "$path"

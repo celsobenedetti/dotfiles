@@ -33,6 +33,7 @@ var mappings = map[string]string{
 	"github":  "GitHub",
 	"mongodb": "MongoDB",
 	"cli":     "CLI",
+	"nextjs":  "Next.js",
 }
 
 // for each of these separators

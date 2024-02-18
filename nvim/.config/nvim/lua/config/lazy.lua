@@ -12,6 +12,7 @@ require("lazy").setup({
       "LazyVim/LazyVim",
       import = "lazyvim.plugins",
       opts = {
+        change_detection = { enabled = false },
         news = {
           lazyvim = true,
           neovim = true,

@@ -47,15 +47,17 @@ esac
 
 # Define ignore patterns in an array
 ignore=(
+	'4-archives'
 	'2024.md'
 	'README.md'
 	'todo.md'
 	'chores.md'
-	'insights.md'
 	'books.md'
 	'movies.md'
 	'done.md'
 	'Makefile'
+	'hugo'
+	'_index.md'
 )
 
 # Join patterns with '|' separator

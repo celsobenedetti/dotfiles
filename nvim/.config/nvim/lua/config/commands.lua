@@ -13,3 +13,6 @@ end, {})
 
 -- opens current file in glow
 vim.api.nvim_create_user_command("Glow", tmux_popup .. "glow % -p", {})
+
+-- run bash on current line
+vim.api.nvim_create_user_command("Bash", ".!bash", {})

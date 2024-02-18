@@ -12,7 +12,7 @@ docker
 docs
 feat
 fix
-fix
+format
 init
 make
 merge

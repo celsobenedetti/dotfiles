@@ -21,7 +21,7 @@ if [ -n "$note" ]; then
 	exit
 fi
 
-day_number=$(fd "day-([1-9]+)" "$path" | wc -l)
+day_number=$(fd "([1-9]+)-(monday|tuesday|wednesday|thursday|friday)" "$path" | wc -l)
 day_number=$((day_number + 1))
 
 # TODO: grab day count automatically

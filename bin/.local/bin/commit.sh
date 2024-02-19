@@ -21,6 +21,7 @@ perf
 refactor
 remove
 rename
+organize
 security
 test
 tmux

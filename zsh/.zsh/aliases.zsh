@@ -62,6 +62,8 @@ alias fd="fd --no-ignore-vcs \
     -E vendor/ \
     -E drupal/ \
     -E db-data/ \
+    -E hugo \
+    -E .foliate \
     -E \"fatvai-*\""
 
 alias venv="nvim ~/.zshenv"

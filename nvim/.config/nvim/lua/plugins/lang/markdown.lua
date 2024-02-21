@@ -52,6 +52,8 @@ return {
 
   {
     "gaoDean/autolist.nvim",
+    -- TODO: rethink if tI need this
+    enabled = false,
     ft = {
       "markdown",
       "text",
@@ -61,7 +63,6 @@ return {
     },
     config = function()
       require("autolist").setup()
-
       vim.keymap.set("i", "<tab>", "<cmd>AutolistTab<cr>")
       vim.keymap.set("i", "<s-tab>", "<cmd>AutolistShiftTab<cr>")
       -- vim.keymap.set("i", "<c-t>", "<c-t><cmd>AutolistRecalculate<cr>") -- an example of using <c-t> to indent
@@ -90,15 +91,14 @@ return {
   -- zk
   {
     "zk-org/zk-nvim",
-    enabled = false,
     ft = "markdown",
     keys = {
       { "<leader>zn", ":ZkNewFromTitleSelection<CR>", mode = "v" },
       { "<leader>zn", ":ZkNewFromTitleSelection<CR>", mode = "v" },
       { "<leader>zz", ":ZkNotes<CR>" },
       { "<leader>zb", ":ZkBacklinks<CR>" },
-      { "<leader>zl", ":ZkLinks<CR>" },
       { "<leader>zt", ":ZkTags<CR>" },
+      { "<leader>zm", ":ZkMatch<CR>", mode = "v" },
     },
     dependencies = {
       {
@@ -130,5 +130,25 @@ return {
         },
       })
     end,
+  },
+
+  {
+    "epwalsh/obsidian.nvim",
+    -- commit = "06154ec6f2964632d53c8fea9f0c175f31357192",
+    version = "*", -- recommended, use latest release instead of latest commit
+    lazy = true,
+    ft = "markdown",
+    cond = require("plugins.config.obsidian").cond,
+    keys = {
+      { "<leader>zk", ":ObsidianSearch<CR>" },
+      { "<leader>oo", ":ObsidianOpen<CR>" },
+      { "<leader>ob", ":ObsidianBacklinks<CR>" },
+      { "<leader>zl", ":ObsidianLinks<CR>" },
+      { "<leader>ot", ":ObsidianTags<CR>" },
+    },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    opts = require("plugins.config.obsidian").opts,
   },
 }

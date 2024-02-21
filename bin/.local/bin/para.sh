@@ -6,6 +6,7 @@
 # The match may be called an "anchored substring pattern matching" from the beggining of the string
 
 depth="2"
+sort_by="type"
 path="$HOME/Documents/notes"
 
 inbox="$path/0-inbox"
@@ -17,7 +18,14 @@ archives="$path/4-archives"
 work="$areas/work"
 ocelot="$resources/ocelot"
 
-case "$1" in
+arg="$1"
+
+if [ "$1" = "--recent" ]; then
+	sort_by="modified --reverse"
+	arg="$2"
+fi
+
+case "$arg" in
 inbox | i* | 0)
 	path=$inbox
 	;;
@@ -65,4 +73,4 @@ ignore_pattern=$(
 	IFS="|"
 	echo "${ignore[*]}"
 )
-exa --tree --sort=type --icons --level="$depth" -I="$ignore_pattern" "$path"
+exa --tree --sort=$sort_by --icons --level="$depth" -I="$ignore_pattern" "$path"

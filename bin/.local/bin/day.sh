@@ -6,9 +6,10 @@
 #   a) today if note doesn't exist for today
 #   b) tomorrow if today already exists
 
-path="$NOTES/2-areas/daily"
+path="$DAILY"
 
-latest=$(ls "$path" --sort=time | grep -v "week" | head -n 1)
+latest=$(ls "$path" | grep -v "week" | awk -F "_" '{print $2}' | sort | tail -n 1)
+latest=$(ls "$path" | grep "$latest")
 if [[ -z "$1" ]]; then
 	nvim "$path/$latest"
 	exit
@@ -28,4 +29,4 @@ day_number=$((day_number + 1))
 # substitute - with / for better readability
 day=$(echo "$day" | sed 's/-/\//g')
 
-zk new --template="daily.md" -t "$day_number $week_day - $day" "$path"
+zk new --template="daily.md" -t "$day_number - $week_day $day" "$path"

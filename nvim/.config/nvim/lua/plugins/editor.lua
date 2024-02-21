@@ -12,7 +12,6 @@ return {
       { "<C-l>", f.navigate_tmux("TmuxNavigateRight"), desc = "Go to Right tmux pane" },
     },
   },
-
   {
     "mbbill/undotree",
     keys = {

@@ -21,8 +21,8 @@ center() {
 	screen_height=$(xdpyinfo | awk '/dimensions/{print $2}' | cut -d 'x' -f2)
 
 	# Calculate the position for centering the window
-	window_width=1920
-	window_height=1000
+	window_width=900
+	window_height=700
 	x_pos=$(((screen_width - window_width) / 2))
 	y_pos=$(((screen_height - window_height) / 2))
 

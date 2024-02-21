@@ -19,7 +19,7 @@ return {
   -- opens telescope with each subdirectory of ~/Documents/notes
   -- moves the current file to the selected directory
   move_note = function(opts)
-    local fd = "!fd . --type=directory -I hugo/ ~/Documents/notes/"
+    local fd = "!fd . --type=directory -E hugo/ ~/Documents/notes/"
     local fd_result = vim.api.nvim_exec2(fd, { output = true })
 
     local dirs = vim.split(fd_result.output, "\n")

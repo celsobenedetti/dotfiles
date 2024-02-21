@@ -14,9 +14,8 @@ areas="$path/2-areas"
 resources="$path/3-resources"
 archives="$path/4-archives"
 
-work="$areas/work-quarter"
+work="$areas/work"
 ocelot="$resources/ocelot"
-daily="$areas/daily"
 
 case "$1" in
 inbox | i* | 0)
@@ -36,12 +35,13 @@ resources | r* | 3*)
 	;;
 work | w*)
 	path=$work
+	depth=3
 	;;
 ocelot | o*)
 	path=$ocelot
 	;;
 daily | d*)
-	path=$daily
+	path=$DAILY
 	;;
 esac
 

@@ -11,8 +11,11 @@ return {
     end,
     keys = {
       { "<leader>zz", ":ObsidianSearch<CR>" },
+      { "<leader>zk", ":ObsidianSearch<CR>" },
+      { "<leader>notes", ":ObsidianSearch<CR>" },
       { "<leader>oo", ":ObsidianOpen<CR>" },
-      { "<leader>ob", ":ObsidianBacklinks<CR>" },
+      { "<leader>zb", ":ObsidianBacklinks<CR>" },
+      { "<leader>zl", ":ObsidianLinks<CR>" },
     },
     dependencies = {
       "nvim-lua/plenary.nvim",

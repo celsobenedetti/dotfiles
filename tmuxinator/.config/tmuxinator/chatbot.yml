@@ -9,6 +9,7 @@ windows:
         - conversation:
             - cd packages/conversation
             - pnpm i
+            - pnpm build:chatbot:umd
             - pnpm build:deps
             - pnpm dev
         - admin:

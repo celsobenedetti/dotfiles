@@ -17,21 +17,15 @@ if [ -z "$branch" ]; then
 	)
 fi
 
-# selected branch is already checked out
-if echo "$branch" | grep -q -E "\*"; then
-	if tmux has-session -t="chatbot" 2>/dev/null; then
-		tmux switch-client -t chatbot
-	else
-		tmuxinator start chatbot
-	fi
-	exit
-fi
-
 if [ -z "$branch" ]; then
 	echo "No branch selected"
 	exit
 fi
 
-tmux kill-session chatbot -t 2>/dev/null
-git switch "$branch"
+# selected branch is different from the currently checked out
+if ! echo "$branch" | grep -q -E "\*"; then
+	git switch "$branch"
+fi
+
+tmux kill-session -t chatbot 2>/dev/null
 tmuxinator start chatbot

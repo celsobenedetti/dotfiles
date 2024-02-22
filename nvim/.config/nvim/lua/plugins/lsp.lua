@@ -21,7 +21,6 @@ return {
         end,
 
         zk = function()
-          require("zk").setup()
           return true
         end,
       }

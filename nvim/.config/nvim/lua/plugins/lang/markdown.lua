@@ -110,6 +110,12 @@ return {
         end,
       },
     },
+
+    config = function()
+      require("zk").setup({
+        picker = "telescope",
+      })
+    end,
   },
 
   {

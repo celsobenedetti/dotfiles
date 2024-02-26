@@ -7,8 +7,9 @@
 #   b) tomorrow if today already exists
 
 path="$DAILY"
+template="today.md"
 
-latest=$(ls "$path" | grep -v "week" | awk -F "_" '{print $2}' | sort | tail -n 1)
+latest=$(ls "$path" | grep -v "week" | awk -F "_" '{print $2}' | sort -V | tail -n 1)
 latest=$(ls "$path" | grep "$latest")
 if [[ -z "$1" ]]; then
 	nvim "$path/$latest"
@@ -18,9 +19,10 @@ fi
 day=$(date +"%d-%m")
 week_day=$(date +"%A")
 
-if echo "$latest" | grep -q "$day"; then
+if ! echo "$latest" | grep -q "$day"; then
 	day=$(date +"%d-%m" -d "tomorrow")
 	week_day=$(date +"%A" -d "tomorrow")
+	template="tomorrow.md"
 fi
 
 day_number=$(fd md "$path" | grep -c -v "week")
@@ -29,4 +31,7 @@ day_number=$((day_number + 1))
 # substitute - with / for better readability
 day=$(echo "$day" | sed 's/-/\//g')
 
-zk new --template="daily.md" -t "$day_number - $week_day $day" "$path"
+zk new \
+	--template="$template" \
+	-t "$day_number - $week_day $day" \
+	"$path"

@@ -66,6 +66,7 @@ ignore=(
 	'Makefile'
 	'hugo'
 	'_index.md'
+	'assets'
 )
 
 # Join patterns with '|' separator

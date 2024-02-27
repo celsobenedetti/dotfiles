@@ -5,7 +5,7 @@ handle_alacritty() {
 	while ! xdotool search --sync --name "floating" >/dev/null 2>&1; do
 		sleep 0.1
 	done
-	center
+	# center
 	open_note
 }
 

@@ -38,7 +38,7 @@ fi
 
 echo "$title_editor_templ" >"$title_editor" # reset title_editor
 title=$(echo "$title" | Title)
-tags=$(echo "$tags" | tr -d "ok")
+tags=${tags//ok/}
 
 if [[ -z $title ]]; then
 	exit 0

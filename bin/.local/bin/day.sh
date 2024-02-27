@@ -19,7 +19,7 @@ fi
 day=$(date +"%d-%m")
 week_day=$(date +"%A")
 
-if ! echo "$latest" | grep -q "$day"; then
+if [ "$1" = "tom" ] || ! echo "$latest" | grep -q "$day"; then
 	day=$(date +"%d-%m" -d "tomorrow")
 	week_day=$(date +"%A" -d "tomorrow")
 	template="tomorrow.md"

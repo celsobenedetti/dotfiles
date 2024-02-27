@@ -101,6 +101,7 @@ Map("<leader>D", "<cmd>Diff<CR>", { desc = "Open tmux popup for with current fil
 Map("<leader>L", "<cmd>Log<CR>", { desc = "Open tmux popup for git log" })
 Map("<leader>gl", "<cmd>Glow<CR>", { desc = "Open tmux popup for git log" })
 Map("<leader>B", "<cmd>Bash<CR>", { desc = "Run bash on current line" })
+Map("<leader>n", "<cmd>Note<CR>", { desc = "Run bash on current line" })
 
 Map("g[", "<cmd>Gitsigns prev_hunk<CR>", { desc = "Prev git diff hunk" })
 Map("g]", "<cmd>Gitsigns next_hunk<CR>", { desc = "Next git diff hunk" })

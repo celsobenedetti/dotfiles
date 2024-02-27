@@ -8,6 +8,10 @@ return {
   search_dotfiles = function()
     require("telescope.builtin").find_files({
       prompt_title = "< Dotfiles >",
+      layout_config = {
+        prompt_position = "top",
+      },
+      sorting_strategy = "ascending",
       search_dirs = {
         "~/.dotfiles",
       },

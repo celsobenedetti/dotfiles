@@ -34,6 +34,7 @@ var mappings = map[string]string{
 	"mongodb": "MongoDB",
 	"cli":     "CLI",
 	"nextjs":  "Next.js",
+	"ssr":     "SSR",
 }
 
 // for each of these separators

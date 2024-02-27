@@ -2,29 +2,35 @@
 
 BROWSER="brave-browser"
 
+# the backbone of my shell workflow (on top of tmux):
 alias vim='nvim'
+alias fzf='fzf --reverse' # prompt from top down
 
+# daily utility escripts
 alias workspace="workspace.sh"
 alias chatbot='chatbot.sh'
 alias commit='commit.sh'
 alias switch='git-switch.sh'
 
+# note taking
 alias note='note.sh'
-alias para="para.sh"
 alias notes="notes.sh"
+alias para="para.sh"
 alias inbox="inbox.sh"
 alias day="day.sh"
 alias project="project.sh"
 
-alias work="zk edit --sort modified -i \$NOTES/2-areas/work-quarter/"
-alias ocelot="zk edit --sort modified -i \$NOTES/3-resources/ocelot/"
+alias work="zk edit --sort modified -i \$NOTES/work/quarter/"
+alias ocelot="zk edit --sort modified -i \$NOTES/work/ocelot/"
 alias thoughts="zk edit -i --tag=thoughts --sort modified"
 alias seeds="zk edit -i --tag=seed --sort modified"
 alias projects="zk edit -i --tag=project --sort modified"
 alias quotes="zk edit -i --tag=quote --sort modified"
 
+alias zz="zz.sh"
 alias ww="work-week.sh"
 alias todo="vim \$TODO"
+alias tmp="tmp.sh"
 
 alias today="date +%Y-%m-%d"
 alias books="books.sh"
@@ -32,7 +38,7 @@ alias quote="quote.sh"
 
 alias v='FZF_PROMPT=Open; fds | preview nvim'
 alias nc='FZF_PROMPT=Open; fds | preview nvim --clean'
-alias c='FZF_PROMPT=Cat; fds | preview bat -p'
+alias c='fd --type=d . | fzf --prompt "cd into: " --preview "exa -aT {1}" | while read -r result; do cd "$result" || exit; done'
 alias r='FZF_PROMPT=Remove file; fds | preview rm'
 alias d="day"
 

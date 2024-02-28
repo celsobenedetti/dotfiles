@@ -11,6 +11,7 @@ import (
 	"golang.org/x/text/language"
 )
 
+// converts stdin string to "Title Case", prints to stdout
 func main() {
 	in := readStdin()
 
@@ -35,6 +36,7 @@ var mappings = map[string]string{
 	"cli":     "CLI",
 	"nextjs":  "Next.js",
 	"ssr":     "SSR",
+	"nestjs":  "NestJS",
 }
 
 // for each of these separators

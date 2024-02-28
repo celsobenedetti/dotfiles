@@ -32,9 +32,12 @@ session_name=$(basename "$session" | tr . _)
 
 # if session does not exist
 if ! tmux has-session -t="$session_name" 2>/dev/null; then
-
 	if [[ "$session_name" == "chatbot" ]]; then
-		chatbot.sh
+		if tmux has-session -t="booting-chatbot" 2>/dev/null; then
+			tmux switch-client -t "booting-chatbot" 2>/dev/null
+		else
+			chatbot.sh
+		fi
 		exit
 	fi
 

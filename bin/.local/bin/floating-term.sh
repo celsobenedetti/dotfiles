@@ -1,17 +1,20 @@
 #! /bin/sh
 #
+#
+script="$1"
+
 handle_alacritty() {
 	# HACK: wait for alacritty to open
 	while ! xdotool search --sync --name "floating" >/dev/null 2>&1; do
 		sleep 0.1
 	done
 	# center
-	open_note
+	run_script
 }
 
-open_note() {
+run_script() {
 	# also a hack
-	xdotool type "note.sh; exit"
+	xdotool type "$script; exit"
 	xdotool key Return
 }
 

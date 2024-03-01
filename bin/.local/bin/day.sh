@@ -9,7 +9,14 @@
 path="$DAILY"
 template="today.md"
 
-latest=$(ls "$path" | grep -v "week" | awk -F "_" '{print $2}' | sort -V | tail -n 1)
+latest=$(
+	ls "$path" |
+		grep -vE "week|$(date +%Y)" |
+		awk -F "_" '{print $2}' |
+		awk -F "-" '{print $2}' |
+		sort -V |
+		tail -n 1
+)
 latest=$(ls "$path" | grep "$latest")
 if [[ -z "$1" ]]; then
 	nvim "$path/$latest"
@@ -25,13 +32,14 @@ if [ "$1" = "tom" ] || ! echo "$latest" | grep -q "$day"; then
 	template="tomorrow.md"
 fi
 
-day_number=$(fd md "$path" | grep -c -v "week")
-day_number=$((day_number + 1))
+# NOTE: gave up on this numbering thing, lets see how it goes
+# day_number=$(fd md "$path" | grep -c -v "week")
+# day_number=$((day_number + 1))
 
 # substitute - with / for better readability
 day=$(echo "$day" | sed 's/-/\//g')
 
 zk new \
 	--template="$template" \
-	-t "$day_number - $week_day $day" \
+	-t "$week_day $day" \
 	"$path"

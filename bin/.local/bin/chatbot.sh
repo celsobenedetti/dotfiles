@@ -21,6 +21,9 @@ choose_branch() {
 
 }
 
+echo "Fetching origin..."
+git fetch origin
+
 branch=$(choose_branch "$1")
 
 if [ -z "$branch" ]; then

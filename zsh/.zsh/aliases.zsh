@@ -20,7 +20,7 @@ alias inbox="inbox.sh"
 alias day="day.sh"
 alias project="project.sh"
 
-alias work="zk edit --sort modified -i \$NOTES/work/quarter/"
+alias work="zk edit --sort modified -i \$NOTES/work"
 alias ocelot="zk edit --sort modified -i \$NOTES/work/ocelot/"
 alias thoughts="zk edit -i --tag=thoughts --sort modified"
 alias seeds="zk edit -i --tag=seed --sort modified"

@@ -29,7 +29,7 @@ end, { mode = "v", desc = "Paste without losing register" }) --hold on to regist
 Map("<leader>p", '"_dP', { mode = "v", desc = "Paste without losing register" }) --hold on to register when pasting and replace text
 
 Map("<leader>wq", "<cmd>wqa<cr>", { desc = "Save all buffers" })
-Map("<leader>dd", ":bdelete<cr>", { desc = "Delete buffer" })
+Map("<leader>dd", ":BD<cr>", { desc = "Delete buffer" })
 
 Map("<leader>re", ":e%<CR>", { desc = "Refresh buffer" })
 Map("<leader>rm", function()
@@ -101,7 +101,7 @@ Map("<leader>D", "<cmd>Diff<CR>", { desc = "Open tmux popup for with current fil
 Map("<leader>L", "<cmd>Log<CR>", { desc = "Open tmux popup for git log" })
 Map("<leader>gl", "<cmd>Glow<CR>", { desc = "Open tmux popup for git log" })
 
-Map("<leader>B", "<cmd>!bash<CR>", { desc = "Run bash on current line" })
+Map("<leader>B", "V<cmd>'<,'>!bash<CR>", { desc = "Run bash on current line" })
 Map("<leader>B", "<cmd>'<,'>!bash<CR>", { desc = "Run bash on current line", mode = "v" })
 
 Map("<leader>n", "<cmd>Note<CR>", { desc = "Run bash on current line" })

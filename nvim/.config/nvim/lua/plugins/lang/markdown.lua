@@ -120,6 +120,7 @@ return {
 
   {
     "lukas-reineke/headlines.nvim",
+
     config = function()
       require("headlines").setup({
         markdown = {
@@ -142,6 +143,7 @@ return {
     "epwalsh/obsidian.nvim",
     -- commit = "06154ec6f2964632d53c8fea9f0c175f31357192",
     version = "*", -- recommended, use latest release instead of latest commit
+    vscode = false,
     lazy = true,
     ft = "markdown",
     cond = require("plugins.config.obsidian").cond,

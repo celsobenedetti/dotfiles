@@ -23,6 +23,8 @@ func TestTitle(t *testing.T) {
 		{in: "calendar cli", want: "Calendar CLI"},
 		{in: "comprehensive guide to ssr in react", want: "Comprehensive Guide To SSR In React"},
 		{in: "nestjs official Fundamentals course", want: "NestJS Official Fundamentals Course"},
+		{in: "learning http", want: "Learning HTTP"},
+		{in: "learning http/2", want: "Learning HTTP/2"},
 	}
 	for i, tt := range titleTests {
 		t.Run(fmt.Sprintf("Test %d", i), func(t *testing.T) {

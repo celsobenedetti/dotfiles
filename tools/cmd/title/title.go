@@ -37,6 +37,8 @@ var mappings = map[string]string{
 	"nextjs":  "Next.js",
 	"ssr":     "SSR",
 	"nestjs":  "NestJS",
+	"http":    "HTTP",
+	"http/2":  "HTTP/2",
 }
 
 // for each of these separators

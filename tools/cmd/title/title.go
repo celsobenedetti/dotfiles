@@ -28,17 +28,20 @@ var titleCaser = cases.Title(language.English)
 
 // any of these term keys will be mapped to values
 var mappings = map[string]string{
-	"oclt":    "OCLT",
-	"fd":      "FD",
-	"para":    "PARA",
-	"github":  "GitHub",
-	"mongodb": "MongoDB",
-	"cli":     "CLI",
-	"nextjs":  "Next.js",
-	"ssr":     "SSR",
-	"nestjs":  "NestJS",
-	"http":    "HTTP",
-	"http/2":  "HTTP/2",
+	"oclt":       "OCLT",
+	"fd":         "FD",
+	"para":       "PARA",
+	"github":     "GitHub",
+	"mongodb":    "MongoDB",
+	"cli":        "CLI",
+	"nextjs":     "Next.js",
+	"ssr":        "SSR",
+	"nestjs":     "NestJS",
+	"http":       "HTTP",
+	"http/1.1":   "HTTP/1.1",
+	"http/2":     "HTTP/2",
+	"websocket":  "WebSocket",
+	"websockets": "WebSockets",
 }
 
 // for each of these separators

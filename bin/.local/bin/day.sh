@@ -13,11 +13,12 @@ latest=$(
 	ls "$path" |
 		grep -vE "week|$(date +%Y)" |
 		awk -F "_" '{print $2}' |
-		awk -F "-" '{print $2}' |
 		sort -V |
 		tail -n 1
 )
+
 latest=$(ls "$path" | grep "$latest")
+
 if [[ -z "$1" ]]; then
 	nvim "$path/$latest"
 	exit
@@ -30,6 +31,11 @@ if [ "$1" = "tom" ] || ! echo "$latest" | grep -q "$day"; then
 	day=$(date +"%d-%m" -d "tomorrow")
 	week_day=$(date +"%A" -d "tomorrow")
 	template="tomorrow.md"
+fi
+
+if [ "$1" = "tod" ] || [ "$1" = "todaydfas" ] || ! echo "$latest" | grep -q "$day"; then
+	day=$(date +"%d-%m")
+	week_day=$(date +"%A")
 fi
 
 # NOTE: gave up on this numbering thing, lets see how it goes

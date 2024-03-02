@@ -41,6 +41,7 @@ alias nc='FZF_PROMPT=Open; fds | preview nvim --clean'
 alias c='fd --type=d . | fzf --prompt "cd into: " --preview "exa -aT {1}" | while read -r result; do cd "$result" || exit; done'
 alias r='FZF_PROMPT=Remove file; fds | preview rm'
 alias d="day"
+alias dot="fd . ~/.dotfiles -H | fzf | xargs -r nvim"
 
 alias rg="rg \
     --glob \"!.git\" \

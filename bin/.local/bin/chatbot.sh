@@ -4,6 +4,9 @@ cd ~/work/chatbot/ || exit
 
 desc="Checkout, pull, build and boot up Chatbot:"
 
+echo "Fetching origin..."
+git fetch origin
+
 choose_branch() {
 	if [ -n "$1" ]; then
 		echo "$1"
@@ -20,9 +23,6 @@ choose_branch() {
 		tr -d " "
 
 }
-
-echo "Fetching origin..."
-git fetch origin
 
 branch=$(choose_branch "$1")
 

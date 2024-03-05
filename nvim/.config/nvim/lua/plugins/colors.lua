@@ -52,8 +52,6 @@ set guicursor+=i:blinkwait10
 end
 check_black_cursor(Colorschemes.default)
 
-vim.opt.background = bg
-
 local function is_enabled(themes)
   if type(themes) == "table" then
     for _, v in pairs(themes) do

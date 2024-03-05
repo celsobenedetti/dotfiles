@@ -28,8 +28,6 @@ return {
     opts = function(_, opts)
       local cmp = require("cmp")
 
-      -- disable Enter as acccepting completion (Use <C-y>) instead
-      opts.mapping["<CR>"] = cmp.config.disable
       opts.mapping["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select })
       opts.mapping["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select })
 

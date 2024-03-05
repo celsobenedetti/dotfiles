@@ -141,6 +141,7 @@ return {
 
   {
     "epwalsh/obsidian.nvim",
+    enabled = vim.g.obsidian,
     -- commit = "06154ec6f2964632d53c8fea9f0c175f31357192",
     version = "*", -- recommended, use latest release instead of latest commit
     vscode = false,

@@ -26,6 +26,11 @@ local function bold()
   vim.api.nvim_feedkeys(Escape("ysi**"), "v", true)
 end
 
+local function strikethrough()
+  vim.api.nvim_feedkeys(Escape("S~"), "v", true)
+  vim.api.nvim_feedkeys(Escape("ysi~~"), "v", true)
+end
+
 local function code()
   vim.api.nvim_feedkeys(Escape("S`"), "v", true)
 end
@@ -35,4 +40,5 @@ return {
   italic = italic,
   bold = bold,
   code = code,
+  strikethrough = strikethrough,
 }

@@ -83,6 +83,24 @@ Map(
 )
 
 Map(
+  { "<c-t>", "<leader>t" },
+  require("functions.markdown.wrap").strikethrough,
+  { mode = "v", desc = "Strikethrough current selection in bold" }
+)
+
+Map("<c-b>", function()
+  vim.api.nvim_feedkeys(Escape("****<Esc>hha"), "n", true)
+end, { mode = "i", desc = "Add bold tags for insert mode in bold" })
+
+Map("<c-i>", function()
+  vim.api.nvim_feedkeys("__" .. Escape("<Esc>ha"), "n", false)
+end, { mode = "i", desc = "Add italic tags for insert mode in bold" })
+
+Map("<c-t>", function()
+  vim.api.nvim_feedkeys(Escape("~~~~<Esc>hha"), "n", true)
+end, { mode = "i", desc = "Add Strikeghrough italic tags for insert mode in bold" })
+
+Map(
   "<leader>`",
   require("functions.markdown.wrap").code,
   { mode = "v", desc = "Wrap current selection in code" }

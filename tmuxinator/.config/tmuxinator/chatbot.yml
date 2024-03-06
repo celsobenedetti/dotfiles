@@ -7,13 +7,11 @@ on_project_start:
 windows:
   - editor:
   - servers:
-      layout: tiled
+      layout: main-vertical
       panes:
-        - conversation:
-            - cd packages/conversation
-            - pnpm dev
         - admin:
             - cd packages/admin
             - pnpm dev
-        - shell:
-            - zsh
+        - conversation:
+            - cd packages/conversation
+            - pnpm dev

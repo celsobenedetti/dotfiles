@@ -1,10 +1,25 @@
 DIRS = alacritty bin git gtk nvim sway tmux wofi zsh
 
-link:
+bin: build
+tools: build
+build:
+	@echo "========= Building Tools =============" 
+	@$(MAKE) -s -C tools
+	@echo "======================================" 
+
+test:
+	@echo "========= Testing Tools =============" 
+	@$(MAKE) test -s -C tools 
+	@echo "======================================" 
+
+link: stow
+stow:
 	stow $(DIRS)
 
-unlink:
+unlink: stowd
+stowd:
 	stow -D $(DIRS)
+
 
 encrypt:
 	@find git -type f | grep -v crypt | \
@@ -20,12 +35,4 @@ decrypt:
 		done
 	@stow git
 
-build:
-	@echo "========= Building Tools =============" 
-	@$(MAKE) -s -C tools
-	@echo "======================================" 
 
-test:
-	@echo "========= Testing Tools =============" 
-	@$(MAKE) test -s -C tools 
-	@echo "======================================" 

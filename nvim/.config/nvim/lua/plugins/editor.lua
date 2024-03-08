@@ -107,43 +107,6 @@ return {
   },
 
   {
-    "ThePrimeagen/harpoon",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    vscode = true,
-    config = function()
-      local harpoon = require("harpoon.ui")
-      Map("<leader>M", require("harpoon.mark").add_file)
-      Map("<leader>hc", require("harpoon.mark").clear_all)
-      Map("<A-h>", harpoon.nav_prev, { desc = "Harpoon previous" })
-      Map("<A-l>", harpoon.nav_next, { desc = "Harpoon next" })
-
-      local power_fingers = { "a", "s", "d", "f" }
-      local power_fingers2 = { "h", "j", "k", "l" }
-      for i = 1, 4 do
-        Map("<A-" .. tostring(i) .. ">", function()
-          harpoon.nav_file(i)
-        end)
-
-        Map("m" .. tostring(i), function()
-          harpoon.nav_file(i)
-        end)
-
-        Map("m" .. power_fingers[i], function()
-          harpoon.nav_file(i)
-        end)
-
-        Map("m" .. power_fingers2[i], function()
-          harpoon.nav_file(i)
-        end)
-      end
-
-      if not vim.g.vscode then
-        Map("mm", harpoon.toggle_quick_menu)
-      end
-    end,
-  },
-
-  {
     "nvim-treesitter/nvim-treesitter",
     -- TODO: update this
     commit = "ba6454783493ac3a5dd209c25e491640b07bd8de",
@@ -205,5 +168,16 @@ return {
   {
     "qpkorr/vim-bufkill",
     event = "VeryLazy",
+  },
+
+  {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    opts = {
+      menu = {
+        width = vim.api.nvim_win_get_width(0) - 4,
+      },
+    },
+    keys = require("plugins.config.harpoon").keys,
   },
 }

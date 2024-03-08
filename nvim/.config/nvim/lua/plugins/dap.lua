@@ -3,7 +3,13 @@ return {
     "mfussenegger/nvim-dap",
     optional = true,
     keys = {
-      { "<leader>bC", require("dap").clear_breakpoints, { desc = "Clear DAP Breakpoints" } },
+      {
+        "<leader>bC",
+        function()
+          require("dap").clear_breakpoints()
+        end,
+        { desc = "Clear DAP Breakpoints" },
+      },
       {
         "<leader>bL",
         function()
@@ -31,6 +37,7 @@ return {
 
   {
     "rcarriga/nvim-dap-ui",
+    optional = true,
     opts = function(_, opts)
       opts.layouts = {
 

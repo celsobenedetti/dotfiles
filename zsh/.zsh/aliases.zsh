@@ -72,7 +72,8 @@ alias fd="fd --no-ignore-vcs \
     -E db-data/ \
     -E hugo \
     -E .foliate \
-    -E \"fatvai-*\""
+    -E \"fatvai-*\" \
+    -E coverage"
 
 alias venv="nvim ~/.zshenv"
     
@@ -97,7 +98,7 @@ alias gpt="\$BROWSER --new-window https://chat.openai.com"
 alias cat='bat'
 alias ll='exa --git -I=".git|node_modules" -a'
 alias l='exa --icons --git -I=".git|node_modules" -a -l'
-alias lt='exa -T --level=2 --icons -I=".git|node_modules" --git -a'
+alias lt='exa -T --level=2 --icons -I=".git|node_modules|dist|coverage" --git -a'
 alias dust="dust -c"
 alias clip="xclip -sel clip"
 
@@ -112,7 +113,7 @@ alias nf='neofetch'
 alias tx="tmuxinator"
 alias yac="httpyac"
 alias nord="nordvpn"
-alias gcal="gcalcli"
+alias nx="npx nx"
 
 # alias k='kubectl'
 alias k='k3s kubectl'

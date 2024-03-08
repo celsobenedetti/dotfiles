@@ -1,17 +1,26 @@
 return {
   {
     "zbirenbaum/copilot.lua",
-    cmd = {
-      "Copilot",
-    },
+    event = "VeryLazy",
+    -- cmd = {
+    --   "Copilot",
+    -- },
     opts = {
       filetypes = {
         yaml = true,
+        json = true,
       },
       suggestion = {
-        auto_trigger = true,
+        auto_trigger = false,
       },
     },
+  },
+
+  {
+    "zbirenbaum/copilot-cmp",
+    config = function()
+      require("copilot_cmp").setup()
+    end,
   },
 
   -- Lazy

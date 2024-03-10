@@ -43,6 +43,7 @@ alias c='fd --type=d . | fzf --prompt "cd into: " --preview "exa -aT {1}" | whil
 alias r='FZF_PROMPT=Remove file; fds | preview rm'
 alias d="day"
 alias dot="fd . ~/.dotfiles -H | fzf | xargs -r nvim"
+alias sw='switch'
 
 alias rg="rg \
     --glob \"!.git\" \

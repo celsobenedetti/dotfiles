@@ -1,8 +1,3 @@
--- Autocmds are automatically loaded on the VeryLazy event
--- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
--- Add any additional autocmds here
-local work_week = require("functions.markdown.work_week")
-
 local all = vim.api.nvim_create_augroup("AllFilesGroup", { clear = true })
 local markdown = vim.api.nvim_create_augroup("MarkdownGroup", { clear = true })
 local typeScript = nil -- vim.api.nvim_create_augroup("TypeScriptGroup", { clear = true })

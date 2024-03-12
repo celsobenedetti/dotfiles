@@ -7,7 +7,7 @@ tclean() {
     for arg in "$@"; do
         sessions="$(echo "$sessions" | grep -v "$arg")"
     done
-    sessions="$(echo "$sessions" | grep -v "notes")"
+    sessions="$(echo "$sessions" | grep -v "notes|chatbot")"
 
     printf "Killing sessions...\n\n"
 

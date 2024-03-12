@@ -1,4 +1,12 @@
-DIRS = alacritty bin git gtk nvim sway tmux wofi zsh
+.PHONY: nvim
+
+nvim:
+	mkdir ~/.config/nvim 2>/dev/null
+	stow -v -R -t ~/.config/nvim nvim
+
+pull:
+	git pull
+	git submodule update --remote
 
 bin: build
 tools: build
@@ -12,15 +20,7 @@ test:
 	@$(MAKE) test -s -C tools 
 	@echo "======================================" 
 
-link: stow
-stow:
-	stow $(DIRS)
-
-unlink: stowd
-stowd:
-	stow -D $(DIRS)
-
-
+# TODO: try out https://github.com/FiloSottile/age
 encrypt:
 	@find git -type f | grep -v crypt | \
 		while read -r file; do \

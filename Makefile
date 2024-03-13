@@ -1,8 +1,12 @@
-.PHONY: nvim
+.PHONY: nvim code
 
 nvim:
-	mkdir ~/.config/nvim 2>/dev/null
+	-mkdir ~/.config/nvim 2>/dev/null
 	stow -v -R -t ~/.config/nvim nvim
+
+code:
+	-mkdir ~/.config/Code/User 2>/dev/null
+	stow -v -R -t ~/.config/Code/User code
 
 pull:
 	git pull

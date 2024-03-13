@@ -5,7 +5,7 @@
 # "projects", "areas","resources", "archives", "work"
 # The match may be called an "anchored substring pattern matching" from the beggining of the string
 
-depth="2"
+depth="1"
 sort_by="type"
 path="$HOME/Documents/notes"
 

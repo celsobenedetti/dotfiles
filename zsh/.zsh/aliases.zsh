@@ -19,14 +19,17 @@ alias para="para.sh"
 alias inbox="inbox.sh"
 alias day="day.sh"
 alias project="project.sh"
-alias t="tags.sh"
 
+alias tags="tags.sh"
 alias work="zk edit --sort modified -i \$NOTES/work"
 alias ocelot="zk edit --sort modified -i \$NOTES/work/ocelot/"
 alias thoughts="zk edit -i --tag=thoughts --sort modified"
 alias seeds="zk edit -i --tag=seed --sort modified"
 alias projects="zk edit -i --tag=project --sort modified"
 alias quotes="zk edit -i --tag=quote --sort modified"
+
+alias p="projects"
+alias t="tags"
 
 alias zz="zz.sh"
 alias ww="work-week.sh"

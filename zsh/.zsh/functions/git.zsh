@@ -2,11 +2,12 @@
 _gitLogLineToHash="echo {} | grep -o '[a-f0-9]\{7\}' | head -1"
 _viewGitLogLine="$_gitLogLineToHash | xargs -I % sh -c 'git show --color=always % | delta'"
 
-vlog(){ 
+flog(){ 
     git log \
         --color=always \
         --format="%C(cyan)%h %C(blue)%ar%C(auto)%d \
                 %C(yellow)%s^%+b %C(black)%ae" "$@" |
+        rg ago | # drop all lines which dont contain "X days ago (hack to trim multiline commit)"
         fzf -i -e +s \
         --reverse \
         --tiebreak=index \

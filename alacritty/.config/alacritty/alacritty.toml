@@ -1,0 +1,35 @@
+import = ["~/.config/alacritty/mocha.toml"]
+
+[env]
+TERM = "xterm-256color"
+
+[shell]
+program = "/usr/bin/zsh"
+
+[keyboard]
+bindings = [{ key = "F11", action = "ToggleFullscreen" }]
+
+
+[window]
+opacity = 0.95
+padding = { x = 6, y = 3 }
+
+[font]
+size = 11
+
+[font.normal]
+family = "MapleMono NF"
+# family =  JetBrainsMonoNL Nerd Font Mono
+style = "Regular"
+
+[font.bold]
+family = "MapleMono NF"
+style = "Bold"
+
+[font.italic]
+family = "MapleMono NF"
+style = "Italic"
+
+[font.bold_italic]
+family = "MapleMono NF"
+style = "Bold Italic"

@@ -42,6 +42,8 @@ var mappings = map[string]string{
 	"http/2":     "HTTP/2",
 	"websocket":  "WebSocket",
 	"websockets": "WebSockets",
+	"ws":         "WS",
+	"api":        "API",
 }
 
 // for each of these separators

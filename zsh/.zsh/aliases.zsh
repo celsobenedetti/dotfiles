@@ -19,6 +19,7 @@ alias para="para.sh"
 alias inbox="inbox.sh"
 alias day="day.sh"
 alias project="project.sh"
+alias title="Title"
 
 alias tags="tags.sh"
 alias work="zk edit --sort modified -i \$NOTES/work"

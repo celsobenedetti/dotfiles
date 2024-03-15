@@ -1,4 +1,4 @@
-.PHONY: nvim code
+.PHONY: nvim code vale
 
 nvim:
 	-mkdir ~/.config/nvim 2>/dev/null
@@ -38,3 +38,12 @@ decrypt:
 			ansible-vault decrypt $$file --output $$output --vault-password-file ~/.vault; \
 		done
 	@stow git
+
+
+vale:
+	stow -D vale -t ~/.config/vale
+	stow vale -t ~/.config/vale
+	cd ~/.config/vale && vale sync
+	-rm ~/.config/vale/styles/write-good/Weasel.yml
+	-rm ~/.config/vale/styles/write-good/Passive.yml
+	-rm ~/.config/vale/styles/write-good/E-Prime.yml

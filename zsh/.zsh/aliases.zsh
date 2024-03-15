@@ -9,7 +9,7 @@ alias fzf='fzf --reverse' # prompt from top down
 # daily utility escripts
 alias workspace="workspace.sh"
 alias chatbot='chatbot.sh'
-alias commit='commit.sh'
+alias commit='git commit'
 alias switch='git-switch.sh'
 
 # note taking
@@ -31,6 +31,7 @@ alias quotes="zk edit -i --tag=quote --sort modified"
 
 alias p="projects"
 alias t="tags"
+alias com="commit"
 
 alias zz="zz.sh"
 alias ww="work-week.sh"
@@ -81,9 +82,9 @@ alias fd="fd --no-ignore-vcs \
     -E coverage"
 
 alias venv="nvim ~/.zshenv"
-    
+
 # remove whitespaces in file paths
-alias fds="fd --type=file -H | sed 's/ /\\ /g'" 
+alias fds="fd --type=file -H | sed 's/ /\\ /g'"
 
 # xargs result of fzf
 alias preview='fzf --multi --prompt "$FZF_PROMPT file -> " --preview "bat {1} --color always --theme=Nord" --height=80% | xargs -r -d "\n"'
@@ -133,9 +134,9 @@ alias src='source ~/.zshrc'
 alias dpip="~/.local/share/nvim/mason/packages/debugpy/venv/bin/pip"
 
 psm() {
-    ps aux --sort=-rss | awk '{print $6/1024 " MB\t\t" substr($0, index($0,$11))}'
+	ps aux --sort=-rss | awk '{print $6/1024 " MB\t\t" substr($0, index($0,$11))}'
 }
 
-deadlinks(){
-    find "$1" -xtype l -delete
+deadlinks() {
+	find "$1" -xtype l -delete
 }

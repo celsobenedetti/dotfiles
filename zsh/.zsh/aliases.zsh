@@ -86,7 +86,7 @@ alias venv="nvim ~/.zshenv"
 alias fds="fd --type=file -H | sed 's/ /\\ /g'" 
 
 # xargs result of fzf
-alias preview='fzf --multi --prompt "$FZF_PROMPT file -> " --preview "bat {1} --color always --theme=Nord" --height=40% | xargs -r -d "\n"'
+alias preview='fzf --multi --prompt "$FZF_PROMPT file -> " --preview "bat {1} --color always --theme=Nord" --height=80% | xargs -r -d "\n"'
 
 # run interactive docker container -> "dev $IMAGE $COMMAND"
 alias dev='docker run --rm -it -v $(pwd):/home/app -w /home/app -v ~/.docker_bash_history:/root/.bash_history -u $(id -u):$(id -g)'
@@ -103,7 +103,7 @@ alias gpt="\$BROWSER --new-window https://chat.openai.com"
 alias cat='bat'
 alias ll='exa --git -I=".git|node_modules" -a'
 alias l='exa --icons --git -I=".git|node_modules" -a -l'
-alias lt='exa -T --level=2 --icons -I=".git|node_modules|dist|coverage" --git -a'
+alias lt='exa -T --level=4 --icons -I=".git|node_modules|dist|coverage" --git -a'
 alias dust="dust -c"
 alias clip="xclip -sel clip"
 

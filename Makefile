@@ -38,5 +38,3 @@ decrypt:
 			ansible-vault decrypt $$file --output $$output --vault-password-file ~/.vault; \
 		done
 	@stow git
-
-

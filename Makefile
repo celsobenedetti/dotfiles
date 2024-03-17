@@ -1,4 +1,6 @@
-.PHONY: nvim code vale
+.PHONY: nvim code vale lf
+
+stow: nvim code vale lf
 
 nvim:
 	-mkdir ~/.config/nvim 2>/dev/null
@@ -47,3 +49,6 @@ vale:
 	-rm ~/.config/vale/styles/write-good/Weasel.yml
 	-rm ~/.config/vale/styles/write-good/Passive.yml
 	-rm ~/.config/vale/styles/write-good/E-Prime.yml
+
+lf:
+	stow lf -t ~/.config/lf

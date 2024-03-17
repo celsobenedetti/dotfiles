@@ -1,10 +1,17 @@
 #!/bin/bash
 #
-# utility for manage daily.md markdown files
+# utility for manage daily.md Markdown files
+#
 # 1. If "$1" is not passed, open latest daily note
+#
 # 2. Else Create new daily note for today or tomorrow
 #   a) today if note doesn't exist for today
 #   b) tomorrow if today already exists
+
+# TODO: remove the need for this onliner
+# for i in {1..6};
+#do zk new -t $(date -d "today +$i days" +'%A-%d/%m') --dry-run --template=today.md \
+#	> "$(date -d "today +$i days" +"%Y-%m-%d").md"; done
 
 path="$DAILY"
 template="today.md"

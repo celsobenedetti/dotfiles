@@ -75,6 +75,9 @@ export PATH="/home/celso/.local/share/fnm:$PATH"
 eval "`fnm env`"
 eval "$(fnm env --use-on-cd)"
 
+#bob
+export PATH="/home/celso/.local/share/bob/nvim-bin:$PATH"
+
 # #pyenv
 # export PYENV_ROOT="$HOME/.pyenv"
 # command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"

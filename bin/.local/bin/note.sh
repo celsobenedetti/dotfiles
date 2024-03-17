@@ -12,7 +12,7 @@ title=""
 tags=""
 fleeting_note=false # skip editor for note content
 destination="$NOTES/0-inbox"
-title_editor='/tmp/title_editor'
+new_note='/tmp/new_note'
 
 title_editor_templ=$(
 	cat <<EOF
@@ -29,14 +29,14 @@ EOF
 if [[ -n "$1" ]]; then
 	title="$1"
 else
-	echo "$title_editor_templ" >"$title_editor"
-	nvim -c 'set filetype=gitcommit' "$title_editor"
-	title=$(head -n 1 "$title_editor")
-	tags=$(awk 'NR==2 {print $0}' "$title_editor")
+	echo "$title_editor_templ" >"$new_note"
+	nvim -c 'set filetype=gitcommit' "$new_note"
+	title=$(head -n 1 "$new_note")
+	tags=$(awk 'NR==2 {print $0}' "$new_note")
 	fleeting_note=$(echo "$tags" | grep -q . && echo true)
 fi
 
-echo "$title_editor_templ" >"$title_editor" # reset title_editor
+echo "$title_editor_templ" >"$new_note" # reset new_note
 title=$(echo "$title" | Title)
 tags=${tags//ok/}
 

@@ -12,7 +12,7 @@ else
 			/mnt/c/Users/celso_benedetti/work \
 			--min-depth 1 --max-depth 1 --type d 2>/dev/null &
 		echo "$HOME/.dotfiles" &
-		echo "$HOME/.config/nvim" &
+		echo "$HOME/.dotfiles/nvim" &
 		echo "$HOME/.local/share/nvim/lazy"
 	)
 	# session=$(echo "$dirs" | fzf-tmux -p 80% --prompt "Open tmux session -> ") # fzf-tmux is a little bit slower than i'd like

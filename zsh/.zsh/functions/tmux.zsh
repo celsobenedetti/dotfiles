@@ -2,17 +2,17 @@
 
 # kills all tmux sessions except attached one
 tclean() {
-    sessions="$(tmux ls | grep -v attached | awk '{print $1}' | tr -d ':')"
+	sessions="$(tmux ls | grep -v attached | awk '{print $1}' | tr -d ':')"
 
-    for arg in "$@"; do
-        sessions="$(echo "$sessions" | grep -v "$arg")"
-    done
-    sessions="$(echo "$sessions" | grep -vE "notes|chatbot")"
+	for arg in "$@"; do
+		sessions="$(echo "$sessions" | grep -v "$arg")"
+	done
+	sessions="$(echo "$sessions" | grep -vE "notes")"
 
-    printf "Killing sessions...\n\n"
+	printf "Killing sessions...\n\n"
 
-    echo "$sessions" | while read -r session; do
-        echo " $session"
-       tmux kill-session -t "$session"
-    done
+	echo "$sessions" | while read -r session; do
+		echo " $session"
+		tmux kill-session -t "$session"
+	done
 }

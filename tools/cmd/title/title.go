@@ -40,10 +40,14 @@ var mappings = map[string]string{
 	"http":       "HTTP",
 	"http/1.1":   "HTTP/1.1",
 	"http/2":     "HTTP/2",
+	"https":      "HTTPS",
 	"websocket":  "WebSocket",
 	"websockets": "WebSockets",
 	"ws":         "WS",
 	"api":        "API",
+	"genai":      "GenAI",
+	"ai":         "AI",
+	"fer":        "FER",
 }
 
 // for each of these separators

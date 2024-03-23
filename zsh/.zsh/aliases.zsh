@@ -33,6 +33,7 @@ alias v='FZF_PROMPT=Open; fds | preview nvim'
 alias x='xplr'
 alias p="projects"
 alias t="tags"
+alias i="inbox"
 alias c='fd --type=d . | fzf --prompt "cd into: " --preview "exa -aT {1}" | while read -r result; do cd "$result" || exit; done'
 alias com="commit"
 

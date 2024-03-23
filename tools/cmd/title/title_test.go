@@ -25,6 +25,7 @@ func TestTitle(t *testing.T) {
 		{in: "nestjs official Fundamentals course", want: "NestJS Official Fundamentals Course"},
 		{in: "learning http", want: "Learning HTTP"},
 		{in: "learning http/2", want: "Learning HTTP/2"},
+		{in: "spiders custom questions genAI", want: "Spiders Custom Questions GenAI"},
 	}
 	for i, tt := range titleTests {
 		t.Run(fmt.Sprintf("Test %d", i), func(t *testing.T) {

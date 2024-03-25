@@ -36,6 +36,7 @@ alias t="tags"
 alias i="inbox"
 alias c='fd --type=d . | fzf --prompt "cd into: " --preview "exa -aT {1}" | while read -r result; do cd "$result" || exit; done'
 alias com="commit"
+alias n10="git log --oneline -n10"
 
 alias zz="zz.sh"
 alias ww="work-week.sh"
@@ -115,11 +116,10 @@ alias tz='gotz --timezones "CST:America/New_York,Pacific:America/Los_Angeles"'
 alias py='python3'
 alias dc='docker compose'
 alias lg='lazygit'
-alias ldo="lazydocker"
+alias lad="lazydocker"
 alias tf='terraform'
 alias nf='neofetch'
 alias tx="tmuxinator"
-alias yac="httpyac"
 alias nord="nordvpn"
 alias nx="npx nx"
 

@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Linear
+Exec=/bin/brave-browser https://linear.app/celsobenedetti/
+Icon=/home/celso/.dotfiles/assets/Pictures/linear.png

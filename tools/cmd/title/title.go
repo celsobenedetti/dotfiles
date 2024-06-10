@@ -27,6 +27,7 @@ func main() {
 var titleCaser = cases.Title(language.English)
 
 // any of these term keys will be mapped to values
+// TODO: extract these to json file and read it with viper
 var mappings = map[string]string{
 	"oclt":       "OCLT",
 	"fd":         "FD",
@@ -35,6 +36,7 @@ var mappings = map[string]string{
 	"mongodb":    "MongoDB",
 	"cli":        "CLI",
 	"nextjs":     "Next.js",
+	"next.js":    "Next.js",
 	"ssr":        "SSR",
 	"nestjs":     "NestJS",
 	"http":       "HTTP",
@@ -48,6 +50,13 @@ var mappings = map[string]string{
 	"genai":      "GenAI",
 	"ai":         "AI",
 	"fer":        "FER",
+	"gql":        "GQL",
+	"graphql":    "GraphQL",
+	"ttl":        "TTL",
+	"ce":         "CE",
+	"typescript": "TypeScript",
+	"url":        "URL",
+	"urls":       "URLs",
 }
 
 // for each of these separators

@@ -1,17 +1,20 @@
 name: chatbot
 root: ~/work/chatbot/
-on_project_start:
-  - git pull
-  - pnpm i
-  - pnpm -C packages/admin build:deps
 windows:
   - editor:
   - servers:
       layout: main-vertical
       panes:
         - admin:
+            - git pull
+            - pnpm i
             - cd packages/admin
+            - pnpm build:deps 
+            - pnpm codegen
             - pnpm dev
         - conversation:
+            - sleep 30
             - cd packages/conversation
-            - pnpm dev
+            - pnpm dev:debug
+  - git: nvim "+Octo pr"
+

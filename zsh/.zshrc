@@ -46,9 +46,9 @@ bindkey -s ^f "workspace.sh\n"
 
 #### functions ######################################
 
-if ! nordvpn status | rg -q "Status: Connected"; then
-    nordvpn connect
-fi
+# if ! nordvpn status | rg -q "Status: Connected"; then
+#     nordvpn connect
+# fi
 
 source ~/.fzf/shell/key-bindings.zsh
 source ~/.fzf/shell/completion.zsh

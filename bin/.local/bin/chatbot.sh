@@ -21,7 +21,6 @@ choose_branch() {
 			--preview "git diff --color=always {1}" |
 		sed 's/remotes.origin.//' |
 		tr -d " "
-
 }
 
 branch=$(choose_branch "$1")

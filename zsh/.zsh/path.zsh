@@ -12,7 +12,7 @@ export PATH=/home/celso/.local/share/pnpm/:$PATH
 export PATH=/usr/local/go/bin:$PATH
 export PATH=$GOPATH/bin:$PATH
 
-export ZK_NOTEBOOK_DIR=/home/celso/Documents/notes
+export ZK_NOTEBOOK_DIR=/home/celso/notes
 export ZK=$ZK_NOTEBOOK_DIR
 
 export DENO_INSTALL="/home/celso/.deno"

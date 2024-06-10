@@ -9,9 +9,8 @@
 #   b) tomorrow if today already exists
 
 # NOTE: create week notes one liner
-# for i in {1..6};
-#do zk new -t $(date -d "today +$i days" +'%A-%d/%m') --dry-run --template=today.md \
-#	> "$(date -d "today +$i days" +"%Y-%m-%d").md"; done
+# for i in {1..6}; do zk new -t $(date -d "today +$i days" +'%A-%d/%m') --dry-run --template=today.md \
+# 	>"$(date -d "today +$i days" +"%Y-%m-%d").md"; done
 
 path="$DAILY"
 

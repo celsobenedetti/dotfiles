@@ -17,12 +17,6 @@ if ! [[ "$1" == "-c" ]]; then
 	exit
 fi
 
-file=$(git status -s | grep -Eo "[a-zA-Z0-9\-]+\.md")
-
-if [[ $file == "" ]]; then
-	exit
-fi
-
 git pull
 git add .
 git commit -m "notes backup $(date +"%Y-%m-%d %H:%M:%S")" -q

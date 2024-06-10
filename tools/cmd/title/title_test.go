@@ -26,6 +26,7 @@ func TestTitle(t *testing.T) {
 		{in: "learning http", want: "Learning HTTP"},
 		{in: "learning http/2", want: "Learning HTTP/2"},
 		{in: "spiders custom questions genAI", want: "Spiders Custom Questions GenAI"},
+		{in: "ce-31 implement ttl for session collection", want: "CE-31 Implement TTL For Session Collection"},
 	}
 	for i, tt := range titleTests {
 		t.Run(fmt.Sprintf("Test %d", i), func(t *testing.T) {

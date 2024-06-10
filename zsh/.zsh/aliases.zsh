@@ -30,7 +30,7 @@ alias projects="zk edit -i --tag=project --sort modified"
 alias quotes="zk edit -i --tag=quote --sort modified"
 
 alias v='FZF_PROMPT=Open; fds | preview nvim'
-alias x='xplr'
+alias n="fd --type=file . ~/notes | preview | xargs nvim"
 alias p="projects"
 alias t="tags"
 alias i="inbox"
@@ -46,12 +46,14 @@ alias tmp="tmp.sh"
 alias today="date +%Y-%m-%d"
 alias books="books.sh"
 alias quote="quote.sh"
+alias lazyvim="lazyvim.sh"
 
 alias nc='FZF_PROMPT=Open; fds | preview nvim --clean'
 alias r='FZF_PROMPT=Remove file; fds | preview rm'
 alias d="day"
 alias dot="fd . ~/.dotfiles -H | fzf | xargs -r nvim"
 alias sw='switch'
+alias grep='rg'
 
 alias rg="rg \
     --glob \"!.git\" \
@@ -84,13 +86,13 @@ alias fd="fd --no-ignore-vcs \
     -E \"fatvai-*\" \
     -E coverage"
 
-alias venv="nvim ~/.zshenv"
+alias venv="nvim ~/.zshenv; source ~/.zshenv"
 
 # remove whitespaces in file paths
 alias fds="fd --type=file -H | sed 's/ /\\ /g'"
 
 # xargs result of fzf
-alias preview='fzf --multi --prompt "$FZF_PROMPT file -> " --preview "bat {1} --color always --theme=Nord" --height=80% | xargs -r -d "\n"'
+alias preview='fzf --multi --prompt "$FZF_PROMPT file -> " --preview "bat {1} --color always --theme=base16" --height=80% | xargs -r -d "\n"'
 
 # run interactive docker container -> "dev $IMAGE $COMMAND"
 alias dev='docker run --rm -it -v $(pwd):/home/app -w /home/app -v ~/.docker_bash_history:/root/.bash_history -u $(id -u):$(id -g)'
@@ -122,6 +124,7 @@ alias nf='neofetch'
 alias tx="tmuxinator"
 alias nord="nordvpn"
 alias nx="npx nx"
+alias octo='nvim "+Octo pr"'
 
 # alias k='kubectl'
 alias k='k3s kubectl'

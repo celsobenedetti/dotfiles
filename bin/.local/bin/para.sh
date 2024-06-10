@@ -5,9 +5,9 @@
 # "projects", "areas","resources", "archives", "work"
 # The match may be called an "anchored substring pattern matching" from the beggining of the string
 
-depth="1"
+depth="2"
 sort_by="type"
-path="$HOME/Documents/notes"
+path="$HOME/notes"
 
 inbox="$path/0-inbox"
 projects="$path/1-projects"
@@ -67,6 +67,8 @@ ignore=(
 	'hugo'
 	'_index.md'
 	'assets'
+	'work'
+	'daily'
 )
 
 # Join patterns with '|' separator

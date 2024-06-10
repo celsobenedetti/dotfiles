@@ -19,7 +19,7 @@ size = 11
 
 [font.normal]
 family = "MapleMono NF"
-# family =  JetBrainsMonoNL Nerd Font Mono
+# family = "JetBrainsMonoNL Nerd Font Mono"
 style = "Regular"
 
 [font.bold]

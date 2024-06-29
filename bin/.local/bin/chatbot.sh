@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ~/work/chatbot/ || exit
+cd ~/chatbot/ || exit
 
 desc="Checkout, pull, build and boot up Chatbot:"
 

@@ -1,7 +1,7 @@
 name: chatbot
-root: ~/work/chatbot/
+root: ~/chatbot/
 windows:
-  - editor:
+  - nvim:
   - servers:
       layout: main-vertical
       panes:
@@ -15,6 +15,7 @@ windows:
         - conversation:
             - sleep 30
             - cd packages/conversation
+            - pnpm build:deps 
             - pnpm dev:debug
   - git: nvim "+Octo pr"
 

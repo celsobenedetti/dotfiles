@@ -11,7 +11,7 @@ bindings = [{ key = "F11", action = "ToggleFullscreen" }]
 
 
 [window]
-opacity = 0.95
+opacity = 0.97
 padding = { x = 6, y = 3 }
 
 [font]
@@ -33,3 +33,6 @@ style = "Italic"
 [font.bold_italic]
 family = "MapleMono NF"
 style = "Bold Italic"
+
+[colors]
+transparent_background_colors = true

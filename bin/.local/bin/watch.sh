@@ -18,6 +18,8 @@ fi
 
 CMD="$CMD | rg -v 'rg'"
 
+start=$(date +%s)
+
 while true; do
 	OUTPUT=$(eval "$CMD")
 
@@ -26,5 +28,7 @@ while true; do
 		exit
 	fi
 
+	time="$(($(date +%s) - "$start"))"
+	printf '%s\n' "$(date -u -d "@$time" '+%H:%M:%S')"
 	sleep 1
 done

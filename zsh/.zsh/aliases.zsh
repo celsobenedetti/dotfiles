@@ -61,6 +61,7 @@ alias rg="rg \
     --glob \"!init.sql\" \
     --glob \"!dev-mocks\" \
     --glob \"!python\" \
+    --glob \"!drupal\" \
     --glob \"!fatvai-*\""
 
 alias fd="fd --no-ignore-vcs \
@@ -125,6 +126,7 @@ alias tx="tmuxinator"
 alias nord="nordvpn"
 alias nx="npx nx"
 alias octo='nvim "+Octo pr"'
+alias rename='tmux rename-window'
 
 # alias k='kubectl'
 alias k='k3s kubectl'

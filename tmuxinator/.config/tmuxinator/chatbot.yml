@@ -1,7 +1,7 @@
 name: chatbot
-root: ~/chatbot/
+root: ~/chatbot
 windows:
-  - nvim:
+  - main:
   - servers:
       layout: main-vertical
       panes:
@@ -9,7 +9,7 @@ windows:
             - git pull
             - pnpm i
             - cd packages/admin
-            - pnpm build:deps 
+            - pnpm build:deps
             - pnpm codegen
             - pnpm dev
         - conversation:
@@ -17,5 +17,14 @@ windows:
             - cd packages/conversation
             - pnpm build:deps 
             - pnpm dev:debug
+
   - git: nvim "+Octo pr"
+  - php:
+      - 'docker exec -it GetAnswers_php bash -c "
+          composer install;
+          drush updb -y;
+          drush cr;
+          drush cim -y;
+          drush core:cron;"'
+      - exit Enter
 
